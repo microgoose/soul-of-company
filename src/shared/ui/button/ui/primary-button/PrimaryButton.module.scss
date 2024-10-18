@@ -1,0 +1,18 @@
+.button {
+  padding: 11px 31px 11px 31px;
+  border-radius: 8px;
+  font: var(--font-text-bold);
+  background-color: var(--mc-accent);
+  color: var(--mc-white);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buttonDisabled {
+  background-color: var(--sys-disabled);
+  cursor: default;
+}
+
+.buttonHovered {
+  background-color: var(--mc-accent-hover);
+}
