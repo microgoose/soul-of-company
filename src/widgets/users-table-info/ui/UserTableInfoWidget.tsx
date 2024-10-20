@@ -8,7 +8,7 @@ export const UserTableInfoWidget = () => {
 
     useEffect(() => {
         getAllUsers().then((list) => setUsers(list));
-    });
+    }, []);
 
     return (
         <div>
