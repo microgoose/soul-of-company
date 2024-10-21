@@ -1,9 +1,10 @@
 {
   "projectName": "Душа Компании",
   "logOut": "Выйти",
+  "addUser": "Добавить пользователя",
   "pages": {
     "notFound": { "title": "Страница не найдена", "text": "404 - Страница не найдена" },
-    "users": { "title": "Пользователи" },
+    "usersManagement": { "title": "Пользователи" },
     "desktop": { "title": "Рабочий стол" },
     "roles": { "title": "Роли" },
     "accounts": { "title": "Счета" },

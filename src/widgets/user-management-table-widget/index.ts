@@ -1,0 +1,1 @@
+export { UserManagementTable } from '@/widgets/user-management-table-widget/ui/user-management-table/UserManagementTable.tsx';

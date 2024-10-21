@@ -1,1 +1,0 @@
-export { UserTableInfoWidget } from './UserTableInfoWidget.tsx';

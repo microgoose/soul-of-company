@@ -1,0 +1,17 @@
+.userManagementTable {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  height: 100%;
+}
+
+.controlsSection {
+  padding: 20px 23px;
+  display: flex;
+  justify-content: space-between;
+  width: 1232px;
+}
+.tableSection {
+  display: flex;
+  width: 1232px;
+}

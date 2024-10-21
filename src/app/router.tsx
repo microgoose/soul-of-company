@@ -1,5 +1,5 @@
 import {createBrowserRouter} from "react-router-dom";
-import {UsersPage} from "@/pages/users";
+import {UserManagementPage} from "pages/user-management";
 import {NotFoundPage} from "@/pages/errors";
 
 export const routes = {
@@ -27,9 +27,9 @@ export const routes = {
         path: '/settings',
         element: <NotFoundPage/>,
     },
-    usersPage: {
+    usersManagementPage: {
         path: '/users',
-        element: <UsersPage/>
+        element: <UserManagementPage/>
     },
     notFoundPage: {
         path: '*',

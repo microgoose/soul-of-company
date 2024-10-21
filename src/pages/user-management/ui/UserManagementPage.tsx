@@ -1,15 +1,15 @@
 import {t} from "i18next";
 import {PageTitle, SidebarLayout} from "@/shared/ui/page";
-import {UserTableInfoWidget} from "@/widgets/users-table-info";
+import {UserManagementTable} from "@/widgets/user-management-table-widget";
 import {MainSidebarWidget} from "@/widgets/main-sidebar";
 
-export const UsersPage = () => {
+export const UserManagementPage = () => {
     return (
         <>
-            <PageTitle title={t('pages.users.title')}/>
+            <PageTitle title={t('pages.usersManagement.title')}/>
             <SidebarLayout>
                 <MainSidebarWidget/>
-                <UserTableInfoWidget/>
+                <UserManagementTable/>
             </SidebarLayout>
         </>
     );
