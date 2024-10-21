@@ -1,1 +1,1 @@
-export { UserTableInfoWidget } from './ui/UserTableInfoWidget.tsx'
+export { UserTableInfoWidget } from './UserTableInfoWidget.tsx';

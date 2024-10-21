@@ -1,12 +1,16 @@
-import {UserTableInfoWidget} from "@/widgets/users-table-info";
-import {PageTitle} from "@/shared/ui/page/PageTitle.tsx";
 import {t} from "i18next";
+import {PageTitle, SidebarLayout} from "@/shared/ui/page";
+import {UserTableInfoWidget} from "@/widgets/users-table-info";
+import {MainSidebarWidget} from "@/widgets/main-sidebar";
 
 export const UsersPage = () => {
     return (
         <>
             <PageTitle title={t('pages.users.title')}/>
-            <UserTableInfoWidget/>
+            <SidebarLayout>
+                <MainSidebarWidget/>
+                <UserTableInfoWidget/>
+            </SidebarLayout>
         </>
     );
 };

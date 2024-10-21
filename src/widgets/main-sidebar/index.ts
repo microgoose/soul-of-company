@@ -1,0 +1,1 @@
+export { MainSidebarWidget } from './ui/main-sidebar/MainSidebarWidget.tsx';

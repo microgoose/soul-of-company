@@ -1,4 +1,4 @@
-import {PageTitle} from "@/shared/ui/page/PageTitle.tsx";
+import {PageTitle} from "@/shared/ui/page/ui/page-title/PageTitle.tsx";
 import {t} from "i18next";
 
 export const NotFoundPage = () => {

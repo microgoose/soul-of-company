@@ -15,12 +15,13 @@ export const useButtonStateClasses: UseButtonStateClassesType = (styles, state) 
     const [active, setActive] = useState(state === ButtonState.ACTIVE);
     const classes = [styles.button];
 
-    if (active)
-        classes.push(styles.buttonActive)
-    else if (disabled)
-        classes.push(styles.buttonDisabled)
-    else if (hovered)
+    if (hovered)
         classes.push(styles.buttonHovered)
+
+    if (disabled)
+        classes.push(styles.buttonDisabled)
+    else if (active)
+        classes.push(styles.buttonActive)
 
     return { classes, setHovered, setDisabled, setActive: setActive };
 }

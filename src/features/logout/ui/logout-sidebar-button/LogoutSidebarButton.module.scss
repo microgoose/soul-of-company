@@ -1,0 +1,13 @@
+.logoutSidebarButton {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  font: var(--font-h2);
+  cursor: pointer;
+}
+
+.logout svg {
+  color: var(--adt-red);
+}
