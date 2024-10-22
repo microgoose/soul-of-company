@@ -1,7 +1,12 @@
 {
   "projectName": "Душа Компании",
   "logOut": "Выйти",
-  "addUser": "Добавить пользователя",
+  "actions": {
+    "edit": "Редактировать",
+    "delete": "Удалить",
+    "copy": "Копировать",
+    "copied": "Скопировано"
+  },
   "pages": {
     "notFound": { "title": "Страница не найдена", "text": "404 - Страница не найдена" },
     "usersManagement": { "title": "Пользователи" },
@@ -10,5 +15,21 @@
     "accounts": { "title": "Счета" },
     "reminders": { "title": "Напоминания" },
     "settings": { "title": "Настройки" }
+  },
+  "mainSidebar": {
+    "desktop": "Рабочий стол"
+  },
+  "usersManagement": {
+    "addUser": "Добавить пользователя"
+  },
+  "user": {
+    "roles": "Роль",
+    "cities": "Город",
+    "telegramId": "TG ID",
+    "login": "Логин",
+    "fio": "Имя",
+    "phone": "Номер телефона",
+    "birthday": "Дата рождения",
+    "hiringDate": "Дата найма"
   }
 }

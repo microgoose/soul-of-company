@@ -1,0 +1,17 @@
+.userTelegramIdActivity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.activityCircle {
+  border-radius: 100%;
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--mc-accent);
+}
+.activityCircle.isActive {
+  background-color: var(--adt-red);
+}

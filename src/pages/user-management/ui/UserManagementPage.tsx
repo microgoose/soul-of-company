@@ -1,16 +1,15 @@
 import {t} from "i18next";
-import {PageTitle, SidebarLayout} from "@/shared/ui/page";
-import {UserManagementTable} from "@/widgets/user-management-table-widget";
-import {MainSidebarWidget} from "@/widgets/main-sidebar";
+import {SidebarLayout} from "@/shared/ui/page";
+import {MainSidebarWidget} from "@/widgets/main-sidebar-widget";
+import {UsersManagementWidget} from "@/widgets/user-management-table-widget";
+import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
 
 export const UserManagementPage = () => {
+    useDocumentTitle(t('pages.usersManagement.title'));
+
     return (
-        <>
-            <PageTitle title={t('pages.usersManagement.title')}/>
-            <SidebarLayout>
-                <MainSidebarWidget/>
-                <UserManagementTable/>
-            </SidebarLayout>
-        </>
+        <SidebarLayout sidebar={<MainSidebarWidget/>}>
+            <UsersManagementWidget/>
+        </SidebarLayout>
     );
 };

@@ -2,23 +2,11 @@
 
 $default-family: 'Museo Sans Cyrl', sans-serif;
 
-$font-size-h1: 16px;
-$font-size-h2: 16px;
-$font-size-text: 14px;
-$font-size-subtext: 14px;
-
-$line-height-h1: 19px;
-$line-height-h2: 19px;
-$line-height-text: 17px;
-$line-height-subtext: 17px;
-
-$font-weight-regular: 400;
-$font-weight-bold: 600;
-
 :root {
-  --font-h1: normal #{$font-weight-regular} #{$font-size-h1}/#{$line-height-h1} #{$default-family};
-  --font-h2: normal #{$font-weight-regular} #{$font-size-h2}/#{$line-height-h2} #{$default-family};
-  --font-text: normal #{$font-weight-regular} #{$font-size-text}/#{$line-height-text} #{$default-family};
-  --font-text-bold: normal #{$font-weight-bold} #{$font-size-text}/#{$line-height-text} #{$default-family};
-  --font-subtext: normal #{$font-weight-regular} #{$font-size-subtext}/#{$line-height-subtext} #{$default-family};
+  --font-h1:          normal  400   16px/19px   #{$default-family};
+  --font-h2:          normal  400   16px/19px   #{$default-family};
+  --font-h2-bold:     normal  600   16px/20px   #{$default-family};
+  --font-text:        normal  400   14px/18px   #{$default-family};
+  --font-text-bold:   normal  600   14px/19px   #{$default-family};
+  --font-subtext:     normal  400   14px/16px   #{$default-family};
 }

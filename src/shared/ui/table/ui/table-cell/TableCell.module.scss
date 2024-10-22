@@ -1,0 +1,27 @@
+.td {
+  position: relative;
+  padding: 8px 16px;
+  font-weight: inherit;
+  text-align: left;
+  vertical-align: top;
+}
+
+.td:before {
+  content: "";
+  display: block;
+  height: 10px;
+}
+
+.td::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 1px;
+  height: calc(100% - 20px);
+  background-color: var(--bg-stroke-gray);
+}
+
+.td:last-child::after {
+  display: none;
+}

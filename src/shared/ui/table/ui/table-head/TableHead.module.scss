@@ -1,0 +1,70 @@
+.th {
+  padding: 8px 0;
+  font-weight: inherit;
+  cursor: pointer;
+  border-bottom: 1px solid var(--bg-stroke-gray);
+  background-color: var(--bg-gray);
+  color: var(--sub-text);
+  text-align: left;
+}
+.th:first-child {
+  border-top-left-radius: 8px;
+}
+.th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 32px;
+  border-left: 1px solid transparent;
+}
+.container:hover {
+  border-color: var(--bg-stroke-gray);
+}
+.flexContainer {
+  padding-left: 7px;
+  display: flex;
+  min-height: 16px;
+  justify-content: left;
+  align-items: center;
+  gap: 4px;
+}
+
+.rightBorder {
+  display: block;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  padding-left: 7px;
+  border-right: 1px solid var(--bg-stroke-gray);
+}
+.container:hover {
+  .rightBorder {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: ew-resize;
+  }
+}
+
+.sortIcon {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--animation-duration) ease;
+  transform: rotateX(180deg);
+}
+.th:hover {
+  .sortIcon {
+    opacity: 0.5;
+    pointer-events: auto;
+  }
+  .sortTypeASC {
+    opacity: 1;
+  }
+  .sortTypeDESC {
+    opacity: 1;
+    transform: none;
+  }
+}

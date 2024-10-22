@@ -1,4 +1,8 @@
-.container {
+.sidebarLayout {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
+}
+.sidebarLayout > :last-child {
+  flex-grow: 1;
+  overflow-x: hidden;
 }

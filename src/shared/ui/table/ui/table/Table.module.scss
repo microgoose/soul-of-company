@@ -1,0 +1,40 @@
+.tableContainer {
+  max-height: 100%;
+  max-width: 100%;
+  border: 1px solid var(--bg-stroke-gray);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: auto;
+}
+
+.tableContainer::-webkit-scrollbar {
+  width: 26px;
+  height: 26px;
+}
+.tableContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+.tableContainer::-webkit-scrollbar-track:vertical {
+  border-left: 1px solid var(--bg-stroke-gray);
+  border-bottom:1px solid var(--bg-stroke-gray);
+}
+.tableContainer::-webkit-scrollbar-track:horizontal {
+  border-top: 1px solid var(--bg-stroke-gray);
+}
+
+.tableContainer::-webkit-scrollbar-thumb {
+  background-color: var(--bg-stroke-gray);
+  border-radius: 32px;
+  border: 8px solid transparent;
+  background-clip: padding-box;
+}
+.tableContainer::-webkit-scrollbar-thumb:vertical {
+  background-color: var(--bg-stroke-gray);
+  border-radius: 32px;
+  border: 8px solid transparent;
+  background-clip: padding-box;
+}
+
+.table {
+  font: var(--font-subtext);
+}

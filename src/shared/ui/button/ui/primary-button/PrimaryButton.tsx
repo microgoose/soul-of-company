@@ -10,13 +10,13 @@ interface PrimaryButtonProps {
 }
 
 export const PrimaryButton: FC<PrimaryButtonProps> = ({ children, state = ButtonState.DEFAULT }) => {
-    const { classes, setHovered } = useButtonStateClasses(styles, state);
+    const { classes, onMouseEnter, onMouseLeave } = useButtonStateClasses({styles, state});
 
     return (
         <button
             className={classNames(classes)}
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
         >
             {children}
         </button>

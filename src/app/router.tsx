@@ -1,18 +1,15 @@
-import {createBrowserRouter} from "react-router-dom";
-import {UserManagementPage} from "pages/user-management";
+import {createBrowserRouter, redirect} from "react-router-dom";
+import {UserManagementPage} from "@/pages/user-management";
 import {NotFoundPage} from "@/pages/errors";
 
 export const routes = {
     homePage: {
         path: '/',
         element: <NotFoundPage/>,
+        loader: () => redirect('/users')
     },
     accountsPage: {
         path: '/accounts',
-        element: <NotFoundPage/>,
-    },
-    desktopPage: {
-        path: '/desktop',
         element: <NotFoundPage/>,
     },
     remindersPage: {

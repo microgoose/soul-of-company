@@ -1,9 +1,9 @@
-import classNames from "classnames";
 import styles from "./LogoutSidebarButton.module.scss";
 import {LoginIcon} from "@/shared/assets";
 import {t} from "i18next";
 import {FC} from "react";
-import {IconButton} from "@/shared/ui/button";
+import {CenteredButton, IconButton} from "@/shared/ui/button";
+import classNames from "classnames";
 
 interface LogoutSidebarButtonProps {
     isCollapsed?: boolean
@@ -19,9 +19,9 @@ export const LogoutSidebarButton: FC<LogoutSidebarButtonProps> = ({isCollapsed})
     }
 
     return (
-        <div className={classNames(styles.logoutSidebarButton, styles.logout)}>
+        <CenteredButton className={classNames(styles.button, styles.logout)}>
             <LoginIcon/>
             <span>{t('logOut')}</span>
-        </div>
+        </CenteredButton>
     );
 };

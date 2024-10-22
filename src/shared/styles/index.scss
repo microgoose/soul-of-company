@@ -2,9 +2,9 @@
 @use 'themes';
 @use "fonts";
 @use 'typography';
+@use "animation";
 
 body {
   font: var(--font-text);
   color: var(--mc-black);
-  height: 100%;
 }

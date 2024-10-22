@@ -1,42 +1,49 @@
-import {FC, ReactNode, useRef} from "react";
+import {FC, ReactNode, useCallback, useRef} from "react";
 import styles from './IconButton.module.scss';
 import classNames from "classnames";
 import {useButtonStateClasses} from "../../model/use-button-state-classes.ts";
-import {ButtonState} from "@/shared/ui/button";
-import {useTooltipPosition} from "@/shared/ui/button/model/use-tooltip-position.ts";
+import {ButtonSize, ButtonState} from "@/shared/ui/button";
+import {ButtonType} from "@/shared/ui/button/model/button-type.ts";
+import {Tooltip} from "@/shared/ui/tooltip";
 
 interface IconButtonProps {
     tooltip?: string,
     state?: ButtonState,
+    type?: ButtonType,
+    size?: ButtonSize,
     children: ReactNode;
     className?: string
+    onClick?: () => void
+    onHover?: () => void
 }
 
-const sides = {
-    leftTop: styles.tooltipLeftTop,
-    rightTop: styles.tooltipRightTop,
-    leftBottom: styles.tooltipLeftBottom,
-    rightBottom: styles.tooltipRightBottom,
-};
-
 export const IconButton: FC<IconButtonProps> = (props) => {
-    const { children, className, tooltip, state = ButtonState.DEFAULT } = props;
-    const { classes, setHovered, setActive } = useButtonStateClasses(styles, state);
-    const triggerRef = useRef<HTMLSpanElement | null>(null);
-    const tooltipPosition = useTooltipPosition({
-        triggerRef,
-        sides
+    const { children, className, tooltip, onClick, onHover } = props;
+    const { type = ButtonType.FILLED, state = ButtonState.DEFAULT, size = ButtonSize.MIDDLE } = props;
+    const containerRef = useRef<HTMLButtonElement | null>(null);
+
+    const {classes, hovered, onMouseDown, onMouseUp, onMouseEnter, onMouseLeave} = useButtonStateClasses({
+        styles, state, type, size
     });
+
+    const onMouseEnterHandler = useCallback(() => {
+        onMouseEnter();
+
+        if (onHover)
+            onHover();
+    }, [onHover, onMouseEnter]);
 
     return (
         <button
             className={classNames(classes, className)}
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            onMouseDown={() => setActive(true)}
-            onMouseUp={() => setActive(false)}
+            onMouseEnter={onMouseEnterHandler}
+            onMouseLeave={onMouseLeave}
+            onMouseDown={onMouseDown}
+            onMouseUp={onMouseUp}
+            onClick={onClick}
+            ref={containerRef}
         >
-            {tooltip? <span ref={triggerRef} className={classNames(styles.tooltip, tooltipPosition)}>{tooltip}</span> : null}
+            {hovered && tooltip && <Tooltip containerRef={containerRef}>{tooltip}</Tooltip>}
             {children}
         </button>
     );

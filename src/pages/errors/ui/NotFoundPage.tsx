@@ -1,11 +1,10 @@
-import {PageTitle} from "@/shared/ui/page/ui/page-title/PageTitle.tsx";
 import {t} from "i18next";
+import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
 
 export const NotFoundPage = () => {
+    useDocumentTitle(t('pages.notFound.title'));
+
     return (
-        <>
-            <PageTitle title={t('pages.notFound.title')}/>
-            <span>{t('pages.notFound.text')}</span>
-        </>
+        <span>{t('pages.notFound.text')}</span>
     );
 };

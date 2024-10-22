@@ -1,0 +1,20 @@
+.tooltip {
+  padding: 8px 16px;
+  position: absolute;
+  white-space: nowrap;
+  height: 32px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  background-color: var(--mc-hover-blue);
+  color: var(--mc-black);
+  animation: fadeIn var(--animation-duration) forwards;
+  animation-delay: 500ms;
+  z-index: 999;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

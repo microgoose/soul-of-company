@@ -6,17 +6,18 @@ import {ButtonState} from "@/shared/ui/button";
 
 interface SecondaryButtonProps {
     state?: ButtonState,
+    className?: string,
     children: ReactNode;
 }
 
-export const SecondaryButton: FC<SecondaryButtonProps> = ({ children, state = ButtonState.DEFAULT }) => {
-    const { classes, setHovered } = useButtonStateClasses(styles, state);
+export const SecondaryButton: FC<SecondaryButtonProps> = ({ children, className, state = ButtonState.DEFAULT }) => {
+    const { classes, onMouseEnter, onMouseLeave } = useButtonStateClasses({styles, state});
 
     return (
         <button
-            className={classNames(classes)}
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
+            className={classNames(classes, className)}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
         >
             {children}
         </button>
