@@ -5,6 +5,7 @@
   src: local('Museo Sans Cyrl'), url(@/shared/styles/fonts/Museo-Sans-Cyrl-500.ttf) format('truetype');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -12,4 +13,5 @@
   src: local('Museo Sans Cyrl') url(@/shared/styles/fonts/Museo-Sans-Cyrl-700.ttf) format('truetype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
