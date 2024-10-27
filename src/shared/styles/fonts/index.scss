@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: 'Museo Sans Cyrl';
-  src: local('Museo Sans Cyrl') url(@/shared/styles/fonts/Museo-Sans-Cyrl-700.ttf) format('truetype');
+  src: local('Museo Sans Cyrl'), url(@/shared/styles/fonts/Museo-Sans-Cyrl-700.ttf) format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
