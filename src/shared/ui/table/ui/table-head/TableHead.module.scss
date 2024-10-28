@@ -1,25 +1,23 @@
 .th {
-  padding: 8px 0;
+  position: sticky;
+  top: 0;
   font-weight: inherit;
   cursor: pointer;
-  border-bottom: 1px solid var(--bg-stroke-gray);
   background-color: var(--bg-gray);
   color: var(--sub-text);
   text-align: left;
-}
-.th:first-child {
-  border-top-left-radius: 8px;
-}
-.th:last-child {
-  border-top-right-radius: 8px;
+  z-index: 1;
 }
 
 .container {
+  margin-left: -1px;
+  padding: 8px 0;
   display: flex;
-  width: 100%;
+  width: calc(100% + 1px);
   justify-content: space-between;
-  height: 32px;
+  height: 48px;
   border-left: 1px solid transparent;
+  border-bottom: 1px solid var(--bg-stroke-gray);
 }
 .container:hover {
   border-color: var(--bg-stroke-gray);

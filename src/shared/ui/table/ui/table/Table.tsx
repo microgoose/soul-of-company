@@ -9,10 +9,8 @@ export interface TableProps {
 
 export const Table = ({children, className}: TableProps) => {
     return (
-        <div className={style.tableContainer}>
-            <table className={classNames(style.table, className)}>
-                {children}
-            </table>
-        </div>
+        <table className={classNames(style.table, className)}>
+            {children}
+        </table>
     );
 };
