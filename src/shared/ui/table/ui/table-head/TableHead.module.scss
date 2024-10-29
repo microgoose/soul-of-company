@@ -16,12 +16,9 @@
   width: calc(100% + 1px);
   justify-content: space-between;
   height: 48px;
-  border-left: 1px solid transparent;
   border-bottom: 1px solid var(--bg-stroke-gray);
 }
-.container:hover {
-  border-color: var(--bg-stroke-gray);
-}
+
 .flexContainer {
   padding-left: 7px;
   display: flex;
@@ -29,6 +26,12 @@
   justify-content: left;
   align-items: center;
   gap: 4px;
+  border-left: 1px solid transparent;
+}
+.container:hover {
+  .flexContainer {
+    border-color: var(--bg-stroke-gray);
+  }
 }
 
 .rightBorder {
