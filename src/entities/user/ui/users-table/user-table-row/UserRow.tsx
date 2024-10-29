@@ -6,6 +6,7 @@ import {UserTelegramIdActivity} from "../../user-telegram-id-activity/UserTelegr
 import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";
 import {TableRow} from "@/shared/ui/table";
 import {TableCellActions} from "@/features/table-cell-actions";
+import {formatDate} from "@/shared/utils/date-utils.ts";
 
 export const UserRow = ({user}: {user: User}) => {
     return (
@@ -45,12 +46,12 @@ export const UserRow = ({user}: {user: User}) => {
             </TableCell>
             <TableCell>
                 <div className={style.cellFrame}>
-                    {user.birthday}
+                    {formatDate(user.birthday)}
                 </div>
             </TableCell>
             <TableCell>
                 <div className={style.cellFrame}>
-                    {user.hiringDate}
+                    {formatDate(user.hiringDate)}
                 </div>
             </TableCell>
             <TableCell>

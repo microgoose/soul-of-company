@@ -49,20 +49,18 @@
 
 .sortIcon {
   opacity: 0;
-  pointer-events: none;
   transition: opacity var(--animation-duration) ease;
   transform: rotateX(180deg);
 }
 .th:hover {
-  .sortIcon {
+  .sortIcon:not(.sortTypeASC, .sortTypeDESC) {
     opacity: 0.5;
-    pointer-events: auto;
   }
-  .sortTypeASC {
-    opacity: 1;
-  }
-  .sortTypeDESC {
-    opacity: 1;
-    transform: none;
-  }
+}
+.sortTypeASC {
+  opacity: 1;
+}
+.sortTypeDESC {
+  opacity: 1;
+  transform: none;
 }

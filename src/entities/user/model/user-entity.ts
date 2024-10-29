@@ -6,7 +6,7 @@ export interface User {
     login: string
     fio: string
     phone: string
-    birthday: string
-    hiringDate: string
+    birthday: Date
+    hiringDate: Date
 }
 export type UsersList = User[]
