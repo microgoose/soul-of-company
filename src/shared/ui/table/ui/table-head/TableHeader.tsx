@@ -6,12 +6,13 @@ import {setupHeaderResizer, SortingType} from "@/shared/ui/table";
 
 interface TableHeadProps {
     children?: ReactNode,
+    withSorting?: boolean,
     sortType?: SortingType
     onSortClick?: () => void
 }
 
 export const TableHeader = (props: TableHeadProps) => {
-    const {children, sortType, onSortClick} = props;
+    const {children, withSorting = true, sortType, onSortClick} = props;
     const thRef = useRef<HTMLTableCellElement | null>(null);
     const rightBorderRef = useRef<HTMLDivElement | null>(null);
 
@@ -34,7 +35,7 @@ export const TableHeader = (props: TableHeadProps) => {
             <div className={styles.container}>
                 <div className={styles.flexContainer}>
                     {children}
-                    <SortDescendingIcon className={sortIconClasses()} onClick={onSortClick}/>
+                    {withSorting && <SortDescendingIcon className={sortIconClasses()} onClick={onSortClick}/>}
                 </div>
 
                 <div className={styles.rightBorder} ref={rightBorderRef}/>

@@ -43,7 +43,7 @@ export const UsersTable = ({ users }: UsersTableProps) => {
                         children={t(`user.${header}`)}
                     />
                 ))}
-                <TableHeader/>
+                <TableHeader withSorting={false}/>
             </TableHeaders>
             <TableBody>
                 {tableController.rows.map((user, index) => (
