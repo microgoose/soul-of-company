@@ -12,6 +12,7 @@ import {
 
 import {UserRow} from "./user-table-row/UserRow.tsx";
 import style from './UsersTable.module.scss';
+import {useEffect} from "react";
 
 interface UsersTableProps {
     users: UsersList
@@ -32,14 +33,19 @@ export const UsersTable = ({ users }: UsersTableProps) => {
     const tableController = useTable<User>({ headers, rows: users });
     const sortingController = useTableSorting<User>(tableController, users);
     
+    useEffect(() => {
+        if (!sortingController.columnName)
+            sortingController.changeSorting(headers[7]);
+    }, [sortingController, users]);
+    
     return (
         <Table className={style.usersTable}>
             <TableHeaders>
                 {tableController.headers.map((header, index) => (
                     <TableHeader
                         key={index}
-                        sortType={sortingController.getSortType(header)}
-                        onSortClick={sortingController.changeSorting(header)}
+                        sortType={sortingController.getColumnSortType(header)}
+                        onSortClick={() => sortingController.changeSorting(header)}
                         children={t(`user.${header}`)}
                     />
                 ))}

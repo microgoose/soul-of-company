@@ -43,7 +43,7 @@ export const useTableSorting = <RowData,> (controller: TableControllerInterface<
     const [columnName, setColumnName] = useState<keyof RowData | undefined>(undefined);
     const [sortType, setSortType] = useState<SortingType | undefined>(undefined);
 
-    const changeSorting = useCallback((columnKey: keyof RowData) => () => {
+    const changeSorting = useCallback((columnKey: keyof RowData) => {
         let newSortType: SortingType | undefined = undefined;
 
         if (columnName === columnKey) {
@@ -65,10 +65,10 @@ export const useTableSorting = <RowData,> (controller: TableControllerInterface<
         setSortType(newSortType);
     }, [columnName, controller, rows, sortType]);
 
-    const getSortType = useCallback(
+    const getColumnSortType = useCallback(
         (columnKey: string) => (columnName === columnKey ? sortType : undefined),
         [columnName, sortType]
     );
 
-    return { changeSorting, getSortType };
+    return { columnName, sortType, changeSorting, getColumnSortType };
 };
