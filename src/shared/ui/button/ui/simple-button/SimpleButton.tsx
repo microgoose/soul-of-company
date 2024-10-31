@@ -1,5 +1,5 @@
 import {FC, ReactNode} from "react";
-import styles from './CenteredButton.module.scss';
+import styles from './SimpleButton.module.scss';
 import classNames from "classnames";
 import {useButtonStateClasses} from "../../model/use-button-state-classes.ts";
 import {ButtonState} from "@/shared/ui/button";
@@ -11,7 +11,7 @@ interface CenteredButtonProps {
     onClick?: () => void
 }
 
-export const CenteredButton: FC<CenteredButtonProps> = ({children, className, onClick, state = ButtonState.DEFAULT}) => {
+export const SimpleButton: FC<CenteredButtonProps> = ({children, className, onClick, state = ButtonState.DEFAULT}) => {
     const {classes, onMouseDown, onMouseUp, onMouseEnter, onMouseLeave} = useButtonStateClasses({styles, state});
 
     return (

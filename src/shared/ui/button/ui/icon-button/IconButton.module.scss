@@ -20,14 +20,19 @@
     height: 24px;
   }
 }
+
 .buttonHovered {
   background-color: var(--bg-blue);
 }
-.buttonActive.typeFilled {
-  border-color: var(--mc-accent);
-  background-color: var(--mc-accent);
-  color: var(--mc-white);
-}
-.buttonActive.typeEmpty {
-  border: 1.5px solid var(--mc-accent);
+
+.buttonActive {
+  &.typeFilled {
+    border-color: var(--mc-accent);
+    background-color: var(--mc-accent);
+    color: var(--mc-white);
+  }
+
+  &.typeEmpty {
+    border: 1.5px solid var(--mc-accent);
+  }
 }

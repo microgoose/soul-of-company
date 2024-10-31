@@ -23,7 +23,7 @@ type UseButtonStateClassesHook = (props: UseButtonStateClassesProps) => ButtonSt
 export const useButtonStateClasses: UseButtonStateClassesHook = (props) => {
     const {styles, state, type = ButtonType.FILLED, size = ButtonSize.MIDDLE, radius = ButtonRadius.MIDDLE} = props;
     const [hovered, setHovered] = useState(state === ButtonState.HOVERED);
-    const [active, setActive] = useState(state === ButtonState.ACTIVE);
+    const [pressed, setPressed] = useState(state === ButtonState.PRESSED);
     const classes = [styles.button];
 
     if (radius == ButtonRadius.SMALL)
@@ -43,18 +43,20 @@ export const useButtonStateClasses: UseButtonStateClassesHook = (props) => {
 
     if (hovered)
         classes.push(styles.buttonHovered);
+    if (pressed)
+        classes.push(styles.buttonPressed);
 
     if (state === ButtonState.DISABLED)
         classes.push(styles.buttonDisabled);
-    else if (active || state === ButtonState.ACTIVE)
+    else if (state === ButtonState.ACTIVE)
         classes.push(styles.buttonActive);
 
-    const onMouseDown= useCallback(() => setActive(true), [setActive]);
-    const onMouseUp= useCallback(() => setActive(false), [setActive]);
+    const onMouseDown= useCallback(() => setPressed(true), [setPressed]);
+    const onMouseUp= useCallback(() => setPressed(false), [setPressed]);
     const onMouseEnter= useCallback(() => setHovered(true), [setHovered]);
     const onMouseLeave= useCallback(() => {
         setHovered(false);
-        setActive(false);
+        setPressed(false);
     }, [setHovered]);
 
     return { classes, hovered, onMouseDown, onMouseUp, onMouseEnter, onMouseLeave };

@@ -1,25 +1,25 @@
 .routeItem {
-  padding: 8px 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-radius: 8px;
   font: var(--font-h2);
   border: 1px solid transparent;
 }
 
+.routeItem > button {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border-radius: 8px;
+}
+
 .routeItem.active {
   font-weight: 600;
-  background-color: var(--mc-accent);
   border-color: var(--mc-accent);
-  color: var(--mc-white);
 }
 
 .routeItem.collapsed {
   padding: unset;
   justify-content: center;
-  width: 40px;
-  height: 40px;
   border-color: var(--mc-sidebar-icon-border);
 
   .text {
