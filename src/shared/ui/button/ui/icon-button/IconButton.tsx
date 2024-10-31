@@ -5,12 +5,14 @@ import {useButtonStateClasses} from "../../model/use-button-state-classes.ts";
 import {ButtonSize, ButtonState} from "@/shared/ui/button";
 import {ButtonType} from "@/shared/ui/button/model/button-type.ts";
 import {Tooltip} from "@/shared/ui/tooltip";
+import {ButtonRadius} from "@/shared/ui/button/model/button-radius.ts";
 
 interface IconButtonProps {
     tooltip?: string,
     state?: ButtonState,
     type?: ButtonType,
     size?: ButtonSize,
+    radius?: ButtonRadius,
     children: ReactNode;
     className?: string
     onClick?: () => void
@@ -19,11 +21,16 @@ interface IconButtonProps {
 
 export const IconButton: FC<IconButtonProps> = (props) => {
     const { children, className, tooltip, onClick, onHover } = props;
-    const { type = ButtonType.FILLED, state = ButtonState.DEFAULT, size = ButtonSize.MIDDLE } = props;
+    const {
+        type = ButtonType.FILLED,
+        state = ButtonState.DEFAULT,
+        size = ButtonSize.MIDDLE,
+        radius = ButtonRadius.MIDDLE
+    } = props;
     const containerRef = useRef<HTMLButtonElement | null>(null);
 
     const {classes, hovered, onMouseDown, onMouseUp, onMouseEnter, onMouseLeave} = useButtonStateClasses({
-        styles, state, type, size
+        styles, state, type, size, radius
     });
 
     const onMouseEnterHandler = useCallback(() => {

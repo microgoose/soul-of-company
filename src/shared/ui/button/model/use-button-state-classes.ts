@@ -1,5 +1,6 @@
 import {useCallback, useState} from "react";
 import {ButtonSize, ButtonState, ButtonType} from "@/shared/ui/button";
+import {ButtonRadius} from "@/shared/ui/button/model/button-radius.ts";
 
 interface ButtonStateClassesReturnType {
     classes: string[],
@@ -14,15 +15,21 @@ interface UseButtonStateClassesProps {
     state: ButtonState,
     type?: ButtonType,
     size?: ButtonSize
+    radius?: ButtonRadius
 }
 
 type UseButtonStateClassesHook = (props: UseButtonStateClassesProps) => ButtonStateClassesReturnType
 
 export const useButtonStateClasses: UseButtonStateClassesHook = (props) => {
-    const {styles, state, type = ButtonType.FILLED, size = ButtonSize.MIDDLE} = props;
+    const {styles, state, type = ButtonType.FILLED, size = ButtonSize.MIDDLE, radius = ButtonRadius.MIDDLE} = props;
     const [hovered, setHovered] = useState(state === ButtonState.HOVERED);
     const [active, setActive] = useState(state === ButtonState.ACTIVE);
     const classes = [styles.button];
+
+    if (radius == ButtonRadius.SMALL)
+        classes.push(styles.radiusSmall);
+    if (radius == ButtonRadius.MIDDLE)
+        classes.push(styles.radiusMiddle);
 
     if (type == ButtonType.EMPTY)
         classes.push(styles.typeEmpty);
