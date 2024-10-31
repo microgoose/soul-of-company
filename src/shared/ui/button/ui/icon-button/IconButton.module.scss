@@ -5,7 +5,7 @@
   width: 40px;
   height: 40px;
   font: var(--font-text-bold);
-  border: 1px solid var(--icon-button-border);
+  border: 1.5px solid var(--icon-button-border);
   border-radius: 8px;
   color: var(--mc-black);
   cursor: pointer;
@@ -29,5 +29,5 @@
   color: var(--mc-white);
 }
 .buttonActive.typeEmpty {
-  border: 1px solid var(--mc-accent);
+  border: 1.5px solid var(--mc-accent);
 }
