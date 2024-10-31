@@ -1,3 +1,9 @@
 .cellFrame {
   padding-top: 4px;
 }
+.usersTableCell {
+  max-width: 430px;
+}
+.usersTableCell:not(:last-child) {
+  min-width: 130px;
+}

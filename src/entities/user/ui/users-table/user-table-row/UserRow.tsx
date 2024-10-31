@@ -11,17 +11,17 @@ import {formatDate} from "@/shared/utils/date-utils.ts";
 export const UserRow = ({user}: {user: User}) => {
     return (
         <TableRow>
-            <TableCell>
+            <TableCell className={style.usersTableCell}>
                 <div className={style.cellFrame}>
                     <SimpleList list={user.roles}/>
                 </div>
             </TableCell>
-            <TableCell>
+            <TableCell className={style.usersTableCell}>
                 <div className={style.cellFrame}>
                     <SimpleList list={user.cities}/>
                 </div>
             </TableCell>
-            <TableCell>
+            <TableCell className={style.usersTableCell}>
                 <div className={style.cellFrame}>
                     {/*TODO* replace fake data */}
                     <UserTelegramIdActivity isActive={Math.random() < 0.5}>
@@ -29,30 +29,30 @@ export const UserRow = ({user}: {user: User}) => {
                     </UserTelegramIdActivity>
                 </div>
             </TableCell>
-            <TableCell>
+            <TableCell className={style.usersTableCell}>
                 <CopyText text={user.login}/>
             </TableCell>
-            <TableCell>
+            <TableCell className={style.usersTableCell}>
                 <div className={style.cellFrame}>
                     {user.fio}
                 </div>
             </TableCell>
-            <TableCell>
+            <TableCell className={style.usersTableCell}>
                 <div className={style.cellFrame}>
                     {user.phone}
                 </div>
             </TableCell>
-            <TableCell>
+            <TableCell className={style.usersTableCell}>
                 <div className={style.cellFrame}>
                     {formatDate(user.birthday)}
                 </div>
             </TableCell>
-            <TableCell>
+            <TableCell className={style.usersTableCell}>
                 <div className={style.cellFrame}>
                     {formatDate(user.hiringDate)}
                 </div>
             </TableCell>
-            <TableCell>
+            <TableCell className={style.usersTableCell}>
                 <TableCellActions/>
             </TableCell>
         </TableRow>
