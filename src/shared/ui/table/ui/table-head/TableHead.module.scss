@@ -20,7 +20,7 @@
 }
 
 .flexContainer {
-  padding-left: 7px;
+  padding-left: 15px;
   display: flex;
   min-height: 16px;
   justify-content: left;
@@ -39,7 +39,7 @@
   height: 100%;
   opacity: 0;
   pointer-events: none;
-  padding-left: 7px;
+  padding-left: 15px;
   border-right: 1px solid var(--bg-stroke-gray);
 }
 .container:hover {
