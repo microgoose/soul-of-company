@@ -5,11 +5,13 @@
   gap: 8px;
   border-radius: 8px;
   font: var(--font-h2);
+  border: 1px solid transparent;
 }
 
 .routeItem.active {
   font-weight: 600;
   background-color: var(--mc-accent);
+  border-color: var(--mc-accent);
   color: var(--mc-white);
 }
 
@@ -18,7 +20,7 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  border: 1px solid var(--mc-sidebar-icon-border);
+  border-color: var(--mc-sidebar-icon-border);
 
   .text {
     display: none;
