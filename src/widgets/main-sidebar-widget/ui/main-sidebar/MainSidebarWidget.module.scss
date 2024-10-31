@@ -23,10 +23,10 @@
 }
 
 .headerSection {
-  padding: 24px 26px 24px 45px;
+  padding: 24px 34px 24px 35px;
 }
 .desktopSection {
-  padding: 24px 24px 24px 30px;
+  padding: 16px 24px 16px 24px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: var(--mc-sidebar-border);
@@ -35,7 +35,7 @@
   border-top-color: var(--mc-sidebar-border);
 }
 .bottomSection {
-  padding: 24px 24px 24px 30px;
+  padding: 24px 24px 22px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -51,7 +51,7 @@
 
 .collapsed {
   .headerSection {
-    padding: 20px 20px 20px 30px;
+    padding: 24px 22px 16px 32px;
 
     a {
       display: block;
@@ -69,6 +69,10 @@
   }
 
   .desktopSection {
-    padding: 20px 20px 20px 30px;
+    padding: 16px 22px 16px 32px;
+  }
+
+  .bottomSection {
+    padding: 24px 22px 22px 32px;
   }
 }

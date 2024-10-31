@@ -1,6 +1,5 @@
 .routeItem {
   font: var(--font-h2);
-  border: 1px solid transparent;
 }
 
 .routeItem > button {
@@ -20,7 +19,7 @@
 .routeItem.collapsed {
   padding: unset;
   justify-content: center;
-  border-color: var(--mc-sidebar-icon-border);
+  border: 1px solid var(--mc-sidebar-icon-border);
 
   .text {
     display: none;
