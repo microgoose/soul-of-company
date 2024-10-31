@@ -2,7 +2,6 @@
   position: sticky;
   top: 0;
   font-weight: inherit;
-  cursor: pointer;
   background-color: var(--bg-gray);
   color: var(--sub-text);
   text-align: left;
@@ -54,6 +53,7 @@
   opacity: 0;
   transition: opacity var(--animation-duration) ease;
   transform: rotateX(180deg);
+  cursor: pointer;
 }
 .th:hover {
   .sortIcon:not(.sortTypeASC, .sortTypeDESC) {
