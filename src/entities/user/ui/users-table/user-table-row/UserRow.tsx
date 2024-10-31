@@ -30,9 +30,7 @@ export const UserRow = ({user}: {user: User}) => {
                 </div>
             </TableCell>
             <TableCell>
-                <div className={style.cellFrame}>
-                    <CopyText text={user.login}/>
-                </div>
+                <CopyText text={user.login}/>
             </TableCell>
             <TableCell>
                 <div className={style.cellFrame}>

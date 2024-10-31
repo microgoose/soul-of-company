@@ -21,8 +21,8 @@ export const CopyText = ({text}: { text: string }) => {
     }, []);
 
     return (
-        <span className={style.copyText}>
-            {text}
+        <div className={style.copyText}>
+            <span>{text}</span>
             <IconButton
                 type={ButtonType.EMPTY}
                 size={ButtonSize.SMALL}
@@ -33,6 +33,6 @@ export const CopyText = ({text}: { text: string }) => {
             >
                 <CopyIcon/>
             </IconButton>
-        </span>
+        </div>
     );
 };
