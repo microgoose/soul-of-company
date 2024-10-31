@@ -1,5 +1,11 @@
 .copyText {
-    display: flex;
-    align-items: center;
+    display: inline-flex;
+    align-items: flex-start;
     gap: 8px;
+}
+.copyText > span {
+    margin-top: 4px;
+}
+.copyText > button {
+    flex-shrink: 0;
 }

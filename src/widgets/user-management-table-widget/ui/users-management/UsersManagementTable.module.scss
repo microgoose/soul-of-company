@@ -21,11 +21,12 @@
   max-height: 100%;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: auto;
   border: 1px solid var(--bg-stroke-gray);
 }
 .usersTableSection.hasScroll {
-  overflow: auto;
+  overflow-y: auto;
   margin-right: 0;
 }
 .usersTableSection::-webkit-scrollbar {
