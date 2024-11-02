@@ -13,9 +13,11 @@ export const setupHeaderResizer = (thElement: HTMLTableCellElement, triggerEl: H
             document.removeEventListener('mousemove', onMouseMove);
             document.removeEventListener('mouseup', onMouseUp);
             document.body.style.userSelect = '';
+            document.body.style.cursor = '';
         };
 
         document.body.style.userSelect = 'none';
+        document.body.style.cursor = 'col-resize';
         document.addEventListener('mousemove', onMouseMove);
         document.addEventListener('mouseup', onMouseUp);
     };

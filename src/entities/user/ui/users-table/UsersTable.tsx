@@ -5,6 +5,7 @@ import {
     TableBody,
     TableHeader,
     TableHeaders,
+    TableHeaderSorter,
     TableHeaderType,
     useTable,
     useTableSorting
@@ -29,31 +30,34 @@ const headers: TableHeaderType<User> = [
     'hiringDate',
 ];
 
-export const UsersTable = ({ users }: UsersTableProps) => {
-    const tableController = useTable<User>({ headers, rows: users });
+export const UsersTable = ({users}: UsersTableProps) => {
+    const tableController = useTable<User>({headers, rows: users});
     const sortingController = useTableSorting<User>(tableController, users);
-    
+
     useEffect(() => {
         if (!sortingController.columnName)
             sortingController.changeSorting(headers[7]);
     }, [sortingController, users]);
-    
+
     return (
         <Table className={style.usersTable}>
             <TableHeaders>
                 {tableController.headers.map((header, index) => (
-                    <TableHeader
-                        key={index}
-                        sortType={sortingController.getColumnSortType(header)}
-                        onSortClick={() => sortingController.changeSorting(header)}
-                        children={t(`user.${header}`)}
-                    />
+                    <TableHeader key={index}>
+                        <TableHeaderSorter
+                            sortType={sortingController.getColumnSortType(header)}
+                            onSort={() => sortingController.changeSorting(header)}
+                        >
+                            {t(`user.${header}`)}
+                        </TableHeaderSorter>
+                    </TableHeader>
                 ))}
-                <TableHeader withSorting={false}/>
+
+                <TableHeader/>
             </TableHeaders>
             <TableBody>
                 {tableController.rows.map((user, index) => (
-                    <UserRow key={index} user={user} />
+                    <UserRow key={index} user={user}/>
                 ))}
             </TableBody>
         </Table>

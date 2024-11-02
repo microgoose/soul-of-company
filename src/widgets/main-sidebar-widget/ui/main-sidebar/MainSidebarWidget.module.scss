@@ -17,7 +17,7 @@
   border-right-style: solid;
   border-right-width: 1px;
   border-right-color: var(--bg-stroke-gray);
-  color: var(--mc-sidebar-black);
+  color: var(--mc-black);
   overflow-y: auto;
   scrollbar-width: thin;
 }
@@ -29,10 +29,10 @@
   padding: 16px 24px 16px 24px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: var(--mc-sidebar-border);
+  border-bottom-color: var(--bg-stroke-gray);
   border-top-style: solid;
   border-top-width: 1px;
-  border-top-color: var(--mc-sidebar-border);
+  border-top-color: var(--bg-stroke-gray);
 }
 .bottomSection {
   padding: 24px 24px 22px 24px;

@@ -1,0 +1,26 @@
+.sorterContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 4px;
+}
+
+.sortIcon {
+  opacity: 0;
+  transition: opacity var(--animation-duration) ease;
+  transform: rotateX(180deg);
+  cursor: pointer;
+}
+.sorterContainer:hover {
+  .sortIcon:not(.sortTypeASC, .sortTypeDESC) {
+    opacity: 0.5;
+  }
+}
+.sortTypeASC {
+  opacity: 1;
+}
+.sortTypeDESC {
+  opacity: 1;
+  transform: none;
+}

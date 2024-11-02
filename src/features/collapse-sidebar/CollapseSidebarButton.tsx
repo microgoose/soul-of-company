@@ -1,5 +1,5 @@
 import styles from './CollapseSidebarButton.module.scss';
-import {ButtonState, ButtonType, SimpleButton, IconButton} from "@/shared/ui/button";
+import {ButtonState, ButtonType, IconButton, SimpleButton} from "@/shared/ui/button";
 import {LayoutWindowIcon} from "@/shared/assets";
 import {t} from "i18next";
 import {useCallback} from "react";

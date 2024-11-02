@@ -2,7 +2,7 @@ import styles from "./LogoutSidebarButton.module.scss";
 import {LoginIcon} from "@/shared/assets";
 import {t} from "i18next";
 import {FC} from "react";
-import {SimpleButton, IconButton} from "@/shared/ui/button";
+import {IconButton, SimpleButton} from "@/shared/ui/button";
 import classNames from "classnames";
 
 interface LogoutSidebarButtonProps {

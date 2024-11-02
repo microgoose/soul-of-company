@@ -48,12 +48,12 @@ export const useTableSorting = <RowData,> (controller: TableControllerInterface<
 
         if (columnName === columnKey) {
             if (sortType === undefined)
-                newSortType = SortingType.DESC;
-            else if (sortType === SortingType.DESC)
                 newSortType = SortingType.ASC;
+            else if (sortType === SortingType.ASC)
+                newSortType = SortingType.DESC;
         } else {
             setColumnName(columnKey);
-            newSortType = SortingType.DESC;
+            newSortType = SortingType.ASC;
         }
 
         if (newSortType === undefined) {
