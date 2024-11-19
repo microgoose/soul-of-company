@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import {ContactIcon, DollarCoin, EmployeeTreeIcon, GearWheelIcon, NotificationIcon} from '@/shared/assets';
+import {ContactIcon, DollarCoin, EmployeeTreeIcon, NotificationIcon} from '@/shared/assets';
 import styles from './MainSidebarWidget.module.scss';
 import {DefaultLogo, LogoImage} from "@/entities/logo";
 import {t} from "i18next";
@@ -8,6 +8,7 @@ import {RouteItem} from "../route-item/RouteItem.tsx";
 import {LogoutSidebarButton} from "@/features/logout";
 import {CollapseSidebarButton} from "@/features/collapse-sidebar";
 import {useState} from "react";
+import {Submenu} from "@/shared/ui/submenu";
 
 export const MainSidebarWidget = () => {
     const [isCollapsed, setIsCollapsed] = useState(false);
@@ -51,12 +52,7 @@ export const MainSidebarWidget = () => {
                     </div>
 
                     <div>
-                        <RouteItem
-                            path={routes.settingsPage.path}
-                            icon={<GearWheelIcon/>}
-                            text={t('pages.settings.title')}
-                            isCollapsed={isCollapsed}
-                        />
+                        <Submenu/>
                         <LogoutSidebarButton isCollapsed={isCollapsed}/>
                     </div>
                 </section>

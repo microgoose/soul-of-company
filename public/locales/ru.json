@@ -14,10 +14,15 @@
     "roles": { "title": "Роли" },
     "accounts": { "title": "Счета" },
     "reminders": { "title": "Напоминания" },
-    "settings": { "title": "Настройки" }
+    "buttons": { "title": "Кнопки" },
+    "chain": { "title": "Цепочка" },
+    "cities": { "title": "Города" },
+    "mailing": { "title": "Рассылка" },
+    "openAI": { "title": "Open AI" }
   },
   "mainSidebar": {
-    "desktop": "Рабочий стол"
+    "desktop": "Рабочий стол",
+    "settings": "Настройки"
   },
   "usersManagement": {
     "addUser": "Добавить пользователя"
