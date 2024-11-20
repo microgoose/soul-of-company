@@ -1,0 +1,32 @@
+.submenu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.listContainer {
+  position: absolute;
+  display: flex;
+  bottom: 100%;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: -999;
+}
+.isOpened .listContainer {
+  z-index: 999;
+}
+
+.list {
+  //max-height: 0;
+  transform: translate3d(0, 100%, 0);
+  transition: transform var(--animation-duration) ease;
+}
+.isOpened .list {
+  transform: translate3d(0, 0, 0);
+  //max-height: 1000px;
+}
+
+.list > * {
+  padding-bottom: 8px;
+}

@@ -1,2 +1,2 @@
-export { Submenu } from './ui/Submenu';
-export { SubmenuItem } from './ui/SubmenuItem';
+export { Submenu } from './ui/submenu/Submenu.tsx';
+export { SubmenuItem } from './ui/submenu-item/SubmenuItem.tsx';

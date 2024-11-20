@@ -1,22 +1,19 @@
-.routeItem {
-  font: var(--font-h2);
-}
-
-.routeItem > button {
+.sidebarItem {
   padding: 8px 16px;
   display: flex;
   align-items: center;
   gap: 8px;
   width: 100%;
   border-radius: 8px;
+  font: var(--font-h2);
 }
 
-.routeItem.active {
+.sidebarItem.active {
   font-weight: 600;
   border-color: var(--mc-accent);
 }
 
-.routeItem.collapsed {
+.sidebarItem.collapsed {
   padding: unset;
   justify-content: center;
   border: 1px solid var(--bg-stroke-gray);

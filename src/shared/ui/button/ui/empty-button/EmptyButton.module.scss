@@ -1,0 +1,18 @@
+.button {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--bg-stroke-gray);
+  font: var(--font-text);
+  cursor: pointer;
+  transition: background-color var(--animation-duration) ease;
+}
+.buttonHovered {
+  background-color: var(--bg-blue);
+}
+.buttonActive {
+  background-color: var(--bg-blue-hover);
+}

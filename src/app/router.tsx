@@ -6,53 +6,57 @@ import {RemindersPage} from "@/pages/reminders";
 import {RolesPage} from "@/pages/roles";
 import {ButtonsPage, CitiesPage, MailingPage, OpenAIPage} from "@/pages/settings";
 import {ChainPage} from "@/pages/settings/ui/ChainPage.tsx";
+import {MainSidebarWidget} from "@/widgets/main-sidebar-widget";
+import {SidebarLayout} from "@/shared/ui/page";
 
-export const routes = {
-    homePage: {
-        path: '/',
-        element: <NotFoundPage/>,
-        loader: () => redirect('/users')
-    },
-    usersManagementPage: {
-        path: '/users',
-        element: <UserManagementPage/>
-    },
-    rolesPage: {
-        path: '/roles',
-        element: <RolesPage/>,
-    },
-    accountsPage: {
-        path: '/accounts',
-        element: <AccountsPage/>,
-    },
-    remindersPage: {
-        path: '/reminders',
-        element: <RemindersPage/>,
-    },
-    settingsButtonsPage: {
-        path: '/settings/buttons',
-        element: <ButtonsPage/>,
-    },
-    settingsChainPage: {
-        path: '/settings/chain',
-        element: <ChainPage/>,
-    },
-    settingsCitiesPage: {
-        path: '/settings/cities',
-        element: <CitiesPage/>,
-    },
-    settingsMailingPage: {
-        path: '/settings/mailing',
-        element: <MailingPage/>,
-    },
-    settingsOpenAIPage: {
-        path: '/settings/open-ai',
-        element: <OpenAIPage/>,
-    },
-    notFoundPage: {
-        path: '*',
-        element: <NotFoundPage/>
-    },
-};
-
-export const router = createBrowserRouter(Object.values(routes));
+export const router = createBrowserRouter([{
+    path: '/',
+    element: <SidebarLayout sidebar={<MainSidebarWidget/>} />,
+    children: [
+        {
+            path: '/',
+            element: <NotFoundPage/>,
+            loader: () => redirect('/users')
+        },
+        {
+            path: '/users',
+            element: <UserManagementPage/>,
+        },
+        {
+            path: '/roles',
+            element: <RolesPage/>,
+        },
+        {
+            path: '/accounts',
+            element: <AccountsPage/>,
+        },
+        {
+            path: '/reminders',
+            element: <RemindersPage/>,
+        },
+        {
+            path: '/settings/buttons',
+            element: <ButtonsPage/>,
+        },
+        {
+            path: '/settings/chain',
+            element: <ChainPage/>,
+        },
+        {
+            path: '/settings/cities',
+            element: <CitiesPage/>,
+        },
+        {
+            path: '/settings/mailing',
+            element: <MailingPage/>,
+        },
+        {
+            path: '/settings/open-ai',
+            element: <OpenAIPage/>,
+        },
+        {
+            path: '*',
+            element: <NotFoundPage/>
+        },
+    ]
+}]);

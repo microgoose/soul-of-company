@@ -1,7 +1,7 @@
 import {t} from "i18next";
 import styles from './DefaultLogo.module.scss';
 import logo from "@/shared/assets/image/logo-88x94.webp";
-import {routes} from "@/app/router.tsx";
+import {routes} from "@/shared/config/routes.ts";
 import {NavLink} from "react-router-dom";
 
 export const DefaultLogo = () => {

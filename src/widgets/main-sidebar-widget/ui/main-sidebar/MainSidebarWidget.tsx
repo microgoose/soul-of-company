@@ -3,16 +3,22 @@ import {ContactIcon, DollarCoin, EmployeeTreeIcon, NotificationIcon} from '@/sha
 import styles from './MainSidebarWidget.module.scss';
 import {DefaultLogo, LogoImage} from "@/entities/logo";
 import {t} from "i18next";
-import {routes} from "@/app/router.tsx";
-import {RouteItem} from "../route-item/RouteItem.tsx";
+import {routes} from "@/shared/config/routes.ts";
+import {SidebarNavLink} from "../SidebarNavLink.tsx";
 import {LogoutSidebarButton} from "@/features/logout";
 import {CollapseSidebarButton} from "@/features/collapse-sidebar";
-import {useState} from "react";
-import {Submenu} from "@/shared/ui/submenu";
+import {memo, useCallback, useState} from "react";
+import {
+    SidebarSettingsSubmenu
+} from "@/widgets/main-sidebar-widget/ui/sidebar-settings-submenu/SidebarSettingsSubmenu.tsx";
 
-export const MainSidebarWidget = () => {
+export const MainSidebarWidget = memo(() => {
     const [isCollapsed, setIsCollapsed] = useState(false);
     const logo = isCollapsed ? <LogoImage className={styles.logoImage}/> : <DefaultLogo/>;
+
+    const openSidebar = useCallback(() => {
+        setIsCollapsed(false);
+    }, []);
 
     return (
         <aside className={isCollapsed ? classNames(styles.mainSidebar, styles.collapsed) : styles.mainSidebar}>
@@ -25,25 +31,25 @@ export const MainSidebarWidget = () => {
                 </section>
                 <section className={styles.bottomSection}>
                     <div>
-                        <RouteItem
+                        <SidebarNavLink
                             path={routes.usersManagementPage.path}
                             icon={<ContactIcon/>}
                             text={t('pages.usersManagement.title')}
                             isCollapsed={isCollapsed}
                         />
-                        <RouteItem
+                        <SidebarNavLink
                             path={routes.rolesPage.path}
                             icon={<EmployeeTreeIcon/>}
                             text={t('pages.roles.title')}
                             isCollapsed={isCollapsed}
                         />
-                        <RouteItem
+                        <SidebarNavLink
                             path={routes.accountsPage.path}
                             icon={<DollarCoin/>}
                             text={t('pages.accounts.title')}
                             isCollapsed={isCollapsed}
                         />
-                        <RouteItem
+                        <SidebarNavLink
                             path={routes.remindersPage.path}
                             icon={<NotificationIcon/>}
                             text={t('pages.reminders.title')}
@@ -52,11 +58,11 @@ export const MainSidebarWidget = () => {
                     </div>
 
                     <div>
-                        <Submenu/>
+                        <SidebarSettingsSubmenu isCollapsed={isCollapsed} onOpen={openSidebar}/>
                         <LogoutSidebarButton isCollapsed={isCollapsed}/>
                     </div>
                 </section>
             </div>
         </aside>
     );
-};
+});

@@ -2,7 +2,7 @@ import {FC} from "react";
 import {t} from "i18next";
 import logo from '@/shared/assets/image/logo-88x94.webp';
 import {NavLink} from "react-router-dom";
-import {routes} from "@/app/router.tsx";
+import {routes} from "@/shared/config/routes.ts";
 
 interface LogoImageProps {
     className?: string
