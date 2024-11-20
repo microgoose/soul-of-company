@@ -10,6 +10,7 @@ import GearWheelIcon from './icons/gear-wheel-icon.svg?react';
 import LoginIcon from './icons/login-icon.svg?react';
 import PlusIcon from './icons/plus-icon.svg?react';
 import SortDescendingIcon from './icons/sort-descending-icon.svg?react';
+import CrossIcon from './icons/cross-icon.svg?react';
 
 export {
     BasketIcon,
@@ -24,4 +25,5 @@ export {
     LoginIcon,
     PlusIcon,
     SortDescendingIcon,
+    CrossIcon
 }

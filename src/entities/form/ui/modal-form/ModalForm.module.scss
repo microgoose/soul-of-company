@@ -1,0 +1,41 @@
+.modalForm {
+  margin: 72px auto 0;
+  display: flex;
+  width: 415px;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  background-color: var(--bg-gray);
+  border-bottom: 1px solid var(--bg-stroke-gray);
+}
+
+.bodyContainer {
+  border-color: var(--bg-white);
+}
+
+.title {
+  padding: 24px 40px 17px 40px;
+  font: var(--font-h2-bold);
+}
+
+.closeButton {
+  padding: 16px 16px 20px 16px;
+}
+.closeButton svg {
+  padding: 7px;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  background-color: var(--mc-accent);
+  color: var(--mc-white);
+  transition: transform var(--animation-duration) ease;
+}
+.closeButton:hover svg {
+  transform: scale(1.1);
+}
