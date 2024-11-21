@@ -1,0 +1,40 @@
+.dateFieldContainer {
+  position: relative;
+
+  .isPickerOpen.isPickerBelow & > :first-child {
+    border-bottom: unset;
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+  }
+
+  .isPickerOpen.isPickerAbove & > :first-child {
+    border-top: unset;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+  }
+}
+
+.datePicker {
+  width: 100%;
+  padding: 0 12px;
+  display: block;
+  border: 1px solid var(--border-color);
+  background-color: rgb(var(--mc-white));
+
+  .isPickerBelow &{
+    border-radius: 0 0 8px 8px;
+  }
+
+  .isPickerAbove & {
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+.toggleIcon {
+  cursor: pointer;
+
+  .isPickerOpen & {
+    transform: rotateZ(180deg);
+    color: rgb(var(--mc-black));
+  }
+}

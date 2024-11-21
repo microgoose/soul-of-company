@@ -11,6 +11,10 @@ import LoginIcon from './icons/login-icon.svg?react';
 import PlusIcon from './icons/plus-icon.svg?react';
 import SortDescendingIcon from './icons/sort-descending-icon.svg?react';
 import CrossIcon from './icons/cross-icon.svg?react';
+import ChevronDown from './icons/chevron-down.svg?react';
+import Magnifier from './icons/magnifier.svg?react';
+import CheckMark from './icons/check-mark.svg?react';
+import EmptyJackdaw from './icons/empty-jackdaw.svg?react';
 
 export {
     BasketIcon,
@@ -25,5 +29,9 @@ export {
     LoginIcon,
     PlusIcon,
     SortDescendingIcon,
-    CrossIcon
+    CrossIcon,
+    ChevronDown,
+    Magnifier,
+    CheckMark,
+    EmptyJackdaw
 }

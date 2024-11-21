@@ -1,0 +1,1 @@
+export { DayCalendarPicker } from '@/shared/ui/calendar-picker/ui/day-calendar-picker/DayCalendarPicker.tsx';

@@ -1,4 +1,4 @@
-import {useCallback, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {TableControllerInterface, TableRowsType} from "./use-table.ts";
 import {SortingType} from "./sorting-type.ts";
 
@@ -41,34 +41,39 @@ const getSortedRow: SortRowsFunction = (rows, key, sortType) => {
 
 export const useTableSorting = <RowData,> (controller: TableControllerInterface<RowData>, rows: TableRowsType<RowData>) => {
     const [columnName, setColumnName] = useState<keyof RowData | undefined>(undefined);
-    const [sortType, setSortType] = useState<SortingType | undefined>(undefined);
-
-    const changeSorting = useCallback((columnKey: keyof RowData) => {
-        let newSortType: SortingType | undefined = undefined;
-
-        if (columnName === columnKey) {
-            if (sortType === undefined)
-                newSortType = SortingType.ASC;
-            else if (sortType === SortingType.ASC)
-                newSortType = SortingType.DESC;
-        } else {
-            setColumnName(columnKey);
-            newSortType = SortingType.ASC;
-        }
-
-        if (newSortType === undefined) {
-            controller.setRows(rows);
-        } else {
-            controller.setRows(getSortedRow(rows, columnKey, newSortType));
-        }
-
+    const [sortType, setSortType] = useState<SortingType>(SortingType.ASC);
+    
+    const setSorting = useCallback((columnKey: keyof RowData, newSortType: SortingType) => {
+        setColumnName(columnKey);
         setSortType(newSortType);
-    }, [columnName, controller, rows, sortType]);
+    }, []);
+    
+    const changeSorting = useCallback((columnKey: keyof RowData, newSortType?: SortingType) => {
+        if (newSortType) {
+            setSorting(columnKey, newSortType);
+        } else {
+            if (columnName === columnKey) {
+                if (sortType === SortingType.ASC) {
+                    setSorting(columnKey, SortingType.DESC);
+                } else if (sortType === SortingType.DESC) {
+                    setSorting(columnKey, SortingType.ASC);
+                }
+            } else {
+                setSorting(columnKey, SortingType.ASC);
+            }   
+        }
+    }, [columnName, setSorting, sortType]);
 
     const getColumnSortType = useCallback(
         (columnKey: string) => (columnName === columnKey ? sortType : undefined),
         [columnName, sortType]
     );
 
-    return { columnName, sortType, changeSorting, getColumnSortType };
+    useEffect(() => {
+        if (columnName) {
+            controller.setRows(getSortedRow(rows, columnName, sortType));
+        }
+    }, [columnName, sortType]);
+
+    return { columnName, sortType, changeSorting, setSorting, getColumnSortType };
 };

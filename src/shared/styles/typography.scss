@@ -3,10 +3,20 @@
 $default-family: 'Museo Sans Cyrl', sans-serif;
 
 :root {
-  --font-h1:          normal  400   16px/19px   #{$default-family};
-  --font-h2:          normal  400   16px/19px   #{$default-family};
-  --font-h2-bold:     normal  600   16px/20px   #{$default-family};
-  --font-text:        normal  400   14px/18px   #{$default-family};
-  --font-text-bold:   normal  600   14px/19px   #{$default-family};
-  --font-subtext:     normal  400   14px/16px   #{$default-family};
+  --font-h1:           normal  400   16px/19px   #{$default-family};
+  --font-h1-bold:      normal  600   16px/19px   #{$default-family};
+
+  --font-h2:           normal  400   16px/19px   #{$default-family};
+  --font-h2-bold:      normal  600   16px/20px   #{$default-family};
+
+  --font-h4:           normal  400   14px/17px   #{$default-family};
+  --font-h4-bold:      normal  600   14px/17px   #{$default-family};
+
+  --font-text:         normal  400   14px/18px   #{$default-family};
+  --font-text-bold:    normal  600   14px/19px   #{$default-family};
+
+  --font-subtext:      normal  400   14px/16px   #{$default-family};
+  --font-subtext-bold: normal  600   14px/16px   #{$default-family};
+
+  --font-subtitle:     normal  400   12px/14px   #{$default-family};
 }

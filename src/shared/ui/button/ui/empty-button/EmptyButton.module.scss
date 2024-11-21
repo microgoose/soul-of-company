@@ -5,14 +5,14 @@
   height: 40px;
   gap: 8px;
   border-radius: 8px;
-  border: 1px solid var(--bg-stroke-gray);
+  border: 1px solid rgb(var(--bg-stroke-gray));
   font: var(--font-text);
   cursor: pointer;
   transition: background-color var(--animation-duration) ease;
 }
 .buttonHovered {
-  background-color: var(--bg-blue);
+  background-color: rgb(var(--bg-blue));
 }
 .buttonActive {
-  background-color: var(--bg-blue-hover);
+  background-color: rgb(var(--bg-blue-hover));
 }

@@ -1,0 +1,12 @@
+.calendarContainer {
+  font: var(--font-h4);
+}
+
+.calendarTable {
+  text-align: center;
+  vertical-align: middle;
+
+  th, td {
+    height: 48px;
+  }
+}

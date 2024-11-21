@@ -1,17 +1,20 @@
 // themes.scss
 
 :root {
-  --mc-accent: #0ea0de;
-  --mc-accent-hover: #018DC9;
-  --mc-black: #282a2c;
-  --mc-white: #ffffff;
+  --mc-accent: 14, 160, 222;
+  --mc-accent-hover: 1, 141, 201;
+  --mc-black: 40, 42, 44;
+  --mc-white: 255, 255, 255;
+  --mc-vivid-grey: 123, 135, 148;
 
-  --bg-white: #ffffff;
-  --bg-blue: #f0f9fd;
-  --bg-blue-hover: #cfeefa;
-  --bg-gray: #f8f8f8;
-  --bg-stroke-gray: #e6ecee;
+  --bg-blue: 240, 249, 253;
+  --bg-blue-hover: 207, 238, 250;
+  --bg-darker-gray: 247, 247, 247;
+  --bg-gray: 248, 248, 248;
+  --bg-stroke-gray: 230, 236, 238;
+  --bg-gray-blue: 119, 151, 183;
 
-  --adt-red: #c4320a;
-  --sys-disabled: #a9aaab;
+  --adt-red: 196, 50, 10;
+  --adt-green: 93, 150, 43;
+  --sys-disabled: 169, 170, 171;
 }

@@ -1,0 +1,41 @@
+.option {
+  padding: 8px 0 7px 0;
+  display: inline-flex;
+  justify-content: space-between;
+  gap: 4px;
+  width: 100%;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgb(var(--bg-stroke-gray));
+  }
+
+  input {
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgb(var(--mc-accent));
+    border-radius: 50%;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  input:checked {
+    background-color: transparent;
+    border-color: rgb(var(--mc-accent));
+  }
+
+  input:checked::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: rgb(var(--mc-accent));
+    border-radius: 50%;
+  }
+}

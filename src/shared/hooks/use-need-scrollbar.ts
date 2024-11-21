@@ -1,22 +1,22 @@
 import {useEffect, useRef, useState} from "react";
+import {subscribe, unsubscribe} from "@/shared/utils/resize-observer-event-bus.ts";
 
-export const useNeedVerticalScrollbar = (deps: unknown) => {
-    const elementRef = useRef<HTMLElement | null>(null);
+export const useNeedVerticalScrollbar = <HTMLElementType extends HTMLElement>() => {
+    const elementRef = useRef<HTMLElementType | null>(null);
     const [needScrollbar, setNeedScrollbar] = useState(false);
 
     useEffect(() => {
-        const checkScrollbar = () => {
-            if (elementRef.current) {
-                const element = elementRef.current;
-                const hasVerticalScrollbar = element.scrollHeight > element.clientHeight;
-                setNeedScrollbar(hasVerticalScrollbar);
-            }
-        };
+        const el = elementRef.current;
 
-        requestAnimationFrame(() => checkScrollbar());
-        window.addEventListener('resize', checkScrollbar);
-        return () => window.removeEventListener('resize', checkScrollbar);
-    }, [deps]);
+        if (!el) return;
+
+        const onResize = () => {
+            setNeedScrollbar(el.scrollHeight > el.clientHeight);
+        }
+
+        subscribe(el, onResize);
+        return () => unsubscribe(el, onResize);
+    }, []);
 
     return {elementRef, needScrollbar};
 };

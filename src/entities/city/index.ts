@@ -1,0 +1,1 @@
+export type { City, CityList } from './model/city-entity.ts';

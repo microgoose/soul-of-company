@@ -1,0 +1,17 @@
+.selectTagContainer {
+    display: flex;
+    align-items: center;
+    color: rgb(var(--mc-accent));
+}
+
+.tagLabel {
+    padding: 4px 8px;
+    background-color: rgb(var(--bg-blue));
+    border-radius: 6px;
+}
+
+.removeTag {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}

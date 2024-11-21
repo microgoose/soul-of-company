@@ -1,6 +1,7 @@
 import {t} from "i18next";
 import {User, UsersList} from "@/entities/user";
 import {
+    SortingType,
     Table,
     TableBody,
     TableHeader,
@@ -13,10 +14,11 @@ import {
 
 import {UserRow} from "./user-table-row/UserRow.tsx";
 import style from './UsersTable.module.scss';
-import {useEffect} from "react";
+import {ReactNode, useEffect} from "react";
 
 interface UsersTableProps {
-    users: UsersList
+    users: UsersList,
+    actions?: (user: User) => ReactNode,
 }
 
 const headers: TableHeaderType<User> = [
@@ -30,14 +32,15 @@ const headers: TableHeaderType<User> = [
     'hiringDate',
 ];
 
-export const UsersTable = ({users}: UsersTableProps) => {
+export const UsersTable = ({users, actions}: UsersTableProps) => {
     const tableController = useTable<User>({headers, rows: users});
     const sortingController = useTableSorting<User>(tableController, users);
-
+    
     useEffect(() => {
-        if (!sortingController.columnName)
-            sortingController.changeSorting(headers[7]);
-    }, [sortingController, users]);
+        if (users.length && !sortingController.columnName) {
+            sortingController.changeSorting(headers[7], SortingType.DESC);
+        }
+    }, [users]);
 
     return (
         <Table className={style.usersTable}>
@@ -57,7 +60,7 @@ export const UsersTable = ({users}: UsersTableProps) => {
             </TableHeaders>
             <TableBody>
                 {tableController.rows.map((user, index) => (
-                    <UserRow key={index} user={user}/>
+                    <UserRow key={index} user={user} actions={actions} />
                 ))}
             </TableBody>
         </Table>

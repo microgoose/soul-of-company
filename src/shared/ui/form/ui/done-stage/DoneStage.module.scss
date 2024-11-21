@@ -1,0 +1,16 @@
+.doneStage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+  width: 100%;
+  color: rgb(var(--adt-green));
+  font: var(--font-h1-bold);
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+}

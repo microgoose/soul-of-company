@@ -6,7 +6,7 @@ import {NavLink, useMatch} from "react-router-dom";
 import {GearWheelIcon} from "@/shared/assets";
 import {SidebarItem} from "@/widgets/main-sidebar-widget/ui/sidebar-item/SidebarItem.tsx";
 import {useCallback, useMemo, useState} from "react";
-import {routes} from "@/shared/config/routes.ts";
+import {routesConfig} from "@/shared/config/routes-config.ts";
 
 interface SidebarSettingsSubmenuProps {
     isCollapsed: boolean,
@@ -48,27 +48,27 @@ export const SidebarSettingsSubmenu = ({isCollapsed, onOpen}: SidebarSettingsSub
     return (
         <Submenu isOpened={isOpened} button={sidebarItem} listClasses={styles.submenuList}>
             <SubmenuItem>
-                <NavLink to={routes.settingsButtonsPage.path}>
+                <NavLink to={routesConfig.settingsButtonsPage.path}>
                     {({isActive}) => navButton(isActive, t('pages.buttons.title'))}
                 </NavLink>
             </SubmenuItem>
             <SubmenuItem>
-                <NavLink to={routes.settingsChainPage.path}>
+                <NavLink to={routesConfig.settingsChainPage.path}>
                     {({isActive}) => navButton(isActive, t('pages.chain.title'))}
                 </NavLink>
             </SubmenuItem>
             <SubmenuItem>
-                <NavLink to={routes.settingsCitiesPage.path}>
+                <NavLink to={routesConfig.settingsCitiesPage.path}>
                     {({isActive}) => navButton(isActive, t('pages.cities.title'))}
                 </NavLink>
             </SubmenuItem>
             <SubmenuItem>
-                <NavLink to={routes.settingsMailingPage.path}>
+                <NavLink to={routesConfig.settingsMailingPage.path}>
                     {({isActive}) => navButton(isActive, t('pages.mailing.title'))}
                 </NavLink>
             </SubmenuItem>
             <SubmenuItem>
-                <NavLink to={routes.settingsOpenAIPage.path}>
+                <NavLink to={routesConfig.settingsOpenAIPage.path}>
                     {({isActive}) => navButton(isActive, t('pages.openAI.title'))}
                 </NavLink>
             </SubmenuItem>

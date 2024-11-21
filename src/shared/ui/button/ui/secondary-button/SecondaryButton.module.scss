@@ -3,21 +3,21 @@
   border-radius: 8px;
   border-width: 2px;
   border-style: solid;
-  border-color: var(--mc-accent);
+  border-color: rgb(var(--mc-accent));
   font: var(--font-h2-bold);
-  color: var(--mc-accent);
+  color: rgb(var(--mc-accent));
   background-color: transparent;
   cursor: pointer;
   transition: background-color var(--animation-duration) ease, border-color var(--animation-duration) ease, color var(--animation-duration) ease;
 }
 
 .buttonDisabled {
-  color: var(--sys-disabled);
-  border-color: var(--sys-disabled);
+  color: rgb(var(--sys-disabled));
+  border-color: rgb(var(--sys-disabled));
   cursor: default;
 }
 
 .buttonHovered {
-  border-color: var(--bg-stroke-gray);
-  background-color: var(--bg-gray);
+  border-color: rgb(var(--bg-stroke-gray));
+  background-color: rgb(var(--bg-gray));
 }

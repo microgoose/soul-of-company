@@ -1,0 +1,20 @@
+.dayButton {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+}
+.isActive:not(.isDisabled) {
+    background-color: rgb(var(--mc-accent));
+    color: rgb(var(--mc-white));
+}
+.dayButton:not(.isActive, .isDisabled):hover {
+    background-color: rgb(var(--bg-blue-hover));
+    color: rgb(var(--mc-accent));
+}
+.isCurrentDay:not(.isActive) {
+    color: rgb(var(--mc-accent));
+    font: var(--font-h4-bold);
+}
+.isDisabled {
+    color: rgb(var(--sys-disabled));
+}

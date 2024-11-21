@@ -1,15 +1,9 @@
 .td {
   position: relative;
-  padding: 8px 16px;
+  padding: 18px 16px 8px;
   font-weight: inherit;
   text-align: left;
   vertical-align: top;
-}
-
-.td:before {
-  content: "";
-  display: block;
-  height: 10px;
 }
 
 .td::after {
@@ -19,7 +13,7 @@
   top: 10px;
   width: 1px;
   height: calc(100% - 20px);
-  background-color: var(--bg-stroke-gray);
+  background-color: rgb(var(--bg-stroke-gray));
 }
 
 .td:last-child::after {

@@ -5,9 +5,8 @@
   width: 40px;
   height: 40px;
   font: var(--font-text-bold);
-  border: 1.5px solid var(--bg-stroke-gray);
+  border: 1.5px solid rgb(var(--bg-stroke-gray));
   border-radius: 8px;
-  color: var(--mc-black);
   cursor: pointer;
   transition: background-color var(--animation-duration) ease, color var(--animation-duration) ease;
 
@@ -22,17 +21,17 @@
 }
 
 .buttonHovered {
-  background-color: var(--bg-blue);
+  background-color: rgb(var(--bg-blue));
 }
 
 .buttonActive {
   &.typeFilled {
-    border-color: var(--mc-accent);
-    background-color: var(--mc-accent);
-    color: var(--mc-white);
+    border-color: rgb(var(--mc-accent));
+    background-color: rgb(var(--mc-accent));
+    color: rgb(var(--mc-white));
   }
 
   &.typeEmpty {
-    border: 1.5px solid var(--mc-accent);
+    border: 1.5px solid rgb(var(--mc-accent));
   }
 }

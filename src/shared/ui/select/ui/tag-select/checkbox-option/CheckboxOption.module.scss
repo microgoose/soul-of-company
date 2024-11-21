@@ -1,0 +1,31 @@
+.optionContainer {
+  padding: 8px 10px 8px 16px;
+  display: inline-flex;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgb(var(--bg-stroke-gray));
+  }
+}
+
+.option {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.checkbox {
+  margin-left: 26px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgb(var(--mc-black));
+  color: rgb(var(--mc-accent));
+  border-radius: 4px;
+}
+
+.isChecked .checkbox {
+    border-color: rgb(var(--mc-accent));
+}

@@ -1,0 +1,9 @@
+.stepForm {
+    & > * {
+        display: none;
+    }
+}
+
+.activeStep {
+    display: block;
+}

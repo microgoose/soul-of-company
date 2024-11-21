@@ -1,0 +1,15 @@
+.calendarNavContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controlsSection {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  & > * {
+    width: 110px;
+  }
+}

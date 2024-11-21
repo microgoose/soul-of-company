@@ -3,7 +3,7 @@ import {ContactIcon, DollarCoin, EmployeeTreeIcon, NotificationIcon} from '@/sha
 import styles from './MainSidebarWidget.module.scss';
 import {DefaultLogo, LogoImage} from "@/entities/logo";
 import {t} from "i18next";
-import {routes} from "@/shared/config/routes.ts";
+import {routesConfig} from "@/shared/config/routes-config.ts";
 import {SidebarNavLink} from "../SidebarNavLink.tsx";
 import {LogoutSidebarButton} from "@/features/logout";
 import {CollapseSidebarButton} from "@/features/collapse-sidebar";
@@ -32,25 +32,25 @@ export const MainSidebarWidget = memo(() => {
                 <section className={styles.bottomSection}>
                     <div>
                         <SidebarNavLink
-                            path={routes.usersManagementPage.path}
+                            path={routesConfig.usersManagementPage.path}
                             icon={<ContactIcon/>}
                             text={t('pages.usersManagement.title')}
                             isCollapsed={isCollapsed}
                         />
                         <SidebarNavLink
-                            path={routes.rolesPage.path}
+                            path={routesConfig.rolesPage.path}
                             icon={<EmployeeTreeIcon/>}
                             text={t('pages.roles.title')}
                             isCollapsed={isCollapsed}
                         />
                         <SidebarNavLink
-                            path={routes.accountsPage.path}
+                            path={routesConfig.accountsPage.path}
                             icon={<DollarCoin/>}
                             text={t('pages.accounts.title')}
                             isCollapsed={isCollapsed}
                         />
                         <SidebarNavLink
-                            path={routes.remindersPage.path}
+                            path={routesConfig.remindersPage.path}
                             icon={<NotificationIcon/>}
                             text={t('pages.reminders.title')}
                             isCollapsed={isCollapsed}

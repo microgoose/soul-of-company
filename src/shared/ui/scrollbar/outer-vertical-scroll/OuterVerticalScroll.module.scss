@@ -1,0 +1,9 @@
+.container {
+    margin-right: 26px;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.container.hasScroll {
+    overflow-y: auto;
+    margin-right: 0;
+}

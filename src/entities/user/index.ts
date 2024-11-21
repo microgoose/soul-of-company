@@ -1,7 +1,8 @@
-import type {User, UsersList} from '@/entities/user/model/user-entity.ts'
-import {getAllUsers} from '@/entities/user/api/user-api'
+export type { User, UsersList } from './model/user.types.ts';
 
-export type { User, UsersList }
-export { getAllUsers }
+export { getAllUsers } from './api/user-api.ts';
 
-export {UsersTable} from './ui/users-table/UsersTable.tsx';
+export { type UsersController, useUsersController, UsersControllerContext } from './model/users-controller.ts';
+
+export { UsersTable } from './ui/users-table/UsersTable.tsx';
+export { type UserFormFields, UserForm } from '@/entities/user/ui/user-form/UserForm.tsx';

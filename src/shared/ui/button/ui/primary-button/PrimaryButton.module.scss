@@ -2,17 +2,17 @@
   padding: 11px 31px 11px 31px;
   border-radius: 8px;
   font: var(--font-text-bold);
-  background-color: var(--mc-accent);
-  color: var(--mc-white);
+  background-color: rgb(var(--mc-accent));
+  color: rgb(var(--mc-white));
   cursor: pointer;
   transition: background-color var(--animation-duration) ease, color var(--animation-duration) ease;
 }
 
 .buttonDisabled {
-  background-color: var(--sys-disabled);
+  background-color: rgb(var(--sys-disabled));
   cursor: default;
 }
 
-.buttonHovered {
-  background-color: var(--mc-accent-hover);
+.buttonHovered:not(.buttonDisabled) {
+  background-color: rgb(var(--mc-accent-hover));
 }

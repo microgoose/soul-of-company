@@ -3,8 +3,8 @@
   top: 0;
   text-align: left;
   font-weight: inherit;
-  background-color: var(--bg-gray);
-  color: var(--sys-disabled);
+  background-color: rgb(var(--bg-gray));
+  color: rgb(var(--sys-disabled));
   z-index: 1;
 }
 
@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   height: 48px;
-  border-bottom: 1px solid var(--bg-stroke-gray);
+  border-bottom: 1px solid rgb(var(--bg-stroke-gray));
 }
 
 .container > .centerContent {
@@ -23,7 +23,7 @@
 .rightContent {
   height: 100%;
   padding-left: 7px;
-  border-right: 1px solid var(--bg-stroke-gray);
+  border-right: 1px solid rgb(var(--bg-stroke-gray));
   cursor: col-resize;
   opacity: 0;
   pointer-events: none;

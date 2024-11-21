@@ -1,1 +1,0 @@
-export { ModalForm } from './ui/modal-form/ModalForm.tsx';

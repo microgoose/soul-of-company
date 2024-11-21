@@ -1,0 +1,40 @@
+.datePicker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 24px 12px 32px 12px;
+  background-color: rgb(var(--mc-white));
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  hr {
+    margin-bottom: 14px;
+    height: 1px;
+    width: 100%;
+    background-color: rgb(var(--bg-stroke-gray));
+  }
+}
+
+.selectedDate {
+  padding-bottom: 8px;
+  width: 100%;
+  text-align: left;
+  font: var(--font-h2);
+  color: rgb(var(--mc-accent));
+}
+
+.controlsSection {
+  padding-top: 8px;
+  width: 100%;
+  display: flex;
+  gap: 8px;
+
+  button {
+    width: 50%;
+  }
+}
+
+.cancellationButton {
+  color: rgb(var(--mc-black));
+}

@@ -1,3 +1,8 @@
 .tr:not(:last-child) {
-  border-bottom: 1px solid var(--bg-stroke-gray);
+  border-bottom: 1px solid rgb(var(--bg-stroke-gray));
+}
+
+.disabled {
+  background-color: rgb(var(--bg-gray));
+  color: rgb(var(--sys-disabled));
 }

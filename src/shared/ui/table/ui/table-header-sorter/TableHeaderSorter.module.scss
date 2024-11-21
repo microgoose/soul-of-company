@@ -11,6 +11,7 @@
   transition: opacity var(--animation-duration) ease;
   transform: rotateX(180deg);
   cursor: pointer;
+  flex-shrink: 0;
 }
 .sorterContainer:hover {
   .sortIcon:not(.sortTypeASC, .sortTypeDESC) {

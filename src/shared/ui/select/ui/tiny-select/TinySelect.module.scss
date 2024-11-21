@@ -1,0 +1,70 @@
+.selectField {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font: var(--font-subtext);
+  color: var(--color);
+
+  .isActive.isOptionsAbove & > .selectButton {
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .isActive.isOptionsAbove & > .selectOptionsContainer {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .isActive.isOptionsBelow & > .selectButton {
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .isActive.isOptionsBelow & > .selectOptionsContainer {
+    border-radius: 0 0 8px 8px;
+  }
+}
+
+.selectButton {
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+
+  &:hover {
+    background-color: rgb(var(--bg-blue));
+  }
+
+  input {
+    cursor: pointer;
+  }
+}
+
+.selectOptionsContainer {
+  padding: 4px 8px 4px 12px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: rgb(var(--mc-white));
+  max-height: 200px;
+  overflow-y: auto;
+  word-break: normal;
+  z-index: 1;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.toggleIcon {
+  cursor: pointer;
+
+  .isActive & {
+    transform: rotateZ(180deg);
+    color: rgb(var(--mc-black));
+  }
+}

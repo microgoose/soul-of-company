@@ -8,10 +8,10 @@
   transition: background-color var(--animation-duration) ease;
 }
 .buttonHovered {
-  background-color: var(--bg-stroke-gray);
+  background-color: rgb(var(--bg-stroke-gray));
 }
 .buttonActive {
   font-weight: 600;
-  background-color: var(--mc-accent);
-  color: var(--mc-white);
+  background-color: rgb(var(--mc-accent));
+  color: rgb(var(--mc-white));
 }
