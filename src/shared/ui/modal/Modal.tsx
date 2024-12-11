@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import styles from './Modal.module.scss';
 import classNames from "classnames";
 import {useDeferredUnmount} from "@/shared/hooks/use-deferred-unmount.ts";
-import {getDurationCssVariable} from "@/shared/utils/get-css-variable.ts";
-import {parseDuration} from "@/shared/utils/time-utils.ts";
+import {ANIMATION_DURATION_FAST} from "@/shared/config/animation-config.ts";
 
 interface ModalProps {
     className?: string,
@@ -14,7 +13,7 @@ interface ModalProps {
 }
 
 export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
-    const duration = useMemo(() => parseDuration(getDurationCssVariable('--animation-duration-fast')), []);
+    const duration = useMemo(ANIMATION_DURATION_FAST, []);
     const isVisible = useDeferredUnmount(isOpen, duration);
 
     const handleOnClose = useCallback(() => onClose(), [onClose]);
