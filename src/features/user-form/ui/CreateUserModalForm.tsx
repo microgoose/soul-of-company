@@ -72,6 +72,7 @@ export const CreateUserModalForm = ({ isOpen, onClose }: CreateUserModalFormProp
                     rolesOptions={rolesOptions}
                     citiesOptions={citiesOptions}
                     defaultValues={defaultValues}
+                    submitText={t('actions.create')}
                     onSubmit={handleSubmit}
                 />,
 

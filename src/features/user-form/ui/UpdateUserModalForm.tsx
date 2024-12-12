@@ -74,6 +74,7 @@ export const UpdateUserModalForm = ({ isOpen, onClose, user }: UpdateUserModalFo
                     rolesOptions={rolesOptions}
                     citiesOptions={citiesOptions}
                     defaultValues={defaultValues}
+                    submitText={t('actions.save')}
                     onSubmit={handleSubmit}
                 />,
 

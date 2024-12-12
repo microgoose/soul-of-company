@@ -25,10 +25,12 @@ interface CreateUserFormProps {
     rolesOptions: OptionType[],
     citiesOptions: OptionType[],
     defaultValues: UserFormFields,
+    submitText: string,
     onSubmit: (user: UserFormFields) => void,
 }
 
-export const UserForm = ({rolesOptions, citiesOptions, defaultValues, onSubmit}: CreateUserFormProps) => {
+export const UserForm = (props: CreateUserFormProps) => {
+    const {rolesOptions, citiesOptions, defaultValues, submitText, onSubmit} = props;
     const {control, watch, trigger, handleSubmit, formState: {isValid, errors}} = useForm<UserFormFields>({
         mode: 'onChange',
         resolver: yupResolver<UserFormFields>(getUserValidationSchema()),
@@ -134,7 +136,7 @@ export const UserForm = ({rolesOptions, citiesOptions, defaultValues, onSubmit}:
                 className={styles.submitButton}
                 onClick={handleSubmit(onSubmit)}
             >
-                {t('actions.create')}
+                {submitText}
             </PrimaryButton>
         </>
     );
