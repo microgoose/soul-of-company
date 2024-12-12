@@ -1,4 +1,4 @@
-import {DoneStage, ModalForm, StepForm} from "@/shared/ui/form";
+import {DoneStage, ModalForm, StageForm} from "@/shared/ui/form";
 import {User, UserForm, UserFormFields} from "@/entities/user";
 import {t} from "i18next";
 import {useUserFormFieldsData} from "@/features/user-form/model/use-user-form-field-data.ts";
@@ -25,13 +25,15 @@ const defaultValues = {
 
 export const CreateUserModalForm = ({ isOpen, onClose }: CreateUserModalFormProps) => {
     const { rolesOptions, citiesOptions } = useUserFormFieldsData();
-    const [step, setStep] = useState(0);
+    const [createdUser, setCreatedUser] = useState<User | null>(null);
+    const [stage, setStage] = useState(0);
 
     const handleSubmit = useCallback(async (userFields: UserFormFields) => {
         const roles = await getRolesByIds(userFields.roles);
         const cities = await getCitiesByIds(userFields.cities);
 
-        onClose({
+        setStage(step => step + 1);
+        setCreatedUser({
             id: null,
             ...userFields,
             roles,
@@ -40,19 +42,32 @@ export const CreateUserModalForm = ({ isOpen, onClose }: CreateUserModalFormProp
             hiringDate: toDate(userFields.hiringDate),
             blocked: null,
         });
+    }, []);
 
-        setStep(step => step + 1);
-    }, [onClose]);
+    const handleClose = useCallback(() => {
+        if (createdUser) {
+            onClose(createdUser);
+            setCreatedUser(null);
+        } else {
+            onClose();
+        }
+    }, [createdUser, onClose]);
+
+    useEffect(() => {
+        if (stage == 1 && createdUser) {
+            setTimeout(() => handleClose(), 2000);
+        }
+    }, [createdUser, handleClose, stage]);
 
     useEffect(() => {
         if (isOpen) {
-            setStep(0);
+            setStage(0);
         }
     }, [isOpen]);
     
     return (
-        <ModalForm title={t('forms.createUser')} isOpen={isOpen} onClose={onClose}>
-            <StepForm step={step} steps={[
+        <ModalForm title={t('forms.createUser')} isOpen={isOpen} onClose={handleClose}>
+            <StageForm stage={stage} stages={[
                 <UserForm
                     rolesOptions={rolesOptions}
                     citiesOptions={citiesOptions}

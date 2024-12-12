@@ -1,4 +1,4 @@
-import {DoneStage, ModalForm, StepForm} from "@/shared/ui/form";
+import {DoneStage, ModalForm, StageForm} from "@/shared/ui/form";
 import {User, UserForm, UserFormFields} from "@/entities/user";
 import {t} from "i18next";
 import {useCallback, useEffect, useMemo, useState} from "react";
@@ -15,7 +15,9 @@ interface UpdateUserModalFormProps {
 
 export const UpdateUserModalForm = ({ isOpen, onClose, user }: UpdateUserModalFormProps) => {
     const { rolesOptions, citiesOptions } = useUserFormFieldsData();
-    const [step, setStep] = useState(0);
+    const [updatedUser, setUpdatedUser] = useState<User | null>(null);
+    const [stage, setStage] = useState(0);
+
     const defaultValues = useMemo(() => {
         const roles = user.roles.map(role => role.id);
         const cities = user.cities.map(city => city.id);
@@ -33,7 +35,8 @@ export const UpdateUserModalForm = ({ isOpen, onClose, user }: UpdateUserModalFo
         const roles = await getRolesByIds(userFields.roles);
         const cities = await getCitiesByIds(userFields.cities);
 
-        onClose({
+        setStage(step => step + 1);
+        setUpdatedUser({
             ...user,
             ...userFields,
             roles,
@@ -41,19 +44,32 @@ export const UpdateUserModalForm = ({ isOpen, onClose, user }: UpdateUserModalFo
             birthday: toDate(userFields.birthday),
             hiringDate: toDate(userFields.hiringDate),
         });
+    }, [user]);
 
-        setStep(step => step + 1);
-    }, [onClose, user]);
+    const handleClose = useCallback(() => {
+        if (updatedUser) {
+            onClose(updatedUser);
+            setUpdatedUser(null);
+        } else {
+            onClose();
+        }
+    }, [updatedUser, onClose]);
+
+    useEffect(() => {
+        if (stage == 1 && updatedUser) {
+            setTimeout(() => handleClose(), 2000);
+        }
+    }, [updatedUser, handleClose, stage]);
 
     useEffect(() => {
         if (isOpen) {
-            setStep(0);
+            setStage(0);
         }
     }, [isOpen]);
 
     return (
         <ModalForm title={t('forms.editUser')} isOpen={isOpen} onClose={onClose}>
-            <StepForm step={step} steps={[
+            <StageForm stage={stage} stages={[
                 <UserForm
                     rolesOptions={rolesOptions}
                     citiesOptions={citiesOptions}

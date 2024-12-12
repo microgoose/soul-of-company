@@ -6,6 +6,7 @@
 }
 
 .activityCircle {
+  flex-shrink: 0;
   border-radius: 100%;
   display: block;
   width: 6px;
