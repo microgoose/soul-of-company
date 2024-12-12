@@ -3,6 +3,7 @@ import {Field, InputProperties} from "@/shared/ui/field";
 
 export interface InputProps extends InputProperties {
     value?: number | string,
+    maxLength?: number,
     autoScroll?: boolean
     onChange?: (value: string | number) => void,
     onClick?: () => void,
@@ -11,7 +12,7 @@ export interface InputProps extends InputProperties {
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-    const {value, disabled, type, placeholder, onClick, onChange, onFocus, onBlur} = props;
+    const {value, maxLength = 400, disabled, type, placeholder, onClick, onChange, onFocus, onBlur} = props;
     const [isActive, setIsActive] = useState(false);
 
     const handleInputOnChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -36,6 +37,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
                 disabled={disabled}
                 type={type}
                 placeholder={placeholder}
+                maxLength={maxLength}
                 onClick={onClick}
                 onChange={handleInputOnChange}
                 onFocus={handleInputOnFocus}
