@@ -1,1 +1,1 @@
-export type { City, CityList } from './model/city-entity.ts';
+export * from './api/city-api.ts';

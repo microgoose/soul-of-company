@@ -1,9 +1,9 @@
 import {createBrowserRouter, redirect} from "react-router-dom";
-import {UserManagementPage} from "@/pages/user-management";
+import {UserManagementPage} from "@/pages/user";
 import {NotFoundPage} from "@/pages/errors";
 import {AccountsPage} from "@/pages/accounts";
 import {RemindersPage} from "@/pages/reminders";
-import {RolesPage} from "@/pages/roles";
+import {RolesManagementPage} from "@/pages/roles";
 import {ButtonsPage, CitiesPage, MailingPage, OpenAIPage} from "@/pages/settings";
 import {ChainPage} from "@/pages/settings/ui/ChainPage.tsx";
 import {MainSidebarWidget} from "@/widgets/main-sidebar-widget";
@@ -24,7 +24,7 @@ export const router = createBrowserRouter([{
         },
         {
             path: '/roles',
-            element: <RolesPage/>,
+            element: <RolesManagementPage/>,
         },
         {
             path: '/accounts',

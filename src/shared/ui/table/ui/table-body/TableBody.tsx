@@ -1,5 +1,4 @@
 import {ReactNode} from "react";
-import styles from './TableBody.module.scss';
 
 interface TableRowsProps {
     children: ReactNode
@@ -7,7 +6,7 @@ interface TableRowsProps {
 
 export const TableBody = ({children}: TableRowsProps) => {
     return (
-        <tbody className={styles.tbody}>
+        <tbody>
             {children}
         </tbody>
     );

@@ -40,7 +40,7 @@ export const MainSidebarWidget = memo(() => {
                         <SidebarNavLink
                             path={routesConfig.rolesPage.path}
                             icon={<EmployeeTreeIcon/>}
-                            text={t('pages.roles.title')}
+                            text={t('pages.rolesManagement.title')}
                             isCollapsed={isCollapsed}
                         />
                         <SidebarNavLink

@@ -1,17 +1,16 @@
 import {api} from '@/app/api'
-import {CityList} from "@/entities/city/model/city-entity.ts";
-import {RoleList} from "@/entities/role/model/role-entity.ts";
+import {City} from "@/shared/types/entities";
 
-export const getAllCities = (): Promise<CityList> => {
-  return api.get<CityList>('cities.json').json();
+export const getAllCities = (): Promise<City[]> => {
+    return api.get<City[]>('db/cities.json').json();
 }
 
-export const getCitiesByIds = async (ids: number[]): Promise<RoleList> => {
-  const cities = await getAllCities();
-  return cities.filter(city => ids.includes(city.id));
+export const getCitiesByIds = async (ids: number[]): Promise<City[]> => {
+    const cities = await getAllCities();
+    return cities.filter(city => ids.includes(city.id));
 }
 
-export const getCitiesByNames = async (names: string[]): Promise<RoleList> => {
-  const cities = await getAllCities();
-  return cities.filter(city => names.includes(city.name));
+export const getCitiesByNames = async (names: string[]): Promise<City[]> => {
+    const cities = await getAllCities();
+    return cities.filter(city => names.includes(city.name));
 }

@@ -1,5 +1,3 @@
-export type { User, UsersList } from './model/user.types.ts';
-
 export { getAllUsers } from './api/user-api.ts';
 
 export { type UsersController, useUsersController, UsersControllerContext } from './model/users-controller.ts';

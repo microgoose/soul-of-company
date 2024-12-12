@@ -9,13 +9,21 @@ import classNames from "classnames";
 interface DefaultFormProps {
     title: ReactNode,
     isOpen: boolean,
+    scrollable?: boolean,
     onClose: () => void,
     children: ReactNode,
 }
 
-export const ModalForm = ({ title, children, isOpen, onClose }: DefaultFormProps) => {
+export const ModalForm = (props: DefaultFormProps) => {
+    const { title, scrollable = true, children, isOpen, onClose } = props;
     const elementRef = useRef<HTMLDivElement | null>(null);
     const {setEl, scrollTop} = useOnScroll<HTMLDivElement>();
+
+    const modalFormClasses = useMemo(() => classNames({
+        [styles.modalForm]: true,
+        [styles.scrollable]: scrollable
+    }), [scrollable]);
+
     const headerContainerClasses = useMemo(() => classNames({
         [styles.headerContainer]: true,
         [styles.scrolled]: scrollTop > 0,
@@ -30,7 +38,7 @@ export const ModalForm = ({ title, children, isOpen, onClose }: DefaultFormProps
     }, [isOpen, setEl]);
 
     return (
-        <Modal isOpen={isOpen} onClose={onClose} className={styles.modalForm}>
+        <Modal isOpen={isOpen} onClose={onClose} className={modalFormClasses}>
             <div className={headerContainerClasses}>
                 <div className={styles.title}>{title}</div>
                 <button className={styles.closeButton} onClick={handleOnClose}>

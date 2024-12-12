@@ -1,17 +1,19 @@
-import {getAllUsers, User, UsersList} from "@/entities/user";
+import {getAllUsers} from "@/entities/user";
 import {createContext, useState} from "react";
+import {User} from "@/shared/types/entities";
 
 export interface UsersController {
-    users: UsersList;
+    users: User[];
     isLoading: boolean;
     error: Error | null;
     load: () => void;
     insert: (user: User) => void;
     update: (user: User) => void;
+    remove: (user: User) => void;
 }
 
 export const useUsersController = () => {
-    const [users, setUsers] = useState<UsersList>([]);
+    const [users, setUsers] = useState<User[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<Error | null>(null);
 
@@ -39,7 +41,11 @@ export const useUsersController = () => {
         }));
     };
 
-    return {users, isLoading, error, insert, load, update};
+    const remove = (user: User) => {
+        setUsers(users => users.filter(userItem => userItem.id !== user.id));
+    }
+
+    return {users, isLoading, error, insert, load, update, remove };
 }
 
 export const UsersControllerContext = createContext<UsersController | undefined>(undefined);

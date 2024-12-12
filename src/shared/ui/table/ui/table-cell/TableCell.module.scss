@@ -1,9 +1,20 @@
+tr:first-child .td {
+  padding-top: 18px;
+}
+
 .td {
   position: relative;
-  padding: 18px 16px 8px;
+  padding: 10px 16px 8px;
   font-weight: inherit;
   text-align: left;
   vertical-align: top;
+  max-width: 430px;
+  min-width: 130px;
+
+  &.smallest {
+    min-width: unset;
+    width: 1%;
+  }
 }
 
 .td::after {

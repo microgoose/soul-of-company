@@ -1,1 +1,0 @@
-export { UsersManagementWidget } from './ui/user-management-widget/UsersManagementWidget.tsx';

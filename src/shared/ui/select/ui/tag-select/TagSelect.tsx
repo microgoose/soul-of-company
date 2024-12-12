@@ -48,7 +48,7 @@ export const TagSelect = (props: SelectProps) => {
             {label && <FieldLabel>{label}</FieldLabel>}
 
             <OuterClick onOuterClick={close} className={styles.selectField} start={fieldState.isActive} ref={selectFieldRef}>
-                <div className={styles.tagsContainer} onClick={handleOnTagsContainerClick}>
+                <TinyScrollbarContainer className={styles.tagsContainer} onClick={handleOnTagsContainerClick}>
                     <div className={styles.selectTags}>
                         {value.length?
                             <SelectTags value={value} options={options} onChange={handleOnChange} /> :
@@ -56,7 +56,7 @@ export const TagSelect = (props: SelectProps) => {
                     </div>
 
                     <ChevronDown className={styles.toggleIcon} onClick={toggle}/>
-                </div>
+                </TinyScrollbarContainer>
 
                 <Popover
                     isOpen={fieldState.isActive}

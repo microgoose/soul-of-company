@@ -51,7 +51,7 @@
     "notFound": { "title": "Страница не найдена", "text": "404 - Страница не найдена" },
     "usersManagement": { "title": "Пользователи" },
     "desktop": { "title": "Рабочий стол" },
-    "roles": { "title": "Роли" },
+    "rolesManagement": { "title": "Роли" },
     "accounts": { "title": "Счета" },
     "reminders": { "title": "Напоминания" },
     "buttons": { "title": "Кнопки" },
@@ -66,6 +66,9 @@
   },
   "usersManagement": {
     "addUser": "Добавить пользователя"
+  },
+  "rolesManagement": {
+    "addRole": "Добавить роль"
   },
   "user": {
     "roles": "Роль",
@@ -113,15 +116,40 @@
       }
     }
   },
+  "role": {
+    "name": "Роль"
+  },
+  "roleAuthorities": {
+    "role": "Роль",
+    "authorities": "Полномочия",
+    "actions": {
+      "choosePosition": "Выберите должность",
+      "selectAccesses": "Выберите доступы"
+    },
+    "validation": {
+      "role": {
+        "required": "Роль обязательна",
+        "min": "Необходимо выбрать роль"
+      },
+      "authorities": {
+        "required": "Полномочие обязательно",
+        "min": "Необходимо выбрать хотя бы одно полномочие"
+      }
+    }
+  },
   "forms": {
     "createUser": "Создать пользователя",
     "userCreated": "Пользователь создан",
     "editUser": "Редактировать пользователя",
-    "userUpdated": "Изменения сохранены"
+    "userUpdated": "Изменения сохранены",
+    "createRoleAuthorities": "Создать роль",
+    "roleAuthoritiesCreated": "Роль создана",
+    "editRoleAuthorities": "Редактировать роль",
+    "roleAuthoritiesUpdated": "Изменения сохранены"
   },
   "errors": {
     "incorrectDurationFormat": "Неверный формат продолжительности",
-    "incorrectDateFormat": "Некорректный формат даты",
+    "incorrectDateFormat": "Введите корректный формат даты (дд.мм.гггг)",
     "contextNotInitialized": "Контекст не инициализирован"
   }
 }

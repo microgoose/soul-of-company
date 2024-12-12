@@ -1,5 +1,4 @@
 import {t} from "i18next";
-import {User, UsersList} from "@/entities/user";
 import {
     SortingType,
     Table,
@@ -12,12 +11,12 @@ import {
     useTableSorting
 } from "@/shared/ui/table";
 
-import {UserRow} from "./user-table-row/UserRow.tsx";
-import style from './UsersTable.module.scss';
+import {UserRow} from "./UserRow.tsx";
 import {ReactNode, useEffect} from "react";
+import {User} from "@/shared/types/entities";
 
 interface UsersTableProps {
-    users: UsersList,
+    users: User[],
     actions?: (user: User) => ReactNode,
 }
 
@@ -45,7 +44,7 @@ export const UsersTable = ({users, actions}: UsersTableProps) => {
     }, [users]);
 
     return (
-        <Table className={style.usersTable}>
+        <Table>
             <TableHeaders>
                 {tableController.headers.map((header, index) => (
                     <TableHeader key={index}>

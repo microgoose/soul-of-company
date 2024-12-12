@@ -1,1 +1,1 @@
-export { RolesPage } from './ui/RolesPage.tsx'
+export { RolesManagementPage } from './ui/RolesManagementPage.tsx'
