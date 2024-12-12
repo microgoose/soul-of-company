@@ -39,6 +39,8 @@ export const UsersTable = ({users, actions}: UsersTableProps) => {
     useEffect(() => {
         if (users.length && !sortingController.columnName) {
             sortingController.changeSorting(headers[7], SortingType.DESC);
+        } else {
+            sortingController.sort();
         }
     }, [users]);
 

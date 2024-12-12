@@ -15,11 +15,8 @@ export const UserRowActions = ({ user }: TableCellActionsProps) => {
     const { isOpen, open, close } = useToggle(false);
     const usersContext = useContextSafe(UsersControllerContext);
 
-    const blockUser = useCallback(() => {
-        usersContext.update({
-            ...user,
-            blocked: !user.blocked,
-        });
+    const blockUser = useCallback((blocked: boolean) => {
+        usersContext.update({ ...user, blocked: blocked });
     }, [user, usersContext]);
 
     const updateUser = useCallback((user?: User) => {
@@ -34,7 +31,7 @@ export const UserRowActions = ({ user }: TableCellActionsProps) => {
         <>
             <div className={styles.actionCell}>
                 <EditUser onClick={open}/>
-                <BlockUser onClick={blockUser}/>
+                <BlockUser blocked={user.blocked} onChange={blockUser}/>
             </div>
             
             <UpdateUserModalForm user={user} isOpen={isOpen} onClose={updateUser}/>

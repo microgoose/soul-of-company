@@ -42,6 +42,12 @@ const getSortedRow: SortRowsFunction = (rows, key, sortType) => {
 export const useTableSorting = <RowData,> (controller: TableControllerInterface<RowData>, rows: TableRowsType<RowData>) => {
     const [columnName, setColumnName] = useState<keyof RowData | undefined>(undefined);
     const [sortType, setSortType] = useState<SortingType>(SortingType.ASC);
+
+    const sort = useCallback(() => {
+        if (columnName) {
+            controller.setRows(getSortedRow(rows, columnName, sortType));
+        }
+    }, [columnName, controller, rows, sortType]);
     
     const setSorting = useCallback((columnKey: keyof RowData, newSortType: SortingType) => {
         setColumnName(columnKey);
@@ -70,10 +76,8 @@ export const useTableSorting = <RowData,> (controller: TableControllerInterface<
     );
 
     useEffect(() => {
-        if (columnName) {
-            controller.setRows(getSortedRow(rows, columnName, sortType));
-        }
+        sort();
     }, [columnName, sortType]);
 
-    return { columnName, sortType, changeSorting, setSorting, getColumnSortType };
+    return { columnName, sortType, sort, changeSorting, setSorting, getColumnSortType };
 };

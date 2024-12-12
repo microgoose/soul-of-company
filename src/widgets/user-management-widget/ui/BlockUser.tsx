@@ -1,15 +1,17 @@
-import {IconButton} from "@/shared/ui/button";
-import {t} from "i18next";
-import {BasketIcon} from "@/shared/assets";
+import {Toggle} from "@/shared/ui/toggle";
+import {useCallback} from "react";
 
 interface BlockUserProps {
-    onClick: () => void,
+    blocked: null | boolean,
+    onChange: (blocked: boolean) => void,
 }
 
-export const BlockUser = ({ onClick }: BlockUserProps) => {
+export const BlockUser = ({ blocked, onChange }: BlockUserProps) => {
+    const handleOnChange = useCallback((checked: boolean) => {
+        onChange(!checked);
+    }, [onChange]);
+
     return (
-        <IconButton tooltip={t('actions.block')} onClick={onClick}>
-            <BasketIcon/>
-        </IconButton>
+        <Toggle checked={!blocked} onChange={handleOnChange}/>
     );
 };
