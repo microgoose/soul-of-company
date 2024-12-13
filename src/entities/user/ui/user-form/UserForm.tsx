@@ -50,7 +50,7 @@ export const UserForm = (props: CreateUserFormProps) => {
             <fieldset className={styles.userFields}>
                 <Controller name='roles' control={control} render={({field}) =>
                     <TagSelect
-                        label={t('user.roles')}
+                        label={t('user-management.roles')}
                         placeholder={t('actions.choose')}
                         error={errors.roles?.message}
                         multiple
@@ -63,7 +63,7 @@ export const UserForm = (props: CreateUserFormProps) => {
 
                 <Controller name='cities' control={control} render={({field}) =>
                     <TagSelect
-                        label={t('user.cities')}
+                        label={t('user-management.cities')}
                         placeholder={t('actions.choose')}
                         error={errors.cities?.message}
                         multiple
@@ -76,7 +76,7 @@ export const UserForm = (props: CreateUserFormProps) => {
 
                 <Controller name='telegramId' control={control} render={({field}) =>
                     <Input
-                        label={t('user.telegramId')}
+                        label={t('user-management.telegramId')}
                         placeholder='3978818'
                         type='numeric'
                         error={errors.telegramId?.message}
@@ -86,7 +86,7 @@ export const UserForm = (props: CreateUserFormProps) => {
 
                 <Controller name='login' control={control} render={({field}) =>
                     <Input
-                        label={t('user.login')}
+                        label={t('user-management.login')}
                         placeholder='@telegramLogin'
                         error={errors.login?.message}
                         {...field}
@@ -95,7 +95,7 @@ export const UserForm = (props: CreateUserFormProps) => {
 
                 <Controller name='fio' control={control} render={({field}) =>
                     <Input
-                        label={t('user.fio')}
+                        label={t('user-management.fio')}
                         placeholder={t('templates.fullName')}
                         error={errors.fio?.message}
                         {...field}
@@ -104,7 +104,7 @@ export const UserForm = (props: CreateUserFormProps) => {
 
                 <Controller name='phone' control={control} render={({field}) =>
                     <Input
-                        label={t('user.phone')}
+                        label={t('user-management.phone')}
                         placeholder={t('tips.enterNumber')}
                         type='tel'
                         error={errors.phone?.message}
@@ -114,7 +114,7 @@ export const UserForm = (props: CreateUserFormProps) => {
 
                 <Controller name='birthday' control={control} render={({field}) =>
                     <DateInput
-                        label={t('user.birthday')}
+                        label={t('user-management.birthday')}
                         placeholder={t('tips.selectDate')}
                         error={errors.birthday?.message}
                         {...field}
@@ -123,7 +123,7 @@ export const UserForm = (props: CreateUserFormProps) => {
 
                 <Controller name='hiringDate' control={control} render={({field}) =>
                     <DateInput
-                        label={t('user.hiringDate')}
+                        label={t('user-management.hiringDate')}
                         placeholder={t('tips.selectDate')}
                         error={errors.hiringDate?.message}
                         {...field}

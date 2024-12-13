@@ -15,6 +15,8 @@ import ChevronDown from './icons/chevron-down.svg?react';
 import Magnifier from './icons/magnifier.svg?react';
 import CheckMark from './icons/check-mark.svg?react';
 import EmptyJackdaw from './icons/empty-jackdaw.svg?react';
+import DownloadIcon from './icons/download-icon.svg?react';
+import InfoCircle from './icons/info-circle.svg?react';
 
 export {
     BasketIcon,
@@ -33,5 +35,7 @@ export {
     ChevronDown,
     Magnifier,
     CheckMark,
-    EmptyJackdaw
-}
+    EmptyJackdaw,
+    DownloadIcon,
+    InfoCircle
+};

@@ -17,10 +17,8 @@ export const TableHeader = ({children}: TableHeadProps) => {
 
     return (
         <th className={styles.th} ref={thRef}>
-            <div className={styles.container}>
-                <div className={styles.centerContent}>
-                    {children}
-                </div>
+            <div className={styles.content}>
+                {children}
 
                 <i className={styles.rightContent} ref={rightBorderRef}/>
             </div>

@@ -1,0 +1,1 @@
+export { UpdateUserModalForm } from './UpdateUserModalForm.tsx';

@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Завершено",
+    "code": "COMPLETED"
+  },
+  {
+    "id": 2,
+    "name": "Исполняется",
+    "code": "IN_PROGRESS"
+  },
+  {
+    "id": 3,
+    "name": "Отказано",
+    "code": "DENIED"
+  },
+  {
+    "id": 4,
+    "name": "Истекло",
+    "code": "EXPIRED"
+  },
+  {
+    "id": 5,
+    "name": "Отменено",
+    "code": "CANCELLED"
+  }
+]

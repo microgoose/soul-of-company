@@ -19,7 +19,7 @@ export const TableHeaderSorter = ({children, sortType, onSort}: TableHeadSorterP
 
     return (
         <div className={styles.sorterContainer}>
-            {children}
+            <span>{children}</span>
             <SortDescendingIcon className={sortIconClasses} onClick={onSort}/>
         </div>
     );

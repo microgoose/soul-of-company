@@ -4,10 +4,11 @@ import {useCallback, useEffect} from "react";
 import {ControlsSection, ManagementWidget, RowActions, TableSection} from "@/widgets/management-widget";
 import {RoleAuthorityTable, useRoleAuthoritiesController} from "@/entities/role";
 import {RoleAuthorities} from "@/shared/types/entities";
-import {RemoveEntity} from "@/features/entity/remove-entity/RemoveEntity.tsx";
-import {CreateEntity} from "@/features/entity/create-entity/CreateEntity.tsx";
-import {EditEntity} from "@/features/entity/edit-entity/EditEntity.tsx";
-import {CreateRoleModalForm, UpdateRoleModalForm} from "@/features/role/role-form";
+import {RemoveEntity} from "@/features/remove-entity/RemoveEntity.tsx";
+import {CreateEntity} from "@/features/create-entity/CreateEntity.tsx";
+import {UpdateEntity} from "@/features/update-entity/UpdateEntity.tsx";
+import {UpdateRoleModalForm} from "@/features/update-role-form";
+import {CreateRoleModalForm} from "@/features/create-role-form";
 
 export const RolesManagementPage = () => {
     useDocumentTitle(t('pages.rolesManagement.title'));
@@ -15,15 +16,15 @@ export const RolesManagementPage = () => {
 
     const rolesActions = useCallback((role: RoleAuthorities) => (
         <RowActions>
-            <EditEntity tooltip={t('actions.edit')} entity={role} onUpdate={rolesController.update}>
+            <UpdateEntity tooltip={t('actions.edit')} entity={role} onUpdate={rolesController.update}>
                 {(isOpen, onSubmit, entity) =>
                     <UpdateRoleModalForm isOpen={isOpen} onSubmit={onSubmit} roleAuthorities={entity}/>
                 }
-            </EditEntity>
+            </UpdateEntity>
 
             <RemoveEntity tooltip={t('actions.delete')} entity={role} onRemove={rolesController.remove}/>
         </RowActions>
-    ), []);
+    ), [rolesController]);
 
     useEffect(() => rolesController.load(), []);
 

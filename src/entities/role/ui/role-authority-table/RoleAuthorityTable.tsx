@@ -1,34 +1,40 @@
-import {t} from "i18next";
-import {Table, TableBody, TableHeader, TableHeaders, TableHeaderType, useTable,} from "@/shared/ui/table";
-import {RoleAuthorityRow} from "@/entities/role/ui/role-authority-table/RoleAuthorityRow.tsx";
+import {Table, TableBody, TableHeaders, useTable, useTableSorting,} from "@/shared/ui/table";
+import {RoleAuthorityRow} from "./RoleAuthorityRow.tsx";
 import {ReactNode} from "react";
 import {RoleAuthorities} from "@/shared/types/entities";
+import {RoleAuthorityHeader} from "./RoleAuthorityHeader.tsx";
+import {roleAuthorityHeadersList} from "./model/role-authority-headers.ts";
 
 interface UsersTableProps {
     roleAuthorities: RoleAuthorities[],
     actions?: (roleAuthorities: RoleAuthorities) => ReactNode,
 }
 
-const headers: TableHeaderType<RoleAuthorities> = ['role', 'authorities'];
-
 export const RoleAuthorityTable = ({roleAuthorities, actions}: UsersTableProps) => {
-    const tableController = useTable<RoleAuthorities>({headers, rows: roleAuthorities});
+    const tableController = useTable({
+        headers: roleAuthorityHeadersList,
+        rows: roleAuthorities
+    });
+    const sortingController = useTableSorting<RoleAuthorities>({
+        controller: tableController,
+        sourceRows: roleAuthorities,
+        mapper: {
+            role: (row) => row.role.name,
+            authorities: (row) => row.authorities.length,
+        },
+    });
 
     return (
-        <Table>
+        <Table controller={tableController}>
             <TableHeaders>
-                {tableController.headers.map((header, index) => (
-                    <TableHeader key={index}>
-                        {t(`roleAuthorities.${header}`)}
-                    </TableHeader>
-                ))}
-
-                <TableHeader/>
+                {(header, index) => (
+                    <RoleAuthorityHeader key={index} header={header} controller={sortingController}/>
+                )}
             </TableHeaders>
             <TableBody>
-                {tableController.rows.map((row, index) => (
+                {(row, index) => (
                     <RoleAuthorityRow key={index} roleAuthorities={row} actions={actions} />
-                ))}
+                )}
             </TableBody>
         </Table>
     );

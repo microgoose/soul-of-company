@@ -1,7 +1,7 @@
 import {createBrowserRouter, redirect} from "react-router-dom";
-import {UserManagementPage} from "@/pages/user";
+import {UserManagementPage} from "@/pages/user-management";
 import {NotFoundPage} from "@/pages/errors";
-import {AccountsPage} from "@/pages/accounts";
+import {AccountsManagementPage} from "@/pages/accounts-management";
 import {RemindersPage} from "@/pages/reminders";
 import {RolesManagementPage} from "@/pages/roles";
 import {ButtonsPage, CitiesPage, MailingPage, OpenAIPage} from "@/pages/settings";
@@ -28,7 +28,7 @@ export const router = createBrowserRouter([{
         },
         {
             path: '/accounts',
-            element: <AccountsPage/>,
+            element: <AccountsManagementPage/>,
         },
         {
             path: '/reminders',

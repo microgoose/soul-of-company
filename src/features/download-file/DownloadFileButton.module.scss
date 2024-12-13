@@ -1,0 +1,29 @@
+.filesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fileContainer {
+  padding: 12px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+  width: 240px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: 1px solid rgb(var(--bg-stroke-gray));
+  border-radius: 8px;
+  color: rgb(var(--mc-black));
+
+  & > svg {
+    flex-shrink: 0;
+  }
+}
+
+.fileButton {
+  padding: 12px;
+  height: 40px;
+}

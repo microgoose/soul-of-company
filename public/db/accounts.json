@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "number": 1001,
+    "date": "01.12.2024",
+    "counterparty": {
+      "id": 1,
+      "shortName": "ТехКорп"
+    },
+    "city": {
+      "id": 1,
+      "name": "Москва"
+    },
+    "amount": 2500.50,
+    "justification": "Закупка офисных принадлежностей",
+    "files": [
+      {
+        "id": 1,
+        "name": "счет_1001.pdf",
+        "url": "https://example.com/files/счет_1001.pdf",
+        "extension": "pdf"
+      }
+    ],
+    "creator": {
+      "id": 1,
+      "fio": "Иван Иванов"
+    },
+    "status": {
+      "id": 1,
+      "name": "Завершено",
+      "code": "COMPLETED"
+    },
+    "statusComment": null,
+    "comment": "Все товары получены."
+  },
+  {
+    "id": 2,
+    "number": 1002,
+    "date": "02.12.2024",
+    "counterparty": {
+      "id": 2,
+      "shortName": "ЗеленЭнерго"
+    },
+    "city": {
+      "id": 2,
+      "name": "Санкт-Петербург"
+    },
+    "amount": 7800.00,
+    "justification": "Расходы на проект возобновляемой энергии",
+    "files": [
+      {
+        "id": 2,
+        "name": "договор_1002.docx",
+        "url": "https://example.com/files/договор_1002.docx",
+        "extension": "docx"
+      },
+      {
+        "id": 3,
+        "name": "бюджет_1002.xlsx",
+        "url": "https://example.com/files/бюджет_1002.xlsx",
+        "extension": "xlsx"
+      }
+    ],
+    "creator": {
+      "id": 2,
+      "fio": "Анна Смирнова"
+    },
+    "status": {
+      "id": 2,
+      "name": "Исполняется",
+      "code": "IN_PROGRESS"
+    },
+    "statusComment": "Там где надо",
+    "comment": null
+  },
+  {
+    "id": 3,
+    "number": 1003,
+    "date": "03.12.2024",
+    "counterparty": {
+      "id": 3,
+      "shortName": "СтройПроект"
+    },
+    "city": {
+      "id": 3,
+      "name": "Казань"
+    },
+    "amount": 1200.75,
+    "justification": "Возмещение расходов на стройматериалы",
+    "files": [],
+    "creator": {
+      "id": 3,
+      "fio": "Елена Кузнецова"
+    },
+    "status": {
+      "id": 3,
+      "name": "Отказано",
+      "code": "DENIED"
+    },
+    "statusComment": null,
+    "comment": "Несоответствие счета."
+  },
+  {
+    "id": 4,
+    "number": 1004,
+    "date": "04.12.2024",
+    "counterparty": {
+      "id": 4,
+      "shortName": "АльфаПром"
+    },
+    "city": {
+      "id": 4,
+      "name": "Новосибирск"
+    },
+    "amount": 5400000.00,
+    "justification": "Закупка оборудования",
+    "files": [],
+    "creator": {
+      "id": 4,
+      "fio": "Михаил Орлов"
+    },
+    "status": {
+      "id": 4,
+      "name": "Истекло",
+      "code": "EXPIRED"
+    },
+    "statusComment": null,
+    "comment": "Срок действия документа истек."
+  },
+  {
+    "id": 5,
+    "number": 1005,
+    "date": "05.12.2024",
+    "counterparty": {
+      "id": 5,
+      "shortName": "БизнесЛайн"
+    },
+    "city": {
+      "id": 5,
+      "name": "Екатеринбург"
+    },
+    "amount": 3100.00,
+    "justification": "Оплата услуг консалтинга",
+    "files": [
+      {
+        "id": 4,
+        "name": "услуги_1005.pdf",
+        "url": "https://example.com/files/услуги_1005.pdf",
+        "extension": "pdf"
+      }
+    ],
+    "creator": {
+      "id": 5,
+      "fio": "Светлана Морозова"
+    },
+    "status": {
+      "id": 5,
+      "name": "Отменено",
+      "code": "CANCELLED"
+    },
+    "statusComment": null,
+    "comment": "Проект был отменен."
+  }
+]

@@ -1,68 +1,45 @@
-import {t} from "i18next";
-import {
-    SortingType,
-    Table,
-    TableBody,
-    TableHeader,
-    TableHeaders,
-    TableHeaderSorter,
-    TableHeaderType,
-    useTable,
-    useTableSorting
-} from "@/shared/ui/table";
+import {SortingType, Table, TableBody, TableHeaders, useTable, useTableSorting} from "@/shared/ui/table";
 
 import {UserRow} from "./UserRow.tsx";
-import {ReactNode, useEffect} from "react";
+import {ReactNode} from "react";
 import {User} from "@/shared/types/entities";
+import {UserHeader} from "./UserHeader.tsx";
+import {userHeaders, userHeadersList} from "./model/user-headers.ts";
 
 interface UsersTableProps {
     users: User[],
     actions?: (user: User) => ReactNode,
 }
 
-const headers: TableHeaderType<User> = [
-    'roles',
-    'cities',
-    'telegramId',
-    'login',
-    'fio',
-    'phone',
-    'birthday',
-    'hiringDate',
-];
-
 export const UsersTable = ({users, actions}: UsersTableProps) => {
-    const tableController = useTable<User>({headers, rows: users});
-    const sortingController = useTableSorting<User>(tableController, users);
-    
-    useEffect(() => {
-        if (users.length && !sortingController.columnName) {
-            sortingController.changeSorting(headers[7], SortingType.DESC);
-        } else {
-            sortingController.sort();
-        }
-    }, [users]);
+    const tableController = useTable({
+        headers: userHeadersList,
+        rows: users
+    });
+    const sortingController = useTableSorting<User>({
+        controller: tableController,
+        sourceRows: users,
+        defaultSort: {
+            column: userHeaders.hiringDate,
+            sortType: SortingType.DESC,
+        },
+        mapper: {
+            roles: (row) => row.roles.length,
+            cities: (row) => row.cities.length,
+        },
+    });
 
     return (
-        <Table>
+        <Table controller={tableController}>
             <TableHeaders>
-                {tableController.headers.map((header, index) => (
-                    <TableHeader key={index}>
-                        <TableHeaderSorter
-                            sortType={sortingController.getColumnSortType(header)}
-                            onSort={() => sortingController.changeSorting(header)}
-                        >
-                            {t(`user.${header}`)}
-                        </TableHeaderSorter>
-                    </TableHeader>
-                ))}
-
-                <TableHeader/>
+                {(header, index) => (
+                    <UserHeader key={index} header={header} controller={sortingController}/>
+                )}
             </TableHeaders>
             <TableBody>
-                {tableController.rows.map((user, index) => (
+                {(user, index) => (
                     <UserRow key={index} user={user} actions={actions} />
-                ))}
+                )}
             </TableBody>
         </Table>
     );

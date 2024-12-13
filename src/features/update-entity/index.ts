@@ -1,0 +1,1 @@
+export { UpdateEntity } from './UpdateEntity.tsx';

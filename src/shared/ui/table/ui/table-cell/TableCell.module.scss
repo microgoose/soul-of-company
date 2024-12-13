@@ -1,10 +1,18 @@
 tr:first-child .td {
-  padding-top: 18px;
+  padding-top: 32px;
+
+  &:after {
+    right: 0;
+    top: 18px;
+    width: 1px;
+    height: calc(100% - 28px);
+
+  }
 }
 
 .td {
   position: relative;
-  padding: 10px 16px 8px;
+  padding: 24px 16px;
   font-weight: inherit;
   text-align: left;
   vertical-align: top;
@@ -15,18 +23,18 @@ tr:first-child .td {
     min-width: unset;
     width: 1%;
   }
-}
 
-.td::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 10px;
-  width: 1px;
-  height: calc(100% - 20px);
-  background-color: rgb(var(--bg-stroke-gray));
-}
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 1px;
+    height: calc(100% - 20px);
+    background-color: rgb(var(--bg-stroke-gray));
+  }
 
-.td:last-child::after {
-  display: none;
+  &:last-child::after {
+    display: none;
+  }
 }

@@ -43,7 +43,7 @@ export const UserRow = ({user, actions}: UserRowProps) => {
                 {formatDate(user.birthday)}
             </TableCell>
             <TableCell>
-                {formatDate(user.birthday)}
+                {formatDate(user.hiringDate)}
             </TableCell>
             <TableCell smallest>
                 {actions && actions(user)}

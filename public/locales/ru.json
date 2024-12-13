@@ -137,6 +137,18 @@
       }
     }
   },
+  "account": {
+    "number": "Номер",
+    "date": "Дата",
+    "counterparty": "Контрагент",
+    "city": "Город",
+    "amount": "Сумма",
+    "justification": "Обоснование",
+    "files": "Файлы",
+    "creator": "Создатель",
+    "status": "Статус",
+    "comment": "Комментарий"
+  },
   "forms": {
     "createUser": "Создать пользователя",
     "userCreated": "Пользователь создан",

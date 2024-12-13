@@ -1,6 +1,7 @@
 import {Organization} from "@/shared/types/entities/organization.types.ts";
 import {City} from "@/shared/types/entities/city.types.ts";
 import {Person} from "@/shared/types/entities/person.types.ts";
+import {File} from './file.types.ts';
 
 export interface Account {
     id: null | number,
@@ -12,11 +13,21 @@ export interface Account {
     justification: string,
     files: File[],
     creator: Person,
-    state: AccountState,
+    status: AccountStatus,
+    statusComment: string | null,
     comment: string | null,
 }
 
-export interface AccountState {
+export interface AccountStatus {
     id: null | number,
+    code: AccountStatusCode,
     name: string,
+}
+
+export enum AccountStatusCode {
+    COMPLETED = 'COMPLETED',
+    IN_PROGRESS = 'IN_PROGRESS',
+    DENIED = 'DENIED',
+    EXPIRED = 'EXPIRED',
+    CANCELLED = 'CANCELLED'
 }
