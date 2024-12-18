@@ -8,3 +8,4 @@ export * from './person.types.ts';
 export * from './role.types.ts';
 export * from './user.types.ts';
 export * from './reminder.types.ts';
+export * from './chain.types.ts';

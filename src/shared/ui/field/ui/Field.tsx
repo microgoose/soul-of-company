@@ -6,18 +6,19 @@ import {FieldInputContainer, InputProperties, useFieldState} from "@/shared/ui/f
 import {useAutoScroll} from "@/shared/hooks/use-auto-scroll.ts";
 
 interface FieldProps extends InputProperties {
+    className?: string,
     isActive?: boolean,
     autoScroll?: boolean
     children: ReactNode,
 }
 
 export const Field = (props: FieldProps) => {
-    const { label, error, isActive, autoScroll = true, children } = props;
+    const { className, label, error, isActive, autoScroll = true, children } = props;
     const fieldState = useFieldState({ ...props, isActive });
     const fieldRef = useAutoScroll<HTMLDivElement>(autoScroll && fieldState.isActive);
 
     return (
-        <FieldClassState fieldState={fieldState}>
+        <FieldClassState fieldState={fieldState} className={className}>
             {label && <FieldLabel>{label}</FieldLabel>}
 
             <FieldInputContainer ref={fieldRef}>

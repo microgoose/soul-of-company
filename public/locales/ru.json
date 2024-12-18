@@ -17,7 +17,9 @@
     "apply": "Применить",
     "cancellation": "Отмена",
     "logOut": "Выйти",
-    "choose": "Выберите"
+    "choose": "Выберите",
+    "undoChanges": "Отменить изменения",
+    "saveСhanges": "Сохранить изменения"
   },
   "tips": {
     "selectDate": "Выбрать дату",
@@ -64,6 +66,14 @@
     "cities": { "title": "Города" },
     "mailing": { "title": "Рассылка" },
     "openAI": { "title": "Open AI" }
+  },
+  "chain": {
+    "changeChain": "Изменить цепочку",
+    "sequence": "Последовательность, и текст после отправки",
+    "otherText": "Другой текст",
+    "afterAccountCreatedText": "Текст сообщения после создания счета",
+    "mainMenuText": "Текст сообщения главного меню",
+    "afterAccountSentText": "Текст сообщения после отправки счета"
   },
   "mainSidebar": {
     "desktop": "Рабочий стол",
@@ -165,6 +175,18 @@
     "executor": "Исполнитель",
     "sendingStatus": "Статус отправки"
   },
+  "chainLink": {
+    "role": "Должность",
+    "text": "Сообщение",
+    "validation": {
+      "role": {
+        "required": "Роль обязательна"
+      },
+      "text": {
+        "required": "Сообщение обязательно"
+      }
+    }
+  },
 
   "forms": {
     "createUser": "Создать пользователя",
@@ -176,6 +198,9 @@
     "editRoleAuthorities": "Редактировать роль",
     "roleAuthoritiesUpdated": "Изменения сохранены"
   },
+  "validation": {
+      "fieldMustBeFilled": "Поле должно быть заполнено"
+  },
   "errors": {
     "somethingWentWrong": "Что-то пошло не так",
     "incorrectDurationFormat": "Неверный формат продолжительности",
@@ -186,6 +211,9 @@
     },
     "reminderSendingStatus": {
       "notAccountedFor": "Статус отправки напоминания не учтён."
+    },
+    "chain": {
+      "findRoleEntityError": "Не удалось найти сущности роли"
     }
   }
 }

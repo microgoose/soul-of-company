@@ -17,6 +17,7 @@ import CheckMark from './icons/check-mark.svg?react';
 import EmptyJackdaw from './icons/empty-jackdaw.svg?react';
 import DownloadIcon from './icons/download-icon.svg?react';
 import InfoCircle from './icons/info-circle.svg?react';
+import LeftToRightArrow from './icons/left-to-right-arrow.svg?react';
 
 export {
     BasketIcon,
@@ -37,5 +38,6 @@ export {
     CheckMark,
     EmptyJackdaw,
     DownloadIcon,
-    InfoCircle
+    InfoCircle,
+    LeftToRightArrow,
 };

@@ -4,7 +4,7 @@ import styles from './RoleForm.module.scss';
 import {ButtonState, PrimaryButton} from "@/shared/ui/button";
 import {OptionType, TagSelect} from "@/shared/ui/select";
 import {yupResolver} from "@hookform/resolvers/yup";
-import {getRoleAuthoritiesValidationSchema} from "@/entities/role/model/role-form-validation-schema.ts";
+import {getRoleAuthoritiesValidationSchema} from "@/entities/role/model/role-authorities-form-validation-schema.ts";
 
 export interface RoleAuthoritiesFormFields {
     roles: number[]

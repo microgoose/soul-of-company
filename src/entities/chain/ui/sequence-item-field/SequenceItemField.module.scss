@@ -1,0 +1,29 @@
+.sequenceItemField {
+  --border-color: rgb(var(--bg-stroke-gray));
+
+  &.hasError {
+    --border-color: rgb(var(--adt-red));
+  }
+}
+
+.sequenceItem {
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid var(--border-color);
+  background-color: rgb(var(--bg-blue));
+  border-radius: 10px;
+}
+
+.selectField {
+  background-color: rgb(var(--mc-white));
+
+  & span {
+    font-weight: 600;
+  }
+}
+
+.fieldBackground {
+  background-color: rgb(var(--mc-white));
+}

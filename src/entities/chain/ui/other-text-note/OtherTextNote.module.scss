@@ -1,0 +1,10 @@
+.otherTextNote {
+    width: 383px;
+    height: fit-content;
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}

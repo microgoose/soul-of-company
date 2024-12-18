@@ -2,12 +2,12 @@ import {createBrowserRouter, redirect} from "react-router-dom";
 import {UserManagementPage} from "@/pages/user-management";
 import {NotFoundPage} from "@/pages/errors";
 import {AccountsManagementPage} from "@/pages/accounts-management";
-import {RemindersManagementPage} from "@/pages/reminders";
-import {RolesManagementPage} from "@/pages/roles";
+import {RemindersManagementPage} from "@/pages/reminders-management";
+import {RolesManagementPage} from "@/pages/roles-management";
 import {ButtonsPage, CitiesPage, MailingPage, OpenAIPage} from "@/pages/settings";
-import {ChainPage} from "@/pages/settings/ui/ChainPage.tsx";
 import {MainSidebarWidget} from "@/widgets/main-sidebar-widget";
 import {SidebarLayout} from "@/shared/ui/page";
+import {ChainPage} from "@/pages/chain-settings";
 
 export const router = createBrowserRouter([{
     path: '/',

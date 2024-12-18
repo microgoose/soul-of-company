@@ -33,7 +33,7 @@ export const RoleAuthorityTable = ({roleAuthorities, actions}: UsersTableProps) 
             </TableHeaders>
             <TableBody>
                 {(row, index) => (
-                    <RoleAuthorityRow key={index} roleAuthorities={row} actions={actions} />
+                    <RoleAuthorityRow key={index} roleAuthorities={row as RoleAuthorities} actions={actions} />
                 )}
             </TableBody>
         </Table>

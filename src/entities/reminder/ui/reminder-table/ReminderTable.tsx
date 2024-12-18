@@ -35,7 +35,7 @@ export const ReminderTable = ({reminders, actionsCell}: UsersTableProps) => {
             </TableHeaders>
             <TableBody>
                 {(row, index) => (
-                    <ReminderRow key={index} reminder={row} actionsCell={actionsCell} />
+                    <ReminderRow key={index} reminder={row as Reminder} actionsCell={actionsCell} />
                 )}
             </TableBody>
         </Table>

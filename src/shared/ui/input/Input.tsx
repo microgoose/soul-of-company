@@ -2,6 +2,7 @@ import {ChangeEvent, forwardRef, useCallback, useState} from "react";
 import {Field, InputProperties} from "@/shared/ui/field";
 
 export interface InputProps extends InputProperties {
+    className?: string,
     value?: number | string,
     maxLength?: number,
     autoScroll?: boolean

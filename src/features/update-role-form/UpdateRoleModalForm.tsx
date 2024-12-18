@@ -3,7 +3,7 @@ import {t} from "i18next";
 import {useCallback, useEffect, useMemo, useState} from "react";
 import {getRolesByIds} from "@/entities/role/api/role-api.ts";
 import {RoleAuthoritiesFormFields, RoleForm} from "@/entities/role/ui/role-form/RoleForm.tsx";
-import {useRolesFormFieldData} from "@/entities/role/model/use-roles-form-field-data.ts";
+import {useRoleAuthoritiesFormFieldData} from "@/entities/role/model/use-role-authorities-form-field-data.ts";
 import {getAuthoritiesByIds} from "@/entities/authority";
 import {RoleAuthorities} from "@/shared/types/entities";
 
@@ -14,7 +14,7 @@ interface UpdateUserModalFormProps {
 }
 
 export const UpdateRoleModalForm = ({ isOpen, onSubmit, roleAuthorities }: UpdateUserModalFormProps) => {
-    const { rolesOptions, authoritiesOptions } = useRolesFormFieldData();
+    const { rolesOptions, authoritiesOptions } = useRoleAuthoritiesFormFieldData();
     const [updatedRoleAuthorities, setUpdatedRoleAuthorities] = useState<RoleAuthorities | null>(null);
     const [stage, setStage] = useState(0);
     

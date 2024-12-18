@@ -13,6 +13,7 @@ import classNames from "classnames";
 import {Popover, PositionState} from "@/shared/ui/popover";
 
 interface TinySelectProps extends InputProperties {
+    className?: string,
     label?: string;
     error?: string;
     value: OptionValueType[];
@@ -23,7 +24,7 @@ interface TinySelectProps extends InputProperties {
 }
 
 export const TinySelect = (props: TinySelectProps) => {
-    const {label, error, multiple, autoScroll = true, placeholder} = props;
+    const {label, error, multiple, autoScroll = true, placeholder, className} = props;
     const {fieldState, close, toggle} = useSelectFieldState(props);
     const {value, options, visibleOptions, handleOnChange} = useSelectController(props);
     const inputValue = useMemo(() => options
@@ -33,17 +34,17 @@ export const TinySelect = (props: TinySelectProps) => {
 
     const selectFieldRef = useAutoScroll(autoScroll && fieldState.isActive);
     const [optionsPosition, setOptionsPosition] = useState<PositionState>();
-    const fieldClassState = useMemo(() => classNames({
+    const fieldClassState = useMemo(() => classNames(className, {
         [styles.isOptionsBelow]: optionsPosition === PositionState.IS_BELOW,
         [styles.isOptionsAbove]: optionsPosition === PositionState.IS_ABOVE,
-    }), [optionsPosition]);
+    }), [className, optionsPosition]);
 
     return (
         <FieldClassState fieldState={fieldState} styles={styles} className={fieldClassState}>
             {label && <FieldLabel>{label}</FieldLabel>}
 
             <OuterClick onOuterClick={close} className={styles.selectField} start={fieldState.isActive} ref={selectFieldRef}>
-                <button className={styles.selectButton} onClick={toggle}>
+                <button className={styles.selectButton} onClick={toggle} title={inputValue || placeholder}>
                     <span>{inputValue ? inputValue : placeholder}</span>
                     <ChevronDown className={styles.toggleIcon}/>
                 </button>

@@ -1,0 +1,8 @@
+.otherText {
+  width: 383px;
+  height: fit-content;
+
+  & > div {
+    gap: 16px;
+  }
+}

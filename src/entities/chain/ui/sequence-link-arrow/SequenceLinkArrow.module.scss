@@ -1,0 +1,12 @@
+.linkArrow {
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  height: 48px;
+  width: 100%;
+
+  & > svg {
+    height: 24px;
+    color: rgb(var(--mc-accent));
+  }
+}

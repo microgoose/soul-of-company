@@ -38,7 +38,7 @@ export const UsersTable = ({users, actions}: UsersTableProps) => {
             </TableHeaders>
             <TableBody>
                 {(user, index) => (
-                    <UserRow key={index} user={user} actions={actions} />
+                    <UserRow key={index} user={user as User} actions={actions} />
                 )}
             </TableBody>
         </Table>
