@@ -1,0 +1,68 @@
+.statusTag {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
+
+  &.DONE {
+    --background-color: rgb(var(--soft-green));
+    --color: rgb(var(--adt-green));
+  }
+
+  &.IN_PROGRESS {
+    --background-color: rgb(var(--light-lemon));
+    --color: rgb(var(--golden-amber));
+  }
+
+  &.ERROR {
+    --background-color: rgb(var(--soft-peach));
+    --color: rgb(var(--adt-red));
+  }
+
+  &.EXPIRED {
+    --background-color: rgb(var(--pale-sky));
+    --color: rgb(var(--ocean-blue));
+  }
+
+  &.CANCELLED {
+    --background-color: rgba(var(--mc-black), 0.1);
+    --color: rgb(var(--mc-black));
+  }
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+
+  & > * {
+    border-radius: 4px;
+    background-color: var(--background-color);
+    color: var(--color);
+  }
+
+  .title {
+    padding: 4px 8px;
+    width: 100%;
+    word-break: normal;
+    text-align: center;
+  }
+
+  & i {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.additional {
+  width: 100%;
+  text-align: center;
+  font: var(--font-subtitle);
+  color: var(--color);
+}

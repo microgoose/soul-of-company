@@ -5,6 +5,6 @@ export const NotFoundPage = () => {
     useDocumentTitle(t('pages.notFound.title'));
 
     return (
-        <span>{t('pages.notFound.title')}</span>
+        <span>{t('pages.notFound.text')}</span>
     );
 };

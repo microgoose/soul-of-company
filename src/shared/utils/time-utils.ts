@@ -1,4 +1,6 @@
 import {t} from "i18next";
+import {DATE_TIME_FORMAT} from "@/shared/config/date-config.ts";
+import dayjs from "dayjs";
 
 export const parseDuration = (duration: string) => {
     const match = duration.trim().match(/^(\d+(\.\d+)?)(ms|s)$/);
@@ -16,3 +18,7 @@ export const parseDuration = (duration: string) => {
 
     return value * 1000;
 }
+
+export const formatDateTime = (date: Date, dateTimeFormat: string = DATE_TIME_FORMAT) => {
+    return dayjs(date).format(dateTimeFormat);
+};

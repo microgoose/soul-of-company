@@ -1,15 +1,11 @@
 {
   "projectName": "Душа Компании",
-  "logOut": "Выйти",
   "loading": "Загрузка",
-  "somethingWentWrong": "Что-то пошло не так",
-  "tips": {
-    "selectDate": "Выбрать дату",
-    "enterNumber": "Введите номер"
+
+  "preposition": {
+    "in": "в"
   },
-  "templates": {
-    "fullName": "Иванов Иван Иванович"
-  },
+
   "actions": {
     "create": "Создать",
     "save": "Сохранить",
@@ -20,7 +16,15 @@
     "copied": "Скопировано",
     "apply": "Применить",
     "cancellation": "Отмена",
+    "logOut": "Выйти",
     "choose": "Выберите"
+  },
+  "tips": {
+    "selectDate": "Выбрать дату",
+    "enterNumber": "Введите номер"
+  },
+  "templates": {
+    "fullName": "Иванов Иван Иванович"
   },
   "dates": {
     "week": {
@@ -47,6 +51,7 @@
       "dec": "Декабрь"
     }
   },
+
   "pages": {
     "notFound": { "title": "Страница не найдена", "text": "404 - Страница не найдена" },
     "usersManagement": { "title": "Пользователи" },
@@ -70,6 +75,7 @@
   "rolesManagement": {
     "addRole": "Добавить роль"
   },
+
   "user": {
     "roles": "Роль",
     "cities": "Город",
@@ -149,6 +155,17 @@
     "status": "Статус",
     "comment": "Комментарий"
   },
+  "reminder": {
+    "number": "Номер",
+    "author": "Автор",
+    "text": "Текст",
+    "type": "Тип",
+    "created": "Создано",
+    "assigned": "Назначено",
+    "executor": "Исполнитель",
+    "sendingStatus": "Статус отправки"
+  },
+
   "forms": {
     "createUser": "Создать пользователя",
     "userCreated": "Пользователь создан",
@@ -160,8 +177,15 @@
     "roleAuthoritiesUpdated": "Изменения сохранены"
   },
   "errors": {
+    "somethingWentWrong": "Что-то пошло не так",
     "incorrectDurationFormat": "Неверный формат продолжительности",
     "incorrectDateFormat": "Введите корректный формат даты (дд.мм.гггг)",
-    "contextNotInitialized": "Контекст не инициализирован"
+    "contextNotInitialized": "Контекст не инициализирован",
+    "accountStatus": {
+      "notAccountedFor": "Статус счёта не учтён."
+    },
+    "reminderSendingStatus": {
+      "notAccountedFor": "Статус отправки напоминания не учтён."
+    }
   }
 }

@@ -2,7 +2,7 @@ import {createBrowserRouter, redirect} from "react-router-dom";
 import {UserManagementPage} from "@/pages/user-management";
 import {NotFoundPage} from "@/pages/errors";
 import {AccountsManagementPage} from "@/pages/accounts-management";
-import {RemindersPage} from "@/pages/reminders";
+import {RemindersManagementPage} from "@/pages/reminders";
 import {RolesManagementPage} from "@/pages/roles";
 import {ButtonsPage, CitiesPage, MailingPage, OpenAIPage} from "@/pages/settings";
 import {ChainPage} from "@/pages/settings/ui/ChainPage.tsx";
@@ -32,7 +32,7 @@ export const router = createBrowserRouter([{
         },
         {
             path: '/reminders',
-            element: <RemindersPage/>,
+            element: <RemindersManagementPage/>,
         },
         {
             path: '/settings/buttons',

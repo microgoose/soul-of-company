@@ -12,7 +12,7 @@ interface LogoutSidebarButtonProps {
 export const LogoutSidebarButton: FC<LogoutSidebarButtonProps> = ({isCollapsed}) => {
     if (isCollapsed) {
         return (
-            <IconButton tooltip={t('logOut')} className={styles.logout}>
+            <IconButton tooltip={t('actions.logOut')} className={styles.logout}>
                 <LoginIcon/>
             </IconButton>
         )
@@ -21,7 +21,7 @@ export const LogoutSidebarButton: FC<LogoutSidebarButtonProps> = ({isCollapsed})
     return (
         <SimpleButton className={classNames(styles.button, styles.logout)}>
             <LoginIcon/>
-            <span>{t('logOut')}</span>
+            <span>{t('actions.logOut')}</span>
         </SimpleButton>
     );
 };

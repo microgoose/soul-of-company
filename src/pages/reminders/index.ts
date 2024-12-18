@@ -1,1 +1,1 @@
-export { RemindersPage } from './ui/RemindersPage.tsx'
+export { RemindersManagementPage } from './ui/RemindersManagementPage.tsx'
