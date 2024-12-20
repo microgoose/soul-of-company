@@ -1,9 +1,9 @@
 import {getAllRoles} from "@/entities/role";
-import {OptionType} from "@/shared/ui/select";
 import {useEffect, useState} from "react";
+import {OptionsType} from "@/shared/ui/select";
 
 export const useRolesFormFieldData = () => {
-    const [rolesOptions, setRolesOptions] = useState<OptionType[]>([]);
+    const [rolesOptions, setRolesOptions] = useState<OptionsType<number>>([]);
 
     //todo loading state
 

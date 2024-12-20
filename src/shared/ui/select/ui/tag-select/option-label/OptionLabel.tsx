@@ -2,7 +2,7 @@ import styles from './OptionLabel.module.scss';
 import {OptionType} from "@/shared/ui/select";
 
 interface OptionLabelProps {
-    option: OptionType,
+    option: OptionType<unknown>,
 }
 
 export const OptionLabel = ({ option }: OptionLabelProps) => {

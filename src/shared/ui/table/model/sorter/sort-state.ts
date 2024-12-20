@@ -1,5 +1,6 @@
 import {SortingType, TableHeaderType} from "@/shared/ui/table";
 import {DefaultSort} from "./sorter.types.ts";
+import {t} from "i18next";
 
 export class SortState {
     private column: TableHeaderType | undefined;
@@ -37,7 +38,7 @@ export class SortState {
                 this.setSorting(column, SortingType.NONE);
                 break;
             default:
-                throw new Error('Unreachable sort type ' + this.sortType);
+                throw new Error(t('errors.unreachableSortType') + ' ' + this.sortType);
         }
     }
 

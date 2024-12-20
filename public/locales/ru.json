@@ -19,7 +19,8 @@
     "logOut": "Выйти",
     "choose": "Выберите",
     "undoChanges": "Отменить изменения",
-    "saveСhanges": "Сохранить изменения"
+    "saveСhanges": "Сохранить изменения",
+    "refresh": "Обновить"
   },
   "tips": {
     "selectDate": "Выбрать дату",
@@ -67,6 +68,7 @@
     "mailing": { "title": "Рассылка" },
     "openAI": { "title": "Open AI" }
   },
+
   "chain": {
     "changeChain": "Изменить цепочку",
     "sequence": "Последовательность, и текст после отправки",
@@ -84,6 +86,11 @@
   },
   "rolesManagement": {
     "addRole": "Добавить роль"
+  },
+  "mailing": {
+    "weatherNotification": "Уведомления о погоде",
+    "mailingTime": "Время рассылки уведомлений",
+    "diadocApiSettings": "Настройки DiadocApi"
   },
 
   "user": {
@@ -187,6 +194,58 @@
       }
     }
   },
+  "diadocApiConfig": {
+    "label": {
+      "login": "Логин аккаунта",
+      "password": "Пароль от аккаунта",
+      "apiKey": "Api-ключ"
+    },
+    "actions": {
+      "enterPassword": "Введите пароль",
+      "enterLogin": "Введите логин",
+      "enterApiKey": "Введите api-ключ"
+    }
+  },
+  "mailingTimeConfig": {
+    "label": {
+      "timeZone": "Часовой пояс",
+      "startTime": "Начало",
+      "endTime": "Конец"
+    },
+    "actions": {
+      "enterTimeZone": "Укажите часовой пояс",
+      "enterStartTime": "Введите время начала",
+      "enterEndTime": "Введите время окончания"
+    }
+  },
+  "conferenceTime": {
+    "label": {
+      "conferenceID": "ID конференции",
+      "sendingTime": "Время отправки"
+    },
+    "actions": {
+      "enterConferenceID": "Введите ID конференции",
+      "enterSendingTime": "Введите время отправки"
+    }
+  },
+  "temperatureMessage": {
+    "label": {
+      "minTemperature": "Мин. температура",
+      "maxTemperature": "Макс. температура",
+      "message": "Сообщение"
+    },
+    "actions": {
+      "enterMinTemperature": "Укажите температуру",
+      "enterMaxTemperature": "Укажите температуру",
+      "enterMessage": "Введите сообщение",
+      "addMessage": "Добавить сообщение"
+    }
+  },
+  "timeZone": {
+    "errors": {
+      "timeZoneNotFound": "Временная зона не найдена"
+    }
+  },
 
   "forms": {
     "createUser": "Создать пользователя",
@@ -206,6 +265,8 @@
     "incorrectDurationFormat": "Неверный формат продолжительности",
     "incorrectDateFormat": "Введите корректный формат даты (дд.мм.гггг)",
     "contextNotInitialized": "Контекст не инициализирован",
+    "unreachableSortType": "Неучтённый тип сортировки",
+    "valueCantBeMapped": "Значение не может быть отсортировано",
     "accountStatus": {
       "notAccountedFor": "Статус счёта не учтён."
     },

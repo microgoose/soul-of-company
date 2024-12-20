@@ -1,0 +1,1 @@
+export * from './ui/update-diadoc-api-config-form/UpdateDiadocApiConfigForm.tsx';

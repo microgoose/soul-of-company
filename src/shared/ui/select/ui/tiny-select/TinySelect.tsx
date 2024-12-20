@@ -2,7 +2,7 @@ import {useMemo, useState} from "react";
 import styles from "./TinySelect.module.scss";
 import {FieldClassState, FieldError, FieldLabel, InputProperties} from "@/shared/ui/field";
 import {ChevronDown} from "@/shared/assets";
-import {OptionType, OptionValueType} from "@/shared/ui/select";
+import {OptionsType, SelectValue} from "@/shared/ui/select";
 import {useSelectFieldState} from "../../model/use-select-field-state.ts";
 import {useSelectController} from "../../model/use-select-controller.ts";
 import {CheckboxOptions} from "./checkbox-option/CheckboxOptions.tsx";
@@ -12,25 +12,24 @@ import {useAutoScroll} from "@/shared/hooks/use-auto-scroll.ts";
 import classNames from "classnames";
 import {Popover, PositionState} from "@/shared/ui/popover";
 
-interface TinySelectProps extends InputProperties {
+interface TinySelectProps<T extends SelectValue> extends InputProperties {
     className?: string,
     label?: string;
     error?: string;
-    value: OptionValueType[];
-    options: OptionType[];
-    multiple?: boolean;
+    value: T | T[];
+    options: OptionsType<T>;
     autoScroll?: boolean
-    onChange?: (value: OptionValueType[]) => void;
+    onChange?: (value: T | T[]) => void;
 }
 
-export const TinySelect = (props: TinySelectProps) => {
-    const {label, error, multiple, autoScroll = true, placeholder, className} = props;
+export const TinySelect = <T extends SelectValue,> (props: TinySelectProps<T>) => {
+    const {label, error, autoScroll = true, placeholder, className} = props;
     const {fieldState, close, toggle} = useSelectFieldState(props);
     const {value, options, visibleOptions, handleOnChange} = useSelectController(props);
     const inputValue = useMemo(() => options
-        .filter(option => value.includes(option.value))
-        .map(option => option.label)
-        .join(','), [options, value]);
+            .filter(option => Array.isArray(value)? value.includes(option.value) : value === option.value)
+            .map(option => option.label)
+            .join(','), [options, value]);
 
     const selectFieldRef = useAutoScroll(autoScroll && fieldState.isActive);
     const [optionsPosition, setOptionsPosition] = useState<PositionState>();
@@ -55,8 +54,8 @@ export const TinySelect = (props: TinySelectProps) => {
                     target={selectFieldRef}
                     onPosition={setOptionsPosition}
                 >
-                    {multiple ?
-                        <CheckboxOptions value={value} options={visibleOptions} onChange={handleOnChange}/> :
+                    {Array.isArray(value) ?
+                        <CheckboxOptions values={value} options={visibleOptions} onChange={handleOnChange}/> :
                         <RadioOptions value={value} options={visibleOptions} onChange={handleOnChange}/>}
                 </Popover>
             </OuterClick>

@@ -1,7 +1,7 @@
 import {useCallback, useEffect, useState} from "react";
 import {setToArray} from "@/shared/utils/array-utils.ts";
 import {t} from "i18next";
-import {OptionType} from "@/shared/ui/select";
+import {OptionsType} from "@/shared/ui/select";
 import {ChainLink, Role} from "@/shared/types/entities";
 
 export interface ChainLinkValue {
@@ -10,7 +10,7 @@ export interface ChainLinkValue {
 }
 
 export interface UseChainForm {
-    roleOptions: OptionType[][],
+    roleOptions: OptionsType<number>[],
     chainLinksValues: ChainLinkValue[]
     errors: Error[],
     onChange: (chainLink: ChainLinkValue, index: number) => void,
@@ -18,7 +18,7 @@ export interface UseChainForm {
 }
 
 export const useChainForm = (chainLinks: ChainLink[], roles: Role[]): UseChainForm => {
-    const [roleOptions, setRoleOptions] = useState<OptionType[][]>([]);
+    const [roleOptions, setRoleOptions] = useState<OptionsType<number>[]>([]);
     const [chainLinksValues, setChainLinksValues] = useState<ChainLinkValue[]>([]);
     const [errors, setErrors] = useState<Error[]>([]);
 
@@ -35,8 +35,8 @@ export const useChainForm = (chainLinks: ChainLink[], roles: Role[]): UseChainFo
 
     const reset = useCallback(() => {
         setErrors([]);
-        const rolesOptions: OptionType[] = roles.map(r => ({ value: r.id, label: r.name }));
-        const newRoleOptions: OptionType[][] = [];
+        const rolesOptions: OptionsType<number> = roles.map(r => ({ value: r.id, label: r.name }));
+        const newRoleOptions: OptionsType<number>[] = [];
         const newChainLinksValues: ChainLinkValue[] = [];
 
         chainLinks.forEach((chainLink, index) => {

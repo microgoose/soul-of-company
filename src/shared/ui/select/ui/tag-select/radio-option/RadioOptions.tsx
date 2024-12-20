@@ -1,18 +1,18 @@
 import {RadioOption} from "./RadioOption.tsx";
-import {OptionType, OptionValueType} from "@/shared/ui/select";
+import {OptionsType} from "@/shared/ui/select";
 
-interface RadioOptionsProps {
-    value: OptionValueType[],
-    options: OptionType[],
-    onChange: (value: OptionValueType[]) => void
+interface RadioOptionsProps<T> {
+    value: T,
+    options: OptionsType<T>,
+    onChange: (value: T) => void
 }
 
-export const RadioOptions = ({ value, options, onChange }: RadioOptionsProps) => {
+export const RadioOptions = <T,> ({ value, options, onChange }: RadioOptionsProps<T>) => {
     return (
         <>
-            {options.map(option =>
+            {options.map((option, index) =>
                 <RadioOption
-                    key={option.value}
+                    key={index}
                     value={value}
                     option={option}
                     onChange={onChange}

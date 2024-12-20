@@ -3,6 +3,7 @@ import {DefaultSort, SortingType, TableSorter} from "./sorter.types.ts";
 import {SortState} from "./sort-state.ts";
 import {getSortedRows, TableControllerInterface, TableHeaderType} from "@/shared/ui/table";
 import {SortableValue} from "@/shared/ui/table/model/sorter/get-sorted-rows.ts";
+import {t} from "i18next";
 
 export interface UseTableSortingProps<Row> {
     controller: TableControllerInterface
@@ -88,7 +89,7 @@ const colMapper = <Row> (key: string) => (row: Row) => {
         return value;
 
     if (typeof value === 'object' || Array.isArray(value)) {
-        throw new Error('Value can\'t be mapped: ' + value);
+        throw new Error(t('errors.valueCantBeMapped') + ': ' + JSON.stringify(value));
     }
 
     return value;

@@ -1,6 +1,6 @@
 import styles from './TagSelect.module.scss';
 import {FieldClassState, FieldError, FieldLabel, InputProperties} from "@/shared/ui/field";
-import {OptionType, OptionValueType} from "@/shared/ui/select";
+import {OptionsType, SelectValue} from "@/shared/ui/select";
 import {useSelectFieldState} from "@/shared/ui/select/model/use-select-field-state.ts";
 import {useSelectController} from "@/shared/ui/select/model/use-select-controller.ts";
 import {ChevronDown} from "@/shared/assets";
@@ -15,19 +15,18 @@ import {useCallback, useMemo, useState} from "react";
 import {Popover, PositionState} from "@/shared/ui/popover";
 import classNames from "classnames";
 
-interface SelectProps extends InputProperties {
+interface TaSelectProps<T extends SelectValue> extends InputProperties {
     label?: string,
     error?: string,
-    value: OptionValueType[],
-    options: OptionType[],
-    multiple?: boolean,
+    value: T | T[],
+    options: OptionsType<T>,
     search?: boolean,
     autoScroll?: boolean
-    onChange?: (value: OptionValueType[]) => void,
+    onChange?: (value: T | T[]) => void,
 }
 
-export const TagSelect = (props: SelectProps) => {
-    const {label, error, autoScroll = true, placeholder, multiple} = props;
+export const TagSelect = <T extends SelectValue,> (props: TaSelectProps<T>) => {
+    const {label, error, autoScroll = true, placeholder} = props;
     const {fieldState, open, close, toggle} = useSelectFieldState(props);
     const [optionsPosition, setOptionsPosition] = useState<PositionState>();
     const {value, options, visibleOptions, handleOnChange, handleOnFilter} = useSelectController(props);
@@ -50,8 +49,12 @@ export const TagSelect = (props: SelectProps) => {
             <OuterClick onOuterClick={close} className={styles.selectField} start={fieldState.isActive} ref={selectFieldRef}>
                 <TinyScrollbarContainer className={styles.tagsContainer} onClick={handleOnTagsContainerClick}>
                     <div className={styles.selectTags}>
-                        {value.length?
+                        {Array.isArray(value) && value.length?
                             <SelectTags value={value} options={options} onChange={handleOnChange} /> :
+                            placeholder}
+
+                        {!Array.isArray(value) && value?
+                            <SelectTags value={[value]} options={options} onChange={handleOnChange} /> :
                             placeholder}
                     </div>
 
@@ -67,8 +70,8 @@ export const TagSelect = (props: SelectProps) => {
                     <SelectSearch className={styles.selectSearch} onChange={handleOnFilter}/>
 
                     <TinyScrollbarContainer className={styles.selectOptions}>
-                        {multiple?
-                            <CheckboxOptions value={value} options={visibleOptions} onChange={handleOnChange}/> :
+                        {Array.isArray(value)?
+                            <CheckboxOptions values={value} options={visibleOptions} onChange={handleOnChange}/> :
                             <RadioOptions value={value} options={visibleOptions} onChange={handleOnChange}/>}
                     </TinyScrollbarContainer>
                 </Popover>

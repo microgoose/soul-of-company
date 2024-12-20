@@ -1,14 +1,14 @@
 import {CrossIcon} from "@/shared/assets";
 import styles from './SelectTag.module.scss';
-import {OptionType, OptionValueType} from "@/shared/ui/select";
+import {OptionType, SelectValue} from "@/shared/ui/select";
 import {useCallback} from "react";
 
-interface SelectTagProps {
-    option: OptionType,
-    onRemove: (option: OptionValueType) => void,
+interface SelectTagProps<T extends SelectValue> {
+    option: OptionType<T>,
+    onRemove: (value: T) => void,
 }
 
-export const SelectTag = ({ option, onRemove }: SelectTagProps) => {
+export const SelectTag = <T extends SelectValue,> ({ option, onRemove }: SelectTagProps<T>) => {
     const handleOnRemove = useCallback(() => onRemove(option.value), [onRemove, option]);
     
     return (

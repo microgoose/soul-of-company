@@ -1,59 +1,51 @@
-import {OptionType, OptionValueType} from "@/shared/ui/select";
-import {useCallback, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
+import {OptionsType, SelectValue} from "@/shared/ui/select";
 
-interface UseSelectControllerProps {
-    multiple?: boolean,
-    value: OptionValueType[],
-    options: OptionType[],
-    onChange?: (value: OptionValueType[]) => void,
+interface UseSelectControllerProps<T extends SelectValue> {
+    value: T | T[];
+    options: OptionsType<T>;
+    onChange?: (value: T | T[]) => void;
 }
 
-export interface SelectController {
-    value: OptionValueType[],
-    visibleOptions: OptionType[],
-    options: OptionType[],
-    multiple: boolean,
-    handleOnFilter: (key: string) => void,
-    handleOnChange: (value: OptionValueType[]) => void,
+export interface SelectController<T extends SelectValue> {
+    value: T | T[];
+    visibleOptions: OptionsType<T>;
+    options: OptionsType<T>;
+    handleOnFilter: (key: string) => void;
+    handleOnChange: (value: T | T[]) => void;
 }
 
-const toToken = (str: string) => str.trim().toLowerCase().replace(/ /g, '');
+const toToken = (str: string) => str.trim().toLowerCase().replace(/ /g, "");
 
-export const useSelectController = (props: UseSelectControllerProps): SelectController => {
-    const { multiple = false, value, options, onChange } = props;
-    const [visibleOptions, setVisibleOptions] = useState(options);
+export const useSelectController = <T extends SelectValue> (props: UseSelectControllerProps<T>): SelectController<T> => {
+    const { value, options, onChange } = props;
+    const [visibleOptions, setVisibleOptions] = useState<OptionsType<T>>(options);
 
-    const handleOnChange = useCallback((newValue: OptionValueType[]) => {
-        onChange?.(newValue);
-    }, [onChange]);
+    const handleOnChange = useCallback(
+        (newValue: T | T[]) => onChange?.(newValue),
+        [onChange]
+    );
 
-    const handleOnFilter = useCallback((key: string) => {
-        if (!key) {
-            setVisibleOptions(options);
-            return;
-        }
+    const handleOnFilter = useCallback(
+        (key?: string) => {
+            if (!key) {
+                setVisibleOptions(options);
+                return;
+            }
 
-        const token = toToken(key);
+            const token = toToken(key);
+            const newOptions = options.filter(option =>
+                option.label.toLowerCase().includes(token)
+            );
 
-        setVisibleOptions(options
-            // .map(option => {
-            //     const labelToken = toToken(option.label);
-            //     const startIndex = labelToken.indexOf(token);
-            //
-            //     if (startIndex !== -1) {
-            //         const endIndex = startIndex + token.length + 1;
-            //         return {
-            //             ...option,
-            //             highlighted: option.label.substring(startIndex, endIndex),
-            //         };
-            //     }
-            //
-            //     return { ...option, highlighted: undefined };
-            // })
-            // .filter(option => option.highlighted)
-            .filter(option => option.label.match(token))
-        );
-    }, [options]);
+            setVisibleOptions(newOptions);
+        },
+        [options]
+    );
 
-    return { value, options, visibleOptions, multiple, handleOnFilter, handleOnChange };
-}
+    useEffect(() => {
+        handleOnFilter();
+    }, [handleOnFilter]);
+    
+    return { value, options, visibleOptions, handleOnFilter, handleOnChange };
+};

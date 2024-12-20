@@ -1,32 +1,38 @@
 import {useCallback, useMemo} from "react";
-import {OptionType, OptionValueType} from "@/shared/ui/select";
+import {OptionType} from "@/shared/ui/select";
 
-interface UseOptionProps {
-    value: OptionValueType[],
-    option: OptionType,
-    onChange: (value: OptionValueType[]) => void,
+interface UseOptionProps<Value> {
+    value: Value,
+    option: OptionType<Value>,
+    onChange: (value: Value) => void,
 }
 
-export const useOption = ({ value, option, onChange }: UseOptionProps) => {
-    const isChecked = useMemo(() => value.includes(option.value), [option.value, value]);
+export const useOption = <T> ({ value, option, onChange }: UseOptionProps<T>) => {
+    const isChecked = useMemo(() => value === option.value, [option.value, value]);
 
     const handleOnChange = useCallback(() => {
-        onChange([option.value]);
+        onChange(option.value);
     }, [onChange, option.value]);
 
     return { isChecked, handleOnChange };
 };
 
-export const useMultipleOption = ({ value, option, onChange }: UseOptionProps) => {
-    const isChecked = useMemo(() => value.includes(option.value), [option.value, value]);
+interface UseMultipleOptionProps<Value> {
+    values: Value[],
+    option: OptionType<Value>,
+    onChange: (values: Value[]) => void,
+}
+
+export const useMultipleOption = <T> ({ values, option, onChange }: UseMultipleOptionProps<T>) => {
+    const isChecked = useMemo(() => values.includes(option.value), [option.value, values]);
 
     const handleOnChange = useCallback(() => {
         if (isChecked) {
-            onChange(value.filter(item => option.value !== item));
+            onChange(values.filter(value => option.value !== value));
         } else {
-            onChange([ ...value, option.value ]);
+            onChange([ ...values, option.value ]);
         }
-    }, [isChecked, onChange, option.value, value]);
+    }, [isChecked, onChange, option.value, values]);
 
     return { isChecked, handleOnChange };
 };

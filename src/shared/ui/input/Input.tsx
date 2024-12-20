@@ -1,11 +1,16 @@
-import {ChangeEvent, forwardRef, useCallback, useState} from "react";
+import {ChangeEvent, forwardRef, useCallback, useMemo, useState} from "react";
 import {Field, InputProperties} from "@/shared/ui/field";
+import {CrossedOutEye} from "@/shared/assets";
+import styles from './Input.module.scss';
+import IMask from "imask";
 
 export interface InputProps extends InputProperties {
     className?: string,
-    value?: number | string,
+    value: string | number,
     maxLength?: number,
     autoScroll?: boolean
+    postfix?: string,
+    mask?: string,
     onChange?: (value: string | number) => void,
     onClick?: () => void,
     onFocus?: () => void,
@@ -13,12 +18,54 @@ export interface InputProps extends InputProperties {
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-    const {value, maxLength = 400, disabled, type, placeholder, onClick, onChange, onFocus, onBlur} = props;
+    const {
+        value,
+        maxLength = 400,
+        disabled,
+        placeholder,
+        postfix,
+        mask,
+        onClick,
+        onChange,
+        onFocus,
+        onBlur
+    } = props;
+
     const [isActive, setIsActive] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
+
+    const type = useMemo(() => {
+        if (showPassword || (postfix && !isActive))
+            return 'text';
+        return props.type || 'text';
+    }, [isActive, postfix, props.type, showPassword]);
+
+    const formattedValue = useMemo(() => {
+        if (postfix && !isActive) {
+            if (!value)
+                return value;
+
+            return value.toString().endsWith(postfix) ? value.toString() : `${value}${postfix}`;
+        } else {
+            return value;
+        }
+    }, [isActive, postfix, value]);
 
     const handleInputOnChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-        onChange?.(e.target.value);
-    }, [onChange]);
+        let inputValue = e.target.value;
+
+        if (postfix && inputValue.match(postfix)) {
+            inputValue = inputValue.replace(postfix, '');
+        }
+
+        if (mask) {
+            const masked = IMask.createMask({mask});
+            masked.resolve(inputValue);
+            inputValue = masked.value;
+        }
+        
+        onChange?.(inputValue);
+    }, [mask, onChange, postfix]);
 
     const handleInputOnFocus = useCallback(() => {
         setIsActive(true);
@@ -29,12 +76,16 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         setIsActive(false);
         onBlur?.();
     }, [onBlur, setIsActive]);
-    
+
+    const handleTogglePassword = useCallback(() => {
+        setShowPassword(!showPassword);
+    }, [showPassword]);
+
     return (
         <Field {...props} isActive={isActive}>
             <input
                 ref={ref}
-                value={value}
+                value={formattedValue}
                 disabled={disabled}
                 type={type}
                 placeholder={placeholder}
@@ -44,6 +95,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
                 onFocus={handleInputOnFocus}
                 onBlur={handleInputOnBlur}
             />
+
+            {props.type === 'password' &&
+                <CrossedOutEye className={styles.showPassword} onClick={handleTogglePassword}/>}
         </Field>
     )
 });

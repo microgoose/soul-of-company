@@ -1,7 +1,7 @@
 export type InputLabelType = string;
 export type InputErrorType = string;
 export type InputPlaceholderType = string;
-export type InputType = 'tel' | 'text' | 'numeric';
+export type InputType = 'time' | 'tel' | 'text' | 'number' | 'password';
 export type InputDisabledType = boolean;
 
 export interface InputProperties {

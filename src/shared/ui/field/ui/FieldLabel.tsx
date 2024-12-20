@@ -7,6 +7,6 @@ interface InputLabelProps {
 
 export const FieldLabel = ({children}: InputLabelProps) => {
     return (
-        <p className={styles.label}>{children}</p>
+        <label role='label' className={styles.label}>{children}</label>
     );
 };

@@ -4,20 +4,26 @@
   border: 1px solid rgb(var(--bg-stroke-gray));
   border-radius: 10px;
 
-  & > legend {
-    padding: 16px 0;
+  & > .legend {
+    padding: 0 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60px;
+    width: 100%;
     border-bottom: 1px solid rgb(var(--bg-stroke-gray));
+    border-radius: 10px 10px 0 0;
     background-color: rgb(var(--bg-gray));
     font: var(--font-h4-bold);
+  }
+
+  * label {
+    font: var(--font-subtext);
   }
 }
 
 .fields {
   display: flex;
   gap: 16px;
-  padding: 16px 0;
+  padding: 16px;
 }

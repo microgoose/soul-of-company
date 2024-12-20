@@ -10,7 +10,7 @@ export const ChainPage = () => {
     const chainController = useChainSettingsController();
 
     return (
-        <div>
+        <div className={styles.pageContainer}>
             <DividerTitle title={t('pages.chain.title')}>
                 <ChangePageMode
                     isEditMode={chainController.isEditMode}

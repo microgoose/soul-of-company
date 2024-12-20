@@ -1,6 +1,6 @@
 import styles from './SequenceItemField.module.scss';
 import {Input} from "@/shared/ui/input";
-import {OptionType, OptionValueType, TinySelect} from "@/shared/ui/select";
+import {OptionsType, TinySelect} from "@/shared/ui/select";
 import {FieldClassState, FieldError, useFieldState} from "@/shared/ui/field";
 import {useCallback, useMemo} from "react";
 import classNames from "classnames";
@@ -11,7 +11,7 @@ interface SequenceItemValue {
 }
 
 interface SequenceItemFieldsProps {
-    rolesOptions: OptionType[],
+    rolesOptions: OptionsType<number>,
     value: SequenceItemValue
     onChange: (value: SequenceItemValue) => void,
     errorMessage?: string
@@ -25,14 +25,14 @@ export const SequenceItemField = (props: SequenceItemFieldsProps) => {
         [styles.hasError]: errorMessage,
     }), [errorMessage]);
 
-    const handleRoleOnChange = useCallback(([role]: OptionValueType[]) => {
+    const handleRoleOnChange = useCallback((role: number | number[]) => {
         onChange({
             ...value,
-            role: role as number,
+            role: Array.isArray(role)? role[0] : role,
         });
     }, [onChange, value]);
 
-    const handleTextOnChange = useCallback((text: number | string) => {
+    const handleTextOnChange = useCallback((text: string | number) => {
         onChange({
             ...value,
             text: text as string,
@@ -45,7 +45,7 @@ export const SequenceItemField = (props: SequenceItemFieldsProps) => {
                 <TinySelect
                     className={styles.selectField}
                     options={rolesOptions}
-                    value={[value.role]}
+                    value={value.role}
                     onChange={handleRoleOnChange}
                 />
 

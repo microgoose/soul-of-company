@@ -2,7 +2,7 @@ import {Controller, useForm} from "react-hook-form";
 import {t} from "i18next";
 import styles from './RoleForm.module.scss';
 import {ButtonState, PrimaryButton} from "@/shared/ui/button";
-import {OptionType, TagSelect} from "@/shared/ui/select";
+import {OptionsType, TagSelect} from "@/shared/ui/select";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {getRoleAuthoritiesValidationSchema} from "@/entities/role/model/role-authorities-form-validation-schema.ts";
 
@@ -13,8 +13,8 @@ export interface RoleAuthoritiesFormFields {
 
 interface CreateUserFormProps {
     submitText: string,
-    rolesOptions: OptionType[],
-    authorityOptions: OptionType[],
+    rolesOptions: OptionsType<number>,
+    authorityOptions: OptionsType<number>,
     defaultValues: RoleAuthoritiesFormFields,
     onSubmit: (roleAuthorities: RoleAuthoritiesFormFields) => void,
 }
@@ -45,7 +45,6 @@ export const RoleForm = (props: CreateUserFormProps) => {
                     <TagSelect
                         placeholder={t('roleAuthorities.actions.selectAccesses')}
                         error={errors.authorities?.message}
-                        multiple
                         search
                         options={authorityOptions}
                         value={field.value}

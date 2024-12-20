@@ -1,19 +1,19 @@
 import {CheckboxOption} from "./CheckboxOption.tsx";
-import {OptionType, OptionValueType} from "@/shared/ui/select";
+import {OptionsType} from "@/shared/ui/select";
 
-interface CheckboxOptionsProps {
-    value: OptionValueType[],
-    options: OptionType[],
-    onChange: (value: OptionValueType[]) => void
+interface Props<Value> {
+    values: Value[];
+    options: OptionsType<Value>;
+    onChange: (value: Value[]) => void
 }
 
-export const CheckboxOptions = ({ value, options, onChange }: CheckboxOptionsProps) => {
+export const CheckboxOptions = <T,> ({ values, options, onChange }: Props<T>) => {
     return (
         <>
-            {options.map(option =>
+            {options.map((option, index) =>
                 <CheckboxOption
-                    key={option.value}
-                    value={value}
+                    key={index}
+                    values={values}
                     option={option}
                     onChange={onChange}
                 />

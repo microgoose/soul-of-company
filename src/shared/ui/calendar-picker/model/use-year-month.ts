@@ -1,6 +1,6 @@
 import {useCallback, useMemo} from "react";
 import dayjs from "dayjs";
-import {OptionType, OptionValueType} from "@/shared/ui/select";
+import {OptionsType} from "@/shared/ui/select";
 import {t} from "i18next";
 
 interface UseYearMonthProps {
@@ -14,17 +14,25 @@ export const useYearMonth = ({month, startYear, endYear, onChange}: UseYearMonth
     const monthValue = useMemo(() => dayjs(month).month(), [month]);
     const yearValue = useMemo(() => dayjs(month).year(), [month]);
 
-    const handleChangeMonth = useCallback(([newMonthValue]: OptionValueType[]) => {
-        onChange(dayjs().set('year', yearValue).set('month', newMonthValue as number).toDate());
+    const handleChangeMonth = useCallback((newMonthValue: number | number[]) => {
+        onChange(dayjs()
+            .set('year', yearValue)
+            .set('month', Array.isArray(newMonthValue)? newMonthValue[0] : newMonthValue)
+            .toDate()
+        );
     }, [onChange, yearValue]);
-    const handleChangeYear = useCallback(([newYearValue]: OptionValueType[]) => {
-        onChange(dayjs().set('year', newYearValue as number).set('month', monthValue).toDate());
+    const handleChangeYear = useCallback((newYearValue: number | number[]) => {
+        onChange(dayjs()
+            .set('year', Array.isArray(newYearValue)? newYearValue[0] : newYearValue)
+            .set('month', monthValue)
+            .toDate()
+        );
     }, [monthValue, onChange]);
 
     const monthOptions = useMemo(getMonthOptions, []);
     const yearOptions = useMemo(() => {
         const maxYear = endYear || dayjs().year();
-        const yearOptions: OptionType[] = [];
+        const yearOptions: OptionsType<number> = [];
 
         for (let i = maxYear; i > startYear - 1; i--) {
             yearOptions.push({ value: i, label: i.toString() });

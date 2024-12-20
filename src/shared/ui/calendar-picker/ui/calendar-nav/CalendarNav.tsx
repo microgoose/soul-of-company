@@ -18,8 +18,8 @@ export const CalendarNav = ({month, onChange, className}: CalendarNavProps) => {
     return (
         <nav className={classNames(styles.calendarNavContainer, className)}>
             <div className={styles.controlsSection}>
-                <TinySelect value={[monthValue]} options={monthOptions} onChange={handleChangeMonth} />
-                <TinySelect value={[yearValue]} options={yearOptions} onChange={handleChangeYear} />
+                <TinySelect value={monthValue} options={monthOptions} onChange={handleChangeMonth} />
+                <TinySelect value={yearValue} options={yearOptions} onChange={handleChangeYear} />
             </div>
         </nav>
     );

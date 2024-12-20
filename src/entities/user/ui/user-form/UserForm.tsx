@@ -5,7 +5,7 @@ import {DateInput} from "@/shared/ui/date-input";
 import {t} from "i18next";
 import styles from './UserForm.module.scss';
 import {ButtonState, PrimaryButton} from "@/shared/ui/button";
-import {OptionType, TagSelect} from "@/shared/ui/select";
+import {OptionsType, TagSelect} from "@/shared/ui/select";
 import {Input} from "@/shared/ui/input";
 import {useEffect} from "react";
 import {isDateValid} from "@/shared/utils/date-utils.ts";
@@ -22,8 +22,8 @@ export interface UserFormFields {
 }
 
 interface CreateUserFormProps {
-    rolesOptions: OptionType[],
-    citiesOptions: OptionType[],
+    rolesOptions: OptionsType<number>,
+    citiesOptions: OptionsType<number>,
     defaultValues: UserFormFields,
     submitText: string,
     onSubmit: (user: UserFormFields) => void,
@@ -53,7 +53,6 @@ export const UserForm = (props: CreateUserFormProps) => {
                         label={t('user.roles')}
                         placeholder={t('actions.choose')}
                         error={errors.roles?.message}
-                        multiple
                         search
                         options={rolesOptions}
                         value={field.value}
@@ -66,7 +65,6 @@ export const UserForm = (props: CreateUserFormProps) => {
                         label={t('user.cities')}
                         placeholder={t('actions.choose')}
                         error={errors.cities?.message}
-                        multiple
                         search
                         options={citiesOptions}
                         value={field.value}
@@ -78,7 +76,7 @@ export const UserForm = (props: CreateUserFormProps) => {
                     <Input
                         label={t('user.telegramId')}
                         placeholder='3978818'
-                        type='numeric'
+                        type='number'
                         error={errors.telegramId?.message}
                         {...field}
                     />

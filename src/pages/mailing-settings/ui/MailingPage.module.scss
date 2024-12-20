@@ -1,0 +1,15 @@
+.pageContainer {
+    margin: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.topForms {
+    display: flex;
+    gap: 24px;
+
+    & > * {
+        width: 100%;
+    }
+}

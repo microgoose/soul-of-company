@@ -1,5 +1,7 @@
-export type OptionValueType = string | number;
-export interface OptionType {
-    value: OptionValueType,
-    label: string,
+export interface OptionType<T> {
+    value: T;
+    label: string;
 }
+
+export type OptionsType<T> = OptionType<T>[];
+export type SelectValue = string | number;

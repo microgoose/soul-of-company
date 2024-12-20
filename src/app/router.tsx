@@ -4,10 +4,11 @@ import {NotFoundPage} from "@/pages/errors";
 import {AccountsManagementPage} from "@/pages/accounts-management";
 import {RemindersManagementPage} from "@/pages/reminders-management";
 import {RolesManagementPage} from "@/pages/roles-management";
-import {ButtonsPage, CitiesPage, MailingPage, OpenAIPage} from "@/pages/settings";
+import {ButtonsPage, CitiesPage, OpenAIPage} from "@/pages/settings";
 import {MainSidebarWidget} from "@/widgets/main-sidebar-widget";
 import {SidebarLayout} from "@/shared/ui/page";
 import {ChainPage} from "@/pages/chain-settings";
+import {MailingPage} from "@/pages/mailing-settings";
 
 export const router = createBrowserRouter([{
     path: '/',
