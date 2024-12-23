@@ -1,0 +1,22 @@
+.chainLink {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    & > :first-child {
+        width: calc(100% - 40px);
+    }
+
+    .removeChainLink {
+        flex-shrink: 0;
+    }
+}
+
+.addChainLink {
+    color: rgb(var(--mc-accent));
+    border-color: rgb(var(--mc-accent));
+
+    & > svg {
+        transform: rotateZ(45deg);
+    }
+}

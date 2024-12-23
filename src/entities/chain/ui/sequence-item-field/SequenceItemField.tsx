@@ -5,7 +5,7 @@ import {FieldClassState, FieldError, useFieldState} from "@/shared/ui/field";
 import {useCallback, useMemo} from "react";
 import classNames from "classnames";
 
-interface SequenceItemValue {
+export interface SequenceItemValue {
     role: number,
     text: string
 }
@@ -14,16 +14,17 @@ interface SequenceItemFieldsProps {
     rolesOptions: OptionsType<number>,
     value: SequenceItemValue
     onChange: (value: SequenceItemValue) => void,
-    errorMessage?: string
+    roleError?: string,
+    textError?: string,
 }
 
 export const SequenceItemField = (props: SequenceItemFieldsProps) => {
-    const { rolesOptions, value, onChange, errorMessage } = props;
-    const fieldState = useFieldState({ error: errorMessage });
+    const { rolesOptions, value, onChange, roleError, textError } = props;
+    const fieldState = useFieldState({ error: roleError || textError });
     const classFieldState = useMemo(() => classNames({
         [styles.sequenceItemField]: true,
-        [styles.hasError]: errorMessage,
-    }), [errorMessage]);
+        [styles.hasError]: fieldState.hasError,
+    }), [fieldState.hasError]);
 
     const handleRoleOnChange = useCallback((role: number | number[]) => {
         onChange({
@@ -56,7 +57,8 @@ export const SequenceItemField = (props: SequenceItemFieldsProps) => {
                 />
             </div>
 
-            {errorMessage && <FieldError>{errorMessage}</FieldError>}
+            {roleError && <FieldError>{roleError}</FieldError>}
+            {textError && <FieldError>{textError}</FieldError>}
         </FieldClassState>
     );
 };

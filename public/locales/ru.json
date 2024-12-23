@@ -186,12 +186,9 @@
     "role": "Должность",
     "text": "Сообщение",
     "validation": {
-      "role": {
-        "required": "Роль обязательна"
-      },
-      "text": {
-        "required": "Сообщение обязательно"
-      }
+      "chainCannotBeEmpty": "Цепочка не может быть пустой",
+      "roleRequired": "Роль обязательна",
+      "textRequired": "Сообщение обязательно"
     }
   },
   "diadocApiConfig": {

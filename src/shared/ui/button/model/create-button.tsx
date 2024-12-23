@@ -5,27 +5,29 @@ import {useButtonStateClasses} from "@/shared/ui/button/model/use-button-state-c
 import {Tooltip} from "@/shared/ui/tooltip";
 import classNames from "classnames";
 
-interface ButtonProps {
-    tooltip?: string,
+interface ButtonStateProps {
     state?: ButtonState,
     type?: ButtonType,
     size?: ButtonSize,
     radius?: ButtonRadius,
+}
+
+interface ButtonProps extends ButtonStateProps {
+    tooltip?: string,
     children: ReactNode;
     className?: string
     onClick?: () => void
     onHover?: () => void
 }
 
-
-export const createButton = (styles: Record<string, string>) => (props: ButtonProps) => {
+export const createButton = (styles: Record<string, string>, defaultState?: ButtonStateProps) => (props: ButtonProps) => {
     const {children, className, tooltip, onClick, onHover} = props;
     const {
         type = ButtonType.FILLED,
         state = ButtonState.DEFAULT,
         size = ButtonSize.MIDDLE,
-        radius = ButtonRadius.MIDDLE
-    } = props;
+        radius = ButtonRadius.MIDDLE,
+    } = { ...defaultState, ...props };
     const containerRef = useRef<HTMLButtonElement | null>(null);
 
     const {classes, hovered, onMouseDown, onMouseUp, onMouseEnter, onMouseLeave} = useButtonStateClasses({

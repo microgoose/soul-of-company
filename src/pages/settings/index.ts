@@ -1,3 +1,5 @@
-export { ButtonsPage } from './ui/ButtonsPage.tsx'
-export { CitiesPage } from './ui/CitiesPage.tsx'
-export { OpenAIPage } from './ui/OpenAIPage.tsx'
+export { ButtonsPage } from './buttons/ButtonsPage.tsx';
+export { CitiesPage } from './cities/CitiesPage.tsx';
+export { OpenAIPage } from '@/pages/settings/open-ai/OpenAIPage.tsx';
+export { ChainPage } from './chain/ChainPage.tsx';
+export { MailingPage } from './mailing/MailingPage.tsx';

@@ -1,4 +1,4 @@
-import {ChainNoteForm} from "@/features/update-chain-form";
+import {ChainNoteForm} from "@/features/edit-chain-form";
 import {OtherTextNoteForm} from "@/features/update-other-text-form";
 import {UseChainSettingsController} from "@/widgets/chain-settings-widget";
 

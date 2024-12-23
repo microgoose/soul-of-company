@@ -18,6 +18,12 @@
     width: 24px;
     height: 24px;
   }
+
+  &.typeFilled {
+    border-color: rgb(var(--mc-accent));
+    background-color: rgb(var(--mc-accent));
+    color: rgb(var(--mc-white));
+  }
 }
 
 .buttonHovered {
@@ -25,12 +31,6 @@
 }
 
 .buttonActive {
-  &.typeFilled {
-    border-color: rgb(var(--mc-accent));
-    background-color: rgb(var(--mc-accent));
-    color: rgb(var(--mc-white));
-  }
-
   &.typeEmpty {
     border: 1.5px solid rgb(var(--mc-accent));
   }

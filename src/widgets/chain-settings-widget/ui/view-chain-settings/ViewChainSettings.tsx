@@ -1,4 +1,4 @@
-import {OtherTextNote, SequenceItem, SequenceNote} from "@/entities/chain";
+import {OtherTextNote, SequenceItem, SequenceItems, SequenceNote} from "@/entities/chain";
 import {ChainLink, OtherTexts} from "@/shared/types/entities";
 
 interface ViewChainSettingsProps {
@@ -10,9 +10,11 @@ export const ViewChainSettings = ({ chainLinks, otherTexts }: ViewChainSettingsP
     return (
         <>
             <SequenceNote>
-                {chainLinks.map((chainLink, i) => (
-                    <SequenceItem key={i} position={chainLink.role.name} text={chainLink.text}/>
-                ))}
+                <SequenceItems>
+                    {chainLinks.map((chainLink, i) => (
+                        <SequenceItem key={i} position={chainLink.role.name} text={chainLink.text}/>
+                    ))}
+                </SequenceItems>
             </SequenceNote>
             <OtherTextNote otherTexts={otherTexts} />
         </>

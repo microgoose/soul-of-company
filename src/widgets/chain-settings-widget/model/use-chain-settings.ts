@@ -6,16 +6,18 @@ import {
     useOtherTextsController
 } from "@/entities/chain";
 import {Role} from "@/shared/types/entities";
-import {UseChainForm, useChainForm} from "@/features/update-chain-form";
+import {ChainNoteFields, getChainLinkValidationScheme} from "@/features/edit-chain-form";
 import {UseOtherTextForm, useOtherTextForm} from "@/features/update-other-text-form";
 import {getAllRoles} from "@/entities/role";
 import {t} from "i18next";
+import {useForm, UseFormReturn} from "react-hook-form";
+import {yupResolver} from "@hookform/resolvers/yup";
 
 export interface UseChainSettingsController {
     isEditMode: boolean,
     otherTextsController: UseOtherTextsController,
     chainController: UseChainController,
-    chainForm: UseChainForm,
+    chainForm: UseFormReturn<ChainNoteFields>,
     otherTextForm: UseOtherTextForm,
     handleOnEditMode: () => void,
     handleOnSave: () => void,
@@ -27,16 +29,24 @@ export const useChainSettingsController = (): UseChainSettingsController => {
     const [roles, setRoles] = useState<Role[]>([]);
     const otherTextsController = useOtherTextsController();
     const chainController = useChainController();
-    const chainForm = useChainForm(chainController.links, roles);
+    const chainForm = useForm<ChainNoteFields>({
+        mode: 'onChange',
+        resolver: yupResolver(getChainLinkValidationScheme()),
+        values: {
+            links: chainController.links.map(link => ({ role: link.role.id, text: link.text })),
+        },
+    });
     const otherTextForm = useOtherTextForm(otherTextsController.otherTexts);
     
     const handleOnEditMode = useCallback(() => setIsEditMode(true), []);
 
-    const handleOnSave = useCallback(() => {
-        if (chainForm.errors.length || Object.values(otherTextForm.errors).length)
+    const handleOnSave = useCallback(async () => {
+        await chainForm.trigger();
+
+        if (chainForm.formState.errors.links || Object.values(otherTextForm.errors).length)
             return;
 
-        chainController.setLinks(chainForm.chainLinksValues.map((value) => {
+        chainController.setLinks(chainForm.getValues().links.map((value) => {
             const role = roles.find(r => r.id === value.role);
 
             if (!role)
@@ -47,7 +57,7 @@ export const useChainSettingsController = (): UseChainSettingsController => {
 
         otherTextsController.update(otherTextForm.values);
         setIsEditMode(false);
-    }, [chainController, chainForm.chainLinksValues, otherTextsController, roles]);
+    }, [chainController, chainForm, otherTextForm.errors, otherTextForm.values, otherTextsController, roles]);
 
     const handleOnUndo = useCallback(() => {
         chainForm.reset();

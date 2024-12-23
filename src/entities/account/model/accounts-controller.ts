@@ -2,8 +2,8 @@ import {useState} from "react";
 import {Account} from "@/shared/types/entities";
 import {getAllAccounts} from "@/entities/account";
 
-export interface RolesController {
-    roles: Account[];
+export interface AccountController {
+    accounts: Account[];
     isLoading: boolean;
     error: Error | null;
     load: () => void;
@@ -11,8 +11,8 @@ export interface RolesController {
     remove: (Account: Account) => void;
 }
 
-export const useAccountController = (): RolesController => {
-    const [AccountList, setAccountList] = useState<Account[]>([]);
+export const useAccountController = (): AccountController => {
+    const [accounts, setAccounts] = useState<Account[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<Error | null>(null);
 
@@ -21,13 +21,13 @@ export const useAccountController = (): RolesController => {
         setError(null);
 
         getAllAccounts()
-            .then(setAccountList)
+            .then(setAccounts)
             .catch(setError)
             .finally(() => setIsLoading(false));
     };
 
     const update = (account: Account) => {
-        setAccountList(roles => roles.map(accountItem => {
+        setAccounts(roles => roles.map(accountItem => {
             if (accountItem.id === account.id) {
                 return account;
             }
@@ -37,8 +37,8 @@ export const useAccountController = (): RolesController => {
     };
 
     const remove = (role: Account) => {
-        setAccountList(roles => roles.filter(accountItem => accountItem.id !== role.id));
+        setAccounts(roles => roles.filter(accountItem => accountItem.id !== role.id));
     }
 
-    return {roles: AccountList, isLoading, error, load, update, remove};
+    return {accounts, isLoading, error, load, update, remove};
 }

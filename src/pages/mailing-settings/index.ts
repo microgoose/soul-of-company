@@ -1,1 +1,0 @@
-export { MailingPage } from './ui/MailingPage.tsx';

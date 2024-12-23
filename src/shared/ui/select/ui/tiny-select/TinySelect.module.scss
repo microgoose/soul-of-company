@@ -43,8 +43,8 @@
     white-space: nowrap;
   }
 
-  input {
-    cursor: pointer;
+  & > svg {
+    flex-shrink: 0;
   }
 }
 

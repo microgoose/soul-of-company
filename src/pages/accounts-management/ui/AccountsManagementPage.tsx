@@ -24,7 +24,7 @@ export const AccountsManagementPage = () => {
         <ManagementWidget className={styles.accountsManagementWidget}>
             <TableSection>
                 <AccountsTable
-                    accounts={accountController.roles}
+                    accounts={accountController.accounts}
                     fileCell={FileCell}
                     actionsCell={accountActions}
                 />
