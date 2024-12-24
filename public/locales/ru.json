@@ -243,6 +243,13 @@
       "timeZoneNotFound": "Временная зона не найдена"
     }
   },
+  "buttonEntity": {
+    "label": {
+      "number": "Номер",
+      "key": "Ключ",
+      "display": "Отображение"
+    }
+  },
 
   "forms": {
     "createUser": "Создать пользователя",
@@ -264,6 +271,7 @@
     "contextNotInitialized": "Контекст не инициализирован",
     "unreachableSortType": "Неучтённый тип сортировки",
     "valueCantBeMapped": "Значение не может быть отсортировано",
+    "characterLimitHasBeenExceeded": "Лимит символов превышен",
     "accountStatus": {
       "notAccountedFor": "Статус счёта не учтён."
     },

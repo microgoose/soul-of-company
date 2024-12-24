@@ -14,3 +14,4 @@ export * from './mailing-time.types.ts';
 export * from './temperature-message.types.ts';
 export * from './time-zone.types.ts';
 export * from './conference-time.types.ts';
+export * from './button-entity.types.ts';

@@ -9,7 +9,7 @@ export interface UseTableSortingProps<Row> {
     controller: TableControllerInterface
     sourceRows: Row[],
     defaultSort?: DefaultSort,
-    mapper: Record<string, (row: Row) => SortableValue>,
+    mapper?: Record<string, (row: Row) => SortableValue>,
 }
 
 export const useTableSorting = <Row extends object> (
@@ -39,7 +39,7 @@ export const useTableSorting = <Row extends object> (
         if (column) {
             const sortedRows = getSortedRows(
                 originRows,
-                mapper[column.key] || colMapper(column.key),
+                mapper?.[column.key] || colMapper(column.key),
                 sortType
             );
 

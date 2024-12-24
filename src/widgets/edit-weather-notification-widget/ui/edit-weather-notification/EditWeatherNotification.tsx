@@ -1,4 +1,4 @@
-import {useTemperatureMessagesController, useConferenceTimeController} from "@/entities/mailing";
+import {useConferenceTimeController, useTemperatureMessagesController} from "@/entities/mailing";
 import {useEffect} from "react";
 import {
     EditWeatherNotificationForms

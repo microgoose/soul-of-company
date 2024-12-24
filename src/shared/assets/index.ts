@@ -20,6 +20,7 @@ import InfoCircle from './icons/info-circle.svg?react';
 import ToDownArrow from './icons/to-down-arrow.svg?react';
 import RotateLeftStreamLine from './icons/rotate-left-streamline.svg?react';
 import CrossedOutEye from './icons/crossed-out-eye.svg?react';
+import Eye from './icons/eye.svg?react';
 
 export {
     BasketIcon,
@@ -43,5 +44,6 @@ export {
     InfoCircle,
     ToDownArrow,
     RotateLeftStreamLine,
-    CrossedOutEye
+    CrossedOutEye,
+    Eye
 };

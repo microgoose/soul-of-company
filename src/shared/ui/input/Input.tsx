@@ -1,6 +1,6 @@
 import {ChangeEvent, forwardRef, useCallback, useMemo, useState} from "react";
 import {Field, InputProperties} from "@/shared/ui/field";
-import {CrossedOutEye} from "@/shared/assets";
+import {CrossedOutEye, Eye} from "@/shared/assets";
 import styles from './Input.module.scss';
 import IMask from "imask";
 
@@ -96,8 +96,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
                 onBlur={handleInputOnBlur}
             />
 
-            {props.type === 'password' &&
-                <CrossedOutEye className={styles.showPassword} onClick={handleTogglePassword}/>}
+            {(props.type === 'password' && type === 'text')
+                && <Eye className={styles.showPassword} onClick={handleTogglePassword}/>}
+            {(props.type === 'password' && type === 'password')
+                && <CrossedOutEye className={styles.showPassword} onClick={handleTogglePassword}/>}
         </Field>
     )
 });
