@@ -1,7 +1,7 @@
 import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
 import {t} from "i18next";
 import {useCallback, useEffect} from "react";
-import {ControlsSection, ManagementWidget, RowActions, TableSection} from "@/widgets/management-widget";
+import {ControlPanel, HeaderPage, ActionsCell, TableContainer} from "@/layout";
 import {RoleAuthorityTable, useRoleAuthoritiesController} from "@/entities/role";
 import {RoleAuthorities} from "@/shared/types/entities";
 import {RemoveEntity} from "@/features/remove-entity/RemoveEntity.tsx";
@@ -15,7 +15,7 @@ export const RolesManagementPage = () => {
     const rolesController = useRoleAuthoritiesController();
 
     const rolesActions = useCallback((role: RoleAuthorities) => (
-        <RowActions>
+        <ActionsCell>
             <UpdateEntity tooltip={t('actions.edit')} entity={role} onUpdate={rolesController.update}>
                 {(isOpen, onSubmit, entity) =>
                     <UpdateRoleModalForm isOpen={isOpen} onSubmit={onSubmit} roleAuthorities={entity}/>
@@ -23,23 +23,23 @@ export const RolesManagementPage = () => {
             </UpdateEntity>
 
             <RemoveEntity tooltip={t('actions.delete')} entity={role} onRemove={rolesController.remove}/>
-        </RowActions>
+        </ActionsCell>
     ), [rolesController]);
 
     useEffect(() => rolesController.load(), []);
 
     return (
-        <ManagementWidget>
-            <ControlsSection>
+        <HeaderPage>
+            <ControlPanel>
                 <CreateEntity
                     label={t('rolesManagement.addRole')}
                     modalForm={CreateRoleModalForm}
                     onCreate={rolesController.insert}
                 />
-            </ControlsSection>
-            <TableSection>
+            </ControlPanel>
+            <TableContainer>
                 <RoleAuthorityTable roleAuthorities={rolesController.roles} actions={rolesActions}/>
-            </TableSection>
-        </ManagementWidget>
+            </TableContainer>
+        </HeaderPage>
     );
 };

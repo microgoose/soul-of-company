@@ -18,4 +18,4 @@ export const OuterVerticalScroll = ({className, needScrollClass, children}: Oute
             {children}
         </NeedScroll>
     );
-}
+};

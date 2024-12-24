@@ -2,7 +2,7 @@ import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
 import {t} from "i18next";
 import {UsersTable, useUsersController} from "@/entities/user";
 import {useCallback, useEffect} from "react";
-import {ControlsSection, ManagementWidget, RowActions, TableSection} from "@/widgets/management-widget";
+import {ControlPanel, HeaderPage, ActionsCell, TableContainer} from "@/layout";
 import {UpdateEntity} from "@/features/update-entity/UpdateEntity.tsx";
 import {CreateEntity} from "@/features/create-entity/CreateEntity.tsx";
 import {BlockUserButton} from "@/features/block-user/BlockUserButton.tsx";
@@ -15,7 +15,7 @@ export const UserManagementPage = () => {
     const usersController = useUsersController();
 
     const userActions = useCallback((user: User) => (
-        <RowActions>
+        <ActionsCell>
             <UpdateEntity tooltip={t('actions.edit')} entity={user} onUpdate={usersController.update}>
                 {(isOpen, onSubmit, entity) =>
                     <UpdateUserModalForm user={entity} isOpen={isOpen} onSubmit={onSubmit}/>
@@ -23,24 +23,24 @@ export const UserManagementPage = () => {
             </UpdateEntity>
 
             <BlockUserButton user={user} onBlock={usersController.update}/>
-        </RowActions>
+        </ActionsCell>
     ), [usersController.update]);
 
     useEffect(() => usersController.load(), []);
 
     return (
-        <ManagementWidget>
-            <ControlsSection>
+        <HeaderPage>
+            <ControlPanel>
                 <CreateEntity
                     label={t('usersManagement.addUser')}
                     modalForm={CreateUserModalForm}
                     onCreate={usersController.insert}
                 />
-            </ControlsSection>
+            </ControlPanel>
 
-            <TableSection>
+            <TableContainer>
                 <UsersTable users={usersController.users} actions={userActions}/>
-            </TableSection>
-        </ManagementWidget>
+            </TableContainer>
+        </HeaderPage>
     );
 };

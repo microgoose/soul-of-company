@@ -5,10 +5,8 @@ import {ButtonEntityDisplayField} from "../button-entity-display-field/ButtonEnt
 import {EmptyButton} from "@/shared/ui/button";
 import {useCallback, useEffect, useState} from "react";
 import {ButtonEntity} from "@/shared/types/entities";
-import styles from './ButtonsWidgetTable.module.scss';
 import {RotateLeftStreamLine} from "@/shared/assets";
-import {OuterVerticalScroll} from "@/shared/ui/scrollbar";
-
+import {TableContainer} from "@/layout";
 
 export const ButtonsWidgetTable = () => {
     const [buttons, setButtons] = useState<ButtonEntity[]>([]);
@@ -42,12 +40,12 @@ export const ButtonsWidgetTable = () => {
     }
 
     return (
-        <OuterVerticalScroll className={styles.buttonsWidgetTable}>
+        <TableContainer>
             <ButtonEntityTable
                 buttons={buttons}
                 displayInputCell={displayInputCell}
                 updateCell={updateCell}
             />
-        </OuterVerticalScroll>
+        </TableContainer>
     );
 };

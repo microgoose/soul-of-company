@@ -4,13 +4,14 @@ import {DividerTitle} from "@/shared/ui/divider-title";
 import styles from "./ChainPage.module.scss";
 import {ChainSettingsSwitcher, useChainSettingsController} from "@/widgets/chain-settings-widget";
 import {ChangePageMode} from "@/features/change-page-mode";
+import {HeaderPage} from "@/layout";
 
 export const ChainPage = () => {
     useDocumentTitle(t('pages.chain.title'));
     const chainController = useChainSettingsController();
 
     return (
-        <div>
+        <HeaderPage>
             <DividerTitle title={t('pages.chain.title')} className={styles.pageTitle}>
                 <ChangePageMode
                     isEditMode={chainController.isEditMode}
@@ -22,6 +23,6 @@ export const ChainPage = () => {
             <div className={styles.contentContainer}>
                 <ChainSettingsSwitcher chainController={chainController} />
             </div>
-        </div>
+        </HeaderPage>
     );
 };

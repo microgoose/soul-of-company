@@ -1,0 +1,19 @@
+.cityRow > td, .cityRow:first-child > td {
+  padding: 0 16px;
+  height: 66px;
+
+  & > * {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.cityRow:first-child > td:after {
+  top: 10px;
+  height: calc(100% - 16px);
+}
+
+.numberColumn {
+  width: 71px;
+}

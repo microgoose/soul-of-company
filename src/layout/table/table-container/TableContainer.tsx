@@ -1,6 +1,6 @@
 import {ReactNode} from "react";
 import {t} from "i18next";
-import styles from './TableSection.module.scss';
+import styles from './TableContainer.module.scss';
 import {OuterVerticalScroll} from "@/shared/ui/scrollbar";
 
 interface TableSectionProps {
@@ -9,7 +9,7 @@ interface TableSectionProps {
     children: ReactNode
 }
 
-export const TableSection = ({ isLoading, errorMessage, children }: TableSectionProps) => {
+export const TableContainer = ({ isLoading, errorMessage, children }: TableSectionProps) => {
     //todo loading state
     if (isLoading) {
         return t('loading');

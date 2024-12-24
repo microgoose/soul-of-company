@@ -20,6 +20,7 @@ tr:first-child .td {
 
   &.smallest {
     min-width: unset;
+    width: 1%;
   }
 
   &::after {

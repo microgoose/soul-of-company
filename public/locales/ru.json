@@ -250,6 +250,17 @@
       "display": "Отображение"
     }
   },
+  "city": {
+    "actions": {
+      "enterName": "Введите название",
+      "addCity": "Добавить город"
+    },
+    "label": {
+      "name": "Название",
+      "number": "Номер",
+      "city": "Город"
+    }
+  },
 
   "forms": {
     "createUser": "Создать пользователя",
@@ -259,7 +270,8 @@
     "createRoleAuthorities": "Создать роль",
     "roleAuthoritiesCreated": "Роль создана",
     "editRoleAuthorities": "Редактировать роль",
-    "roleAuthoritiesUpdated": "Изменения сохранены"
+    "roleAuthoritiesUpdated": "Изменения сохранены",
+    "createCity": "Создать город"
   },
   "validation": {
       "fieldMustBeFilled": "Поле должно быть заполнено"
