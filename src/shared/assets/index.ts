@@ -21,6 +21,7 @@ import ToDownArrow from './icons/to-down-arrow.svg?react';
 import RotateLeftStreamLine from './icons/rotate-left-streamline.svg?react';
 import CrossedOutEye from './icons/crossed-out-eye.svg?react';
 import Eye from './icons/eye.svg?react';
+import ArrowDiagonalTopLeft from './icons/arrow-diagonal-top-left.svg?react';
 
 export {
     BasketIcon,
@@ -45,5 +46,6 @@ export {
     ToDownArrow,
     RotateLeftStreamLine,
     CrossedOutEye,
-    Eye
+    Eye,
+    ArrowDiagonalTopLeft
 };

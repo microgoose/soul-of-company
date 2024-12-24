@@ -1,0 +1,15 @@
+.textOpener {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.text {
+  overflow-y: hidden;
+}
+
+.toggleText {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}

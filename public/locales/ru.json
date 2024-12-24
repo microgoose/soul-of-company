@@ -261,6 +261,25 @@
       "city": "Город"
     }
   },
+  "openAiConfig": {
+    "label": {
+      "apiKey": "API ключ",
+      "model": "Модель",
+      "tokens": "Токены"
+    }
+  },
+  "openAiHistory": {
+    "actions": {
+      "openResponse": "Раскрыть весь ответ",
+      "closeResponse": "Скрыть ответ"
+    },
+    "label": {
+      "fullName": "ФИО",
+      "time": "Время",
+      "request": "Запрос",
+      "response": "Ответ"
+    }
+  },
 
   "forms": {
     "createUser": "Создать пользователя",

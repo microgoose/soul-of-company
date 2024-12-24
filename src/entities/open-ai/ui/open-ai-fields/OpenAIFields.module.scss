@@ -1,0 +1,20 @@
+.openAiFields {
+    display: flex;
+    gap: 16px;
+
+    & label {
+        font-weight: normal;
+    }
+}
+
+.apiKey {
+    width: 191px;
+}
+
+.model {
+    width: 148px;
+}
+
+.tokens {
+    width: 191px;
+}
