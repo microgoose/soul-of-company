@@ -41,6 +41,22 @@ export const TagSelect = <T extends SelectValue,> (props: TaSelectProps<T>) => {
     const handleOnTagsContainerClick = useCallback(() => {
         if (!fieldState.isActive) open();
     }, [fieldState.isActive, open]);
+    
+    const selectRenderer = useMemo(() => {
+        if (Array.isArray(value)) {
+            if (value.length) {
+                return <SelectTags value={value} options={options} onChange={handleOnChange} />;
+            } else {
+                return placeholder;
+            }
+        } else {
+            if (value) {
+                return <SelectTags value={[value]} options={options} onChange={handleOnChange} />;
+            } else {
+                return placeholder;
+            }
+        }
+    }, [handleOnChange, options, placeholder, value]);
 
     return (
         <FieldClassState fieldState={fieldState} styles={styles} className={fieldClassState}>
@@ -49,13 +65,7 @@ export const TagSelect = <T extends SelectValue,> (props: TaSelectProps<T>) => {
             <OuterClick onOuterClick={close} className={styles.selectField} start={fieldState.isActive} ref={selectFieldRef}>
                 <TinyScrollbarContainer className={styles.tagsContainer} onClick={handleOnTagsContainerClick}>
                     <div className={styles.selectTags}>
-                        {Array.isArray(value) && value.length?
-                            <SelectTags value={value} options={options} onChange={handleOnChange} /> :
-                            placeholder}
-
-                        {!Array.isArray(value) && value?
-                            <SelectTags value={[value]} options={options} onChange={handleOnChange} /> :
-                            placeholder}
+                        {selectRenderer}
                     </div>
 
                     <ChevronDown className={styles.toggleIcon} onClick={toggle}/>
