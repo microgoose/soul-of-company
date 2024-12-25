@@ -3,6 +3,10 @@ import {DiadocApiFormLegend} from "../diadoc-api-form-legend/DiadocApiLegendActi
 import {DiadocApiFields} from "@/entities/mailing";
 import {FormProvider, useForm} from "react-hook-form";
 import {DiadocApiConfig} from "@/shared/types/entities";
+import {yupResolver} from "@hookform/resolvers/yup";
+import {
+    getDiadocApiValidationScheme
+} from "@/features/update-diadoc-api-config/model/get-diadoc-api-validation-scheme.ts";
 
 interface UpdateDiadocApiConfigFormProps {
     diadocApiCofig: DiadocApiConfig,
@@ -12,6 +16,7 @@ interface UpdateDiadocApiConfigFormProps {
 export const UpdateDiadocApiConfigForm = ({ diadocApiCofig, onSubmit }: UpdateDiadocApiConfigFormProps) => {
     const methods = useForm<DiadocApiConfig>({
         mode: 'onChange',
+        resolver: yupResolver<DiadocApiConfig>(getDiadocApiValidationScheme()),
         defaultValues: diadocApiCofig
     });
 

@@ -1,36 +1,43 @@
 import {t} from "i18next";
 import {Input} from "@/shared/ui/input";
-import {UseOtherTextForm} from "@/features/update-other-text-form";
+import {Controller, UseFormReturn} from "react-hook-form";
+import {OtherTexts} from "@/shared/types/entities";
 
 interface OtherTextFieldsProps {
-    form: UseOtherTextForm,
+    form: UseFormReturn<OtherTexts>,
 }
 
-export const OtherTextFields = ({ form }: OtherTextFieldsProps) => {
-    const { values, errors = {}, onChange } = form;
-    
+export const OtherTextFields = ({form}: OtherTextFieldsProps) => {
+    const {control, formState: {errors}} = form;
+
     return (
         <>
-            <Input
-                error={errors.afterAccountCreatedText?.message}
-                label={t('chain.afterAccountCreatedText')}
-                value={values.afterAccountCreatedText}
-                onChange={(value) => onChange('afterAccountCreatedText', value as string)}
-            />
+            <Controller name={`afterAccountCreatedText`} control={control} render={({field}) =>
+                <Input
+                    error={errors?.afterAccountCreatedText?.message}
+                    label={t('chain.afterAccountCreatedText')}
+                    value={field.value}
+                    onChange={field.onChange}
+                />
+            }/>
 
-            <Input
-                error={errors.mainMenuText?.message}
-                label={t('chain.mainMenuText')}
-                value={values.mainMenuText}
-                onChange={(value) => onChange('mainMenuText', value as string)}
-            />
+            <Controller name={`mainMenuText`} control={control} render={({field}) =>
+                <Input
+                    error={errors?.mainMenuText?.message}
+                    label={t('chain.mainMenuText')}
+                    value={field.value}
+                    onChange={field.onChange}
+                />
+            }/>
 
-            <Input
-                error={errors.afterAccountSentText?.message}
-                label={t('chain.afterAccountSentText')}
-                value={values.afterAccountSentText}
-                onChange={(value) => onChange('afterAccountSentText', value as string)}
-            />
+            <Controller name={`afterAccountSentText`} control={control} render={({field}) =>
+                <Input
+                    error={errors?.afterAccountSentText?.message}
+                    label={t('chain.afterAccountSentText')}
+                    value={field.value}
+                    onChange={field.onChange}
+                />
+            }/>
         </>
     );
 };

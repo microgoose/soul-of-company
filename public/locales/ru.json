@@ -236,6 +236,12 @@
       "enterMaxTemperature": "Укажите температуру",
       "enterMessage": "Введите сообщение",
       "addMessage": "Добавить сообщение"
+    },
+    "validation": {
+      "temperatureMessagesCannotBeEmpty": "Не должен быть пустым",
+      "minTemperatureRequired": "Мин. температура обязательна",
+      "maxTemperatureRequired": "Макс. температура обязательна",
+      "messageRequired": "Сообщение обязательно"
     }
   },
   "timeZone": {

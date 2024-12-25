@@ -1,12 +1,12 @@
 import {t} from "i18next";
 import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
-import {DividerTitle} from "@/shared/ui/divider-title";
 import styles from './MailingPage.module.scss';
 import {UpdateDiadocApiConfigForm} from "@/features/update-diadoc-api-config";
 import {useDiadocApiFieldsController, useMailingTimeController} from "@/entities/mailing";
 import {useEffect, useMemo} from "react";
 import {MailingTimeForm} from "@/features/update-mailing-time-config";
 import {EditWeatherNotification} from "@/widgets/edit-weather-notification-widget";
+import {HeaderDividerPage} from "@/layout";
 
 export const MailingPage = () => {
     useDocumentTitle(t('pages.mailing.title'));
@@ -46,13 +46,12 @@ export const MailingPage = () => {
     }, [mailingTimeController.mailingTime, mailingTimeController.update]);
 
     return (
-        <div className={styles.pageContainer}>
-            <DividerTitle title={t('pages.mailing.title')}/>
+        <HeaderDividerPage title={t('pages.mailing.title')} className={styles.pageContainer}>
             <div className={styles.topForms}>
                 {mailingTypeForm}
                 {diadocForm}
             </div>
             <EditWeatherNotification/>
-        </div>
+        </HeaderDividerPage>
     );
 };

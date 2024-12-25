@@ -5,20 +5,23 @@ import {
     UseOtherTextsController,
     useOtherTextsController
 } from "@/entities/chain";
-import {Role} from "@/shared/types/entities";
+import {OtherTexts, Role} from "@/shared/types/entities";
 import {ChainNoteFields, getChainLinkValidationScheme} from "@/features/edit-chain-form";
-import {UseOtherTextForm, useOtherTextForm} from "@/features/update-other-text-form";
 import {getAllRoles} from "@/entities/role";
 import {t} from "i18next";
 import {useForm, UseFormReturn} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
+import {
+    getOtherTextValidationScheme
+} from "@/features/update-other-text-form/model/get-other-text-validation-scheme.ts";
+import {useQuery} from "@tanstack/react-query";
 
 export interface UseChainSettingsController {
     isEditMode: boolean,
     otherTextsController: UseOtherTextsController,
     chainController: UseChainController,
     chainForm: UseFormReturn<ChainNoteFields>,
-    otherTextForm: UseOtherTextForm,
+    otherTextForm: UseFormReturn<OtherTexts>,
     handleOnEditMode: () => void,
     handleOnSave: () => void,
     handleOnUndo: () => void,
@@ -26,9 +29,9 @@ export interface UseChainSettingsController {
 
 export const useChainSettingsController = (): UseChainSettingsController => {
     const [isEditMode, setIsEditMode] = useState(false);
-    const [roles, setRoles] = useState<Role[]>([]);
     const otherTextsController = useOtherTextsController();
     const chainController = useChainController();
+
     const chainForm = useForm<ChainNoteFields>({
         mode: 'onChange',
         resolver: yupResolver(getChainLinkValidationScheme()),
@@ -36,28 +39,39 @@ export const useChainSettingsController = (): UseChainSettingsController => {
             links: chainController.links.map(link => ({ role: link.role.id, text: link.text })),
         },
     });
-    const otherTextForm = useOtherTextForm(otherTextsController.otherTexts);
+    const otherTextForm = useForm<OtherTexts>({
+        mode: 'onChange',
+        resolver: yupResolver(getOtherTextValidationScheme()),
+        values: otherTextsController.otherTexts,
+    });
+
+    const {data: roles = []} = useQuery<Role[]>({
+        queryKey: ['roles'],
+        queryFn: () => getAllRoles(),
+    });
     
     const handleOnEditMode = useCallback(() => setIsEditMode(true), []);
 
     const handleOnSave = useCallback(async () => {
         await chainForm.trigger();
+        await otherTextForm.trigger();
 
-        if (chainForm.formState.errors.links || Object.values(otherTextForm.errors).length)
+        if (!chainForm.formState.isValid || !otherTextForm.formState.isValid)
             return;
 
+        otherTextsController.update(otherTextForm.getValues());
         chainController.setLinks(chainForm.getValues().links.map((value) => {
             const role = roles.find(r => r.id === value.role);
 
-            if (!role)
+            if (!role) {
                 throw new Error(t('errors.chain.findRoleEntityError'));
+            }
             
             return { id: null, role, text: value.text };
         }));
 
-        otherTextsController.update(otherTextForm.values);
         setIsEditMode(false);
-    }, [chainController, chainForm, otherTextForm.errors, otherTextForm.values, otherTextsController, roles]);
+    }, [chainController, chainForm, otherTextForm, otherTextsController, roles]);
 
     const handleOnUndo = useCallback(() => {
         chainForm.reset();
@@ -68,7 +82,6 @@ export const useChainSettingsController = (): UseChainSettingsController => {
     useEffect(() => {
         chainController.load()
         otherTextsController.load();
-        getAllRoles().then(roles => setRoles(roles));
     }, []);
 
     return {

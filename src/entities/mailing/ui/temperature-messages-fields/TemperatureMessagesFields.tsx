@@ -31,10 +31,11 @@ export const TemperatureMessagesFields = () => {
             <div className={styles.temperatureMessages}>
                 {fields.map((item, index) => (
                     <div className={styles.temperatureMessage} key={item.id}>
-                        <Controller name={`messages.${index}.maxTemperature`} control={control} render={({field}) =>
+                        <Controller name={`messages.${index}.minTemperature`} control={control} render={({field}) =>
                             <Input
                                 type='number'
                                 className={styles.minTemperatureField}
+                                // error={errors?.messages?.[index]?.minTemperature?.message}
                                 label={t('temperatureMessage.label.minTemperature')}
                                 placeholder={t('temperatureMessage.actions.enterMinTemperature')}
                                 postfix='С°'
@@ -42,10 +43,11 @@ export const TemperatureMessagesFields = () => {
                             />
                         }/>
 
-                        <Controller name={`messages.${index}.minTemperature`} control={control} render={({field}) =>
+                        <Controller name={`messages.${index}.maxTemperature`} control={control} render={({field}) =>
                             <Input
                                 type='number'
                                 className={styles.maxTemperatureField}
+                                // error={errors?.messages?.[index]?.maxTemperature?.message}
                                 label={t('temperatureMessage.label.maxTemperature')}
                                 placeholder={t('temperatureMessage.actions.enterMaxTemperature')}
                                 postfix='С°'
@@ -56,6 +58,7 @@ export const TemperatureMessagesFields = () => {
                         <Controller name={`messages.${index}.message`} control={control} render={({field}) =>
                             <Input
                                 className={styles.messageField}
+                                // error={typeof errors?.messages?.[index]?.message === 'object'? errors?.messages?.[index]?.message?.message : undefined}
                                 label={t('temperatureMessage.label.message')}
                                 placeholder={t('temperatureMessage.actions.enterMessage')}
                                 {...field}

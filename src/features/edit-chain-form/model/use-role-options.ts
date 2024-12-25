@@ -4,7 +4,7 @@ import {getAllRoles} from "@/entities/role";
 
 export const useRoleOptions = () => {
     const { data: roleOptions = [] } = useQuery<OptionsType<number>>({
-        queryKey: ['roles'],
+        queryKey: ['roleOptions'],
         queryFn: async () => {
             const roles = await getAllRoles();
             return roles.map(r => ({ value: r.id, label: r.name }));

@@ -19,12 +19,10 @@ export const useFieldState = (props: UseFieldStateProps)  => {
     return useMemo<FieldState>(() => {
         let isFilled = false;
 
-        if (props.value) {
-            if (Array.isArray(props.value)) {
-                isFilled = props.value.length > 0;
-            } else {
-                isFilled = !!props.value;
-            }
+        if (Array.isArray(props.value)) {
+            isFilled = props.value.length > 0;
+        } else {
+            isFilled = !!props.value || props.value === 0;
         }
 
         const state: FieldState = {

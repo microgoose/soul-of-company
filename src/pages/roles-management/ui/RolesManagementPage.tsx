@@ -1,7 +1,7 @@
 import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
 import {t} from "i18next";
 import {useCallback, useEffect} from "react";
-import {ControlPanel, HeaderPage, ActionsCell, TableContainer} from "@/layout";
+import {ActionsCell, ControlPanel, HeaderPage, TableContainer} from "@/layout";
 import {RoleAuthorityTable, useRoleAuthoritiesController} from "@/entities/role";
 import {RoleAuthorities} from "@/shared/types/entities";
 import {RemoveEntity} from "@/features/remove-entity/RemoveEntity.tsx";

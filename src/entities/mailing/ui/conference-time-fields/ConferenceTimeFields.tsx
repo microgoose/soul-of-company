@@ -5,13 +5,14 @@ import styles from './ConferenceTimeFields.module.scss';
 import {t} from "i18next";
 
 export const ConferenceTimeFields = () => {
-    const { control } = useFormContext<ConferenceTime>();
+    const { control, formState: { errors } } = useFormContext<ConferenceTime>();
 
     return (
         <>
             <Controller name={`conferenceID`} control={control} render={({field}) =>
                 <Input
                     className={styles.conferenceIDField}
+                    error={errors?.conferenceID?.message}
                     label={t('conferenceTime.label.conferenceID')}
                     placeholder={t('conferenceTime.actions.enterConferenceID')}
                     {...field}
@@ -22,6 +23,7 @@ export const ConferenceTimeFields = () => {
                 <Input
                     type='time'
                     className={styles.sendingTimeField}
+                    error={errors?.sendingTime?.message}
                     label={t('conferenceTime.label.sendingTime')}
                     placeholder={t('conferenceTime.actions.enterSendingTime')}
                     {...field}
