@@ -14,12 +14,12 @@ export const EditWeatherNotification = () => {
         temperatureMessagesController.load();
     }, []);
 
-    if (!conferenceTimeController.config || !temperatureMessagesController.messages.length) {
+    if (!conferenceTimeController.config || temperatureMessagesController.isLoading) {
         return <span>{t('loading')}</span>
     }
 
     return <EditWeatherNotificationForms
         conferenceTime={conferenceTimeController.config}
-        temperatureMessages={temperatureMessagesController.messages}
+        temperatureMessagesController={temperatureMessagesController}
     />
 };

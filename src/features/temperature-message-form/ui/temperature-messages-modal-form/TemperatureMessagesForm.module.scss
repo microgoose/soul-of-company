@@ -1,0 +1,9 @@
+.temperatureMessageFields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  & > :last-child {
+    margin-top: 8px;
+  }
+}

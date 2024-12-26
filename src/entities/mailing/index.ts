@@ -10,5 +10,5 @@ export * from './model/weather-notification-controller.ts';
 
 export * from './ui/diadoc-api-fields/DiadocApiFields.tsx';
 export * from './ui/mailing-time-fields/MailingTimeFields.tsx';
-export * from './ui/temperature-messages-fields/TemperatureMessagesFields.tsx';
+export * from '@/entities/mailing/ui/temperature-messages-list/TemperatureMessagesList.tsx';
 export * from '@/entities/mailing/ui/conference-time-fields/ConferenceTimeFields.tsx';

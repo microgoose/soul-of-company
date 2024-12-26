@@ -1,0 +1,37 @@
+.temperatureMessagesContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.addMessageContainer {
+    padding-bottom: 2px;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+.temperatureMessages {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.temperatureMessage {
+    display: flex;
+    align-items: end;
+    gap: 16px;
+}
+
+.minTemperatureField, .maxTemperatureField {
+    flex-shrink: 0;
+    width: 148px;
+}
+
+.messageField {
+    width: 100%;
+}
+
+.removeMessage {
+    flex-shrink: 0;
+}

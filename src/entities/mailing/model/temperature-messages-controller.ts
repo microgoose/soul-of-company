@@ -7,6 +7,9 @@ export interface UseTemperatureMessagesController {
     isLoading: boolean;
     error: Error | null;
     load: () => void;
+    add: (message: TemperatureMessage) => void;
+    remove: (message: TemperatureMessage) => void;
+    update: (message: TemperatureMessage) => void;
 }
 
 export const useTemperatureMessagesController = (): UseTemperatureMessagesController => {
@@ -24,5 +27,22 @@ export const useTemperatureMessagesController = (): UseTemperatureMessagesContro
             .finally(() => setIsLoading(false));
     };
 
-    return { messages, isLoading, error, load };
+    const add = (message: TemperatureMessage) => {
+        setMessages([message, ...messages]);
+    };
+
+    const remove = (message: TemperatureMessage) => {
+        setMessages(messages.filter(item => item.id !== message.id));
+    };
+
+    const update = (message: TemperatureMessage) => {
+      setMessages(messages.map((item) => {
+          if (item.id === message.id) {
+              return message;
+          }
+          return item;
+      }));
+    };
+
+    return { messages, isLoading, error, load, add, remove, update };
 }

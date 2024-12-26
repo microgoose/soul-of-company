@@ -235,13 +235,16 @@
       "enterMinTemperature": "Укажите температуру",
       "enterMaxTemperature": "Укажите температуру",
       "enterMessage": "Введите сообщение",
-      "addMessage": "Добавить сообщение"
+      "addMessage": "Добавить сообщение",
+      "updateMessage": "Обновить сообщение"
     },
     "validation": {
       "temperatureMessagesCannotBeEmpty": "Не должен быть пустым",
       "minTemperatureRequired": "Мин. температура обязательна",
       "maxTemperatureRequired": "Макс. температура обязательна",
-      "messageRequired": "Сообщение обязательно"
+      "messageRequired": "Сообщение обязательно",
+      "maxGreaterThanMin": "Максимальная температура не может быть меньше минимальной",
+      "minLessThanOrEqualMax": "Минимальная температура не может быть больше максимальной"
     }
   },
   "timeZone": {
@@ -296,7 +299,9 @@
     "roleAuthoritiesCreated": "Роль создана",
     "editRoleAuthorities": "Редактировать роль",
     "roleAuthoritiesUpdated": "Изменения сохранены",
-    "createCity": "Создать город"
+    "createCity": "Создать город",
+    "createTemperatureMessage": "Создать сообщение",
+    "editTemperatureMessage": "Изменить сообщение"
   },
   "validation": {
       "fieldMustBeFilled": "Поле должно быть заполнено"

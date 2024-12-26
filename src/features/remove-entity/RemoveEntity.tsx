@@ -1,6 +1,7 @@
 import {useCallback} from "react";
 import {BasketIcon} from "@/shared/assets";
 import {IconButton} from "@/shared/ui/button";
+import styles from './RemoveEntity.module.scss';
 
 interface RemoveEntityProps<T> {
     entity: T,
@@ -14,7 +15,7 @@ export const RemoveEntity = <T,> ({ entity, tooltip, onRemove }: RemoveEntityPro
     }, [entity, onRemove]);
 
     return (
-        <IconButton tooltip={tooltip} onClick={handleOnClick}>
+        <IconButton tooltip={tooltip} onClick={handleOnClick} className={styles.removeEntityButton}>
             <BasketIcon/>
         </IconButton>
     );
