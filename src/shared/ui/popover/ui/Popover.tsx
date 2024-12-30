@@ -2,6 +2,7 @@ import {MutableRefObject, ReactNode, useEffect, useRef} from "react";
 import classNames from "classnames";
 import styles from './Popover.module.scss'
 import {PositionState, usePopoverPosition} from "../model/use-popover-position.ts";
+import {subscribe, unsubscribe} from "@/shared/utils/resize-observer-event-bus.ts";
 
 interface PopoverProps {
     target: MutableRefObject<HTMLElement | null>,
@@ -18,8 +19,14 @@ export const Popover = (props: PopoverProps) => {
     const popoverPosition = usePopoverPosition({ target, container, onPosition });
     
     useEffect(() => {
-        if (isOpen) popoverPosition();
-    }, [isOpen, popoverPosition]);
+        const targetEl = target.current;
+        
+        if (isOpen && targetEl) {
+            popoverPosition();
+            subscribe(targetEl, popoverPosition);
+            return () => unsubscribe(targetEl, popoverPosition);
+        }
+    }, [isOpen, popoverPosition, target]);
 
     if (!isOpen) return null;
 
