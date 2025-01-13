@@ -13,20 +13,20 @@
   color: var(--color);
 
   .isActive.isOptionsAbove & > .tagsContainer {
-    border-top: none;
     border-radius: 0 0 8px 8px;
   }
 
   .isActive.isOptionsAbove & > .selectOptionsContainer {
-    border-radius: 8px 8px 0 0;
-  }
-
-  .isActive.isOptionsBelow & > .tagsContainer {
     border-bottom: none;
     border-radius: 8px 8px 0 0;
   }
 
+  .isActive.isOptionsBelow & > .tagsContainer {
+    border-radius: 8px 8px 0 0;
+  }
+
   .isActive.isOptionsBelow & > .selectOptionsContainer {
+    border-top: none;
     border-radius: 0 0 8px 8px;
   }
 }
