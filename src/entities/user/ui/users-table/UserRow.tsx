@@ -6,6 +6,7 @@ import {TableRow} from "@/shared/ui/table";
 import {ReactNode, useMemo} from "react";
 import {formatDate} from "@/shared/utils/date-utils.ts";
 import {User} from "@/shared/types/entities";
+import style from './UsersTable.module.scss';
 
 interface UserRowProps {
     user: User,
@@ -30,7 +31,7 @@ export const UserRow = ({user, actions}: UserRowProps) => {
                     {user.telegramId}
                 </UserTelegramIdActivity>
             </TableCell>
-            <TableCell>
+            <TableCell className={style.loginCell}>
                 <CopyText text={user.login} disabled={!!user.blocked}/>
             </TableCell>
             <TableCell>

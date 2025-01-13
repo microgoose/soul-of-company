@@ -4,7 +4,7 @@ import {UserRow} from "./UserRow.tsx";
 import {ReactNode} from "react";
 import {User} from "@/shared/types/entities";
 import {UserHeader} from "./UserHeader.tsx";
-import {userHeaders, userHeadersList} from "./model/user-headers.ts";
+import {userHeaders, userHeadersList} from "../../model/user-headers.ts";
 
 interface UsersTableProps {
     users: User[],

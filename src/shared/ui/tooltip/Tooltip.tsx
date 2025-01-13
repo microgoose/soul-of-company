@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
-import {ReactNode, RefObject, useRef} from "react";
-import {useTooltipPosition} from "./model/use-tooltip-position.ts";
+import {ReactNode, RefObject, useEffect, useRef} from "react";
+import {tooltipPositionSystem} from "./model/tooltip-position-system.ts";
 import style from './Tooltip.module.scss';
 
 interface TooltipProps {
@@ -8,10 +8,17 @@ interface TooltipProps {
     children: ReactNode,
 }
 
-export const Tooltip = ({ containerRef, children }: TooltipProps) => {
+export const Tooltip = ({containerRef, children}: TooltipProps) => {
     const tooltipRef = useRef<HTMLSpanElement | null>(null);
 
-    useTooltipPosition({ containerRef, tooltipRef });
+    useEffect(() => {
+        const tooltipEl = tooltipRef.current;
+        const containerEL = containerRef.current;
+
+        if (!containerEL || !tooltipEl) return;
+
+        tooltipPositionSystem({containerEL, tooltipEl});
+    }, [containerRef, tooltipRef, children]);
 
     return ReactDOM.createPortal(
         <span className={style.tooltip} ref={tooltipRef}>

@@ -11,8 +11,8 @@ interface OuterClickProps {
 export const OuterClick = forwardRef((props: OuterClickProps, outerRef) => {
     const {className, start, children, onOuterClick} = props;
     const ref = useRef<HTMLDivElement>(null);
-    useOutsideClick(ref, onOuterClick, start);
 
+    useOutsideClick(ref, onOuterClick, start);
     useImperativeHandle(outerRef, () => ref.current);
 
     return (

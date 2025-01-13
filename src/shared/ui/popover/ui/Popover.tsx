@@ -20,11 +20,16 @@ export const Popover = (props: PopoverProps) => {
     
     useEffect(() => {
         const targetEl = target.current;
-        
-        if (isOpen && targetEl) {
+        const containerEl = container.current;
+
+        if (isOpen && targetEl && containerEl) {
             popoverPosition();
             subscribe(targetEl, popoverPosition);
-            return () => unsubscribe(targetEl, popoverPosition);
+            subscribe(containerEl, popoverPosition);
+            return () => {
+                unsubscribe(targetEl, popoverPosition);
+                unsubscribe(containerEl, popoverPosition);
+            };
         }
     }, [isOpen, popoverPosition, target]);
 
