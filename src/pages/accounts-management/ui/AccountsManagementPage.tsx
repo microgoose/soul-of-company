@@ -3,7 +3,7 @@ import {t} from "i18next";
 import {AccountsTable, useAccountController} from "@/entities/account";
 import {useCallback, useEffect} from "react";
 import {Account} from "@/shared/types/entities";
-import {ActionsCell, HeaderPage, TableContainer} from "@/layout";
+import {ActionsCell, MonoPage, TableContainer} from "@/layout";
 import {RemoveEntity} from "@/features/remove-entity";
 import {DownloadFilesButton} from "@/features/download-file";
 
@@ -20,8 +20,7 @@ export const AccountsManagementPage = () => {
     useEffect(() => accountController.load(), []);
 
     return (
-        <HeaderPage>
-            <div/>
+        <MonoPage>
             <TableContainer>
                 <AccountsTable
                     accounts={accountController.accounts}
@@ -29,7 +28,7 @@ export const AccountsManagementPage = () => {
                     actionsCell={accountActions}
                 />
             </TableContainer>
-        </HeaderPage>
+        </MonoPage>
     );
 };
 

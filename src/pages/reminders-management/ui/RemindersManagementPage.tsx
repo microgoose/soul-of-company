@@ -3,7 +3,7 @@ import {t} from "i18next";
 import {ReminderTable, useRemindersController} from "@/entities/reminder";
 import {useCallback, useEffect} from "react";
 import {Reminder} from "@/shared/types/entities";
-import {ActionsCell, HeaderPage, TableContainer} from "@/layout";
+import {ActionsCell, MonoPage, TableContainer} from "@/layout";
 import {RemoveEntity} from "@/features/remove-entity";
 
 
@@ -20,11 +20,10 @@ export const RemindersManagementPage = () => {
     useEffect(() => remindersController.load(), []);
 
     return (
-        <HeaderPage>
-            <div/>
+        <MonoPage>
             <TableContainer>
                 <ReminderTable reminders={remindersController.reminders} actionsCell={accountActions}/>
             </TableContainer>
-        </HeaderPage>
+        </MonoPage>
     );
 };
