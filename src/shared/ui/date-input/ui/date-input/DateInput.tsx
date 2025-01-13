@@ -90,6 +90,7 @@ export const DateInput = forwardRef<HTMLInputElement, DatePickerProps>((props, r
             >
                 <FieldInputContainer>
                     <input
+                        type='text'
                         ref={ref}
                         value={value}
                         onChange={handleOnChange}
