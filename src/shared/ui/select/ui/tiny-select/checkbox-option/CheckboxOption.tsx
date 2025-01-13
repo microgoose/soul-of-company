@@ -18,7 +18,7 @@ export const CheckboxOption = <T,> (props: Props<T>) => {
         <div className={classNames(styles.option, {[styles.isChecked]: isChecked})} title={option.label}>
             <span>{option.label}</span>
             <button className={styles.checkbox} onClick={handleOnChange}>
-                {isChecked && <CheckMark/>}
+                {isChecked && <CheckMark className={styles.checkMark}/>}
             </button>
         </div>
     );

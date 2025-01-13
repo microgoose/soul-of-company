@@ -18,6 +18,5 @@
 }
 
 .buttonHovered {
-  border-color: rgb(var(--bg-stroke-gray));
-  background-color: rgb(var(--bg-gray));
+  background-color: rgb(var(--bg-blue-hover), .5);
 }
