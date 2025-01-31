@@ -1,4 +1,4 @@
-import {ChangeEvent, forwardRef, useCallback, useMemo, useState} from "react";
+import {ChangeEvent, forwardRef, ReactNode, useCallback, useMemo, useState} from "react";
 import {Field, InputProperties} from "@/shared/ui/field";
 import {CrossedOutEye, Eye} from "@/shared/assets";
 import styles from './Input.module.scss';
@@ -7,6 +7,7 @@ import IMask from "imask";
 export interface InputProps extends InputProperties {
     className?: string,
     value: string | number,
+    afterInput?: ReactNode,
     maxLength?: number,
     autoScroll?: boolean
     postfix?: string,
@@ -20,6 +21,7 @@ export interface InputProps extends InputProperties {
 export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     const {
         value,
+        afterInput,
         maxLength = 400,
         disabled,
         placeholder,
@@ -100,6 +102,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
                 && <Eye className={styles.showPassword} onClick={handleTogglePassword}/>}
             {(props.type === 'password' && type === 'password')
                 && <CrossedOutEye className={styles.showPassword} onClick={handleTogglePassword}/>}
+            {afterInput}
         </Field>
     )
 });

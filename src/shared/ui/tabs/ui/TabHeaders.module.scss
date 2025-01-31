@@ -1,0 +1,17 @@
+.tabLabels {
+  display: flex;
+  align-items: center;
+  height: 47px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  background-color: rgb(var(--bg-gray));
+}
+
+.emptySpaceTab {
+  height: 100%;
+  width: 100%;
+  border-bottom: 1px solid rgb(var(--bg-stroke-gray));
+}

@@ -6,7 +6,7 @@ import {EmptyButton} from "@/shared/ui/button";
 import {useCallback, useEffect, useState} from "react";
 import {ButtonEntity} from "@/shared/types/entities";
 import {RotateLeftStreamLine} from "@/shared/assets";
-import {TableContainer} from "@/layout";
+import {TableContainer} from "@/shared/layout";
 
 export const ButtonsWidgetTable = () => {
     const [buttons, setButtons] = useState<ButtonEntity[]>([]);

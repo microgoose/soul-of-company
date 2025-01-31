@@ -6,7 +6,7 @@ import {useDiadocApiFieldsController, useMailingTimeController} from "@/entities
 import {useEffect, useMemo} from "react";
 import {MailingTimeForm} from "@/features/update-mailing-time-config";
 import {EditWeatherNotification} from "@/widgets/edit-weather-notification-widget";
-import {HeaderDividerPage} from "@/layout";
+import {HeaderDividerPage} from "@/shared/layout";
 
 export const MailingPage = () => {
     useDocumentTitle(t('pages.mailing.title'));

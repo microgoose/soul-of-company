@@ -1,7 +1,7 @@
 import {t} from "i18next";
 import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
 import {ButtonsWidgetTable} from "@/widgets/edit-buttons-widget";
-import {HeaderDividerPage} from "@/layout";
+import {HeaderDividerPage} from "@/shared/layout";
 import styles from './ButtonsPage.module.scss';
 
 export const ButtonsPage = () => {

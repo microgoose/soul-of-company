@@ -27,7 +27,7 @@ export const routesConfig = {
         path: '/settings/mailing',
     },
     settingsOpenAIPage: {
-        path: '/settings/open-ai',
+        path: '/settings/ai',
     },
     notFoundPage: {
         path: '*',

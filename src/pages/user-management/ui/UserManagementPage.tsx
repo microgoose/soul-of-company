@@ -2,7 +2,7 @@ import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
 import {t} from "i18next";
 import {UsersTable, useUsersController} from "@/entities/user";
 import {useCallback, useEffect} from "react";
-import {ActionsCell, ControlPanel, HeaderPage, TableContainer} from "@/layout";
+import {ActionsCell, ControlPanel, HeaderPage, TableContainer} from "@/shared/layout";
 import {UpdateEntity} from "@/features/update-entity/UpdateEntity.tsx";
 import {CreateEntity} from "@/features/create-entity/CreateEntity.tsx";
 import {BlockUserButton} from "@/features/block-user/BlockUserButton.tsx";

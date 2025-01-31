@@ -19,6 +19,11 @@
     height: 24px;
   }
 
+  &.typeClear {
+    border-color: transparent;
+    background-color: transparent;
+  }
+
   &.typeFilled {
     border-color: rgb(var(--mc-accent));
     background-color: rgb(var(--mc-accent));

@@ -1,1 +1,0 @@
-export {CopyText} from './CopyText.tsx';

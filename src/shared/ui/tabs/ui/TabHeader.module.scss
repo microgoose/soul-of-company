@@ -1,0 +1,16 @@
+.tabLabel {
+  padding: 15px 32px 14px 32px;
+  min-width: 142px;
+  max-width: 247px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-right: 1px solid rgb(var(--bg-stroke-gray));
+  border-bottom: 1px solid rgb(var(--bg-stroke-gray));
+  font: var(--font-h4-bold);
+
+  &.isActiveTab {
+    background-color: rgb(var(--mc-white));
+    border-bottom-color: transparent;
+  }
+}

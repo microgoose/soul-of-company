@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "type": {
+      "id": 1,
+      "code": "openai-gpt4"
+    },
+    "label": "GPT-40",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "type": {
+      "id": 1,
+      "code": "openai-gpt4"
+    },
+    "label": "Это тоже GPT-4O с очень длинным названием которое повторяет само себя очень длинно",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "type": {
+      "id": 2,
+      "code": "google-gemini"
+    },
+    "label": "Google Gemini",
+    "isActive": false
+  },
+  {
+    "id": 4,
+    "type": {
+      "id": 3,
+      "code": "anthropic-claude"
+    },
+    "label": "Anthropic Claude",
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "type": {
+      "id": 4,
+      "code": "mistral-7b"
+    },
+    "label": "Mistral 7B",
+    "isActive": false
+  },
+  {
+    "id": 6,
+    "type": {
+      "id": 4,
+      "code": "cohere-command-r"
+    },
+    "label": "Cohere Command R",
+    "isActive": true
+  }
+]

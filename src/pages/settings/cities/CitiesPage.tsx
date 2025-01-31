@@ -1,6 +1,6 @@
 import {t} from "i18next";
 import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
-import {ActionsCell, HeaderPage, TableContainer} from "@/layout";
+import {ActionsCell, HeaderPage, TableContainer} from "@/shared/layout";
 import {CitiesTable, useCitiesController} from "@/entities/city";
 import {useCallback} from "react";
 import {City} from "@/shared/types/entities";

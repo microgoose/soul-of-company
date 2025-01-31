@@ -31,7 +31,9 @@ export const useButtonStateClasses: UseButtonStateClassesHook = (props) => {
     if (radius == ButtonRadius.MIDDLE)
         classes.push(styles.radiusMiddle);
 
-    if (type == ButtonType.EMPTY)
+    if (type == ButtonType.CLEAR)
+        classes.push(styles.typeClear);
+    else if (type == ButtonType.EMPTY)
         classes.push(styles.typeEmpty);
     else if (type == ButtonType.FILLED)
         classes.push(styles.typeFilled);

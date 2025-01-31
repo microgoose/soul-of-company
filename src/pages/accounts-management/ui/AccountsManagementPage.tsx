@@ -3,7 +3,7 @@ import {t} from "i18next";
 import {AccountsTable, useAccountController} from "@/entities/account";
 import {useCallback, useEffect} from "react";
 import {Account} from "@/shared/types/entities";
-import {ActionsCell, MonoPage, TableContainer} from "@/layout";
+import {ActionsCell, MonoPage, TableContainer} from "@/shared/layout";
 import {RemoveEntity} from "@/features/remove-entity";
 import {DownloadFilesButton} from "@/features/download-file";
 

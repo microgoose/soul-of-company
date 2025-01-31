@@ -66,7 +66,10 @@
     "chain": { "title": "Цепочка" },
     "cities": { "title": "Города" },
     "mailing": { "title": "Рассылка" },
-    "openAI": { "title": "Open AI" }
+    "AISettings": {
+      "title": "Нейросети",
+      "fullTitle": "Исскуственный интелект"
+    }
   },
 
   "chain": {
@@ -270,14 +273,17 @@
       "city": "Город"
     }
   },
-  "openAiConfig": {
+  "AIConfig": {
+    "errors": {
+      "aiApiNotFound": "AI API конфигуарция не найдена"
+    },
     "label": {
-      "apiKey": "API ключ",
+      "apiKey": "API",
       "model": "Модель",
       "tokens": "Токены"
     }
   },
-  "openAiHistory": {
+  "AIHistory": {
     "actions": {
       "openResponse": "Раскрыть весь ответ",
       "closeResponse": "Скрыть ответ"
@@ -303,6 +309,12 @@
     "createTemperatureMessage": "Создать сообщение",
     "editTemperatureMessage": "Изменить сообщение"
   },
+  "tabs": {
+    "selectTab": "Выберите вкладку",
+    "tabsIsEmpty": "Отсутствутют вкладки",
+    "tabsContextNotInitialized": "Контекст вкладок не инициализирован",
+    "unableToActivateTab": "Не удалось переключить вкладку"
+  },
   "validation": {
       "fieldMustBeFilled": "Поле должно быть заполнено"
   },
@@ -322,6 +334,12 @@
     },
     "chain": {
       "findRoleEntityError": "Не удалось найти сущности роли"
+    },
+    "AiApi": {
+      "activeAiApiNotFound": "Не найден активный AI API"
+    },
+    "AIConfig": {
+      "aiApiNotFound": "AI API конфигуарция не найдена"
     }
   }
 }

@@ -69,7 +69,7 @@ export const SidebarSettingsSubmenu = ({isCollapsed, onOpen}: SidebarSettingsSub
             </SubmenuItem>
             <SubmenuItem>
                 <NavLink to={routesConfig.settingsOpenAIPage.path}>
-                    {({isActive}) => navButton(isActive, t('pages.openAI.title'))}
+                    {({isActive}) => navButton(isActive, t('pages.AISettings.title'))}
                 </NavLink>
             </SubmenuItem>
         </Submenu>

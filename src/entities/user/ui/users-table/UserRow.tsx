@@ -1,5 +1,5 @@
 import {SimpleList} from "@/shared/ui/list";
-import {CopyText} from "@/shared/ui/copy-text";
+import {CopyText} from "@/shared/components/copy-text";
 import {UserTelegramIdActivity} from "../user-telegram-id-activity/UserTelegramIdActivity.tsx";
 import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";
 import {TableRow} from "@/shared/ui/table";

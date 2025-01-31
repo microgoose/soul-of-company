@@ -1,0 +1,38 @@
+[
+  {
+    "aiApi": { "id": 1 },
+    "apiKey": "4y2o34434u234r234-34api-mega-vega-giga-long-super-api-deluxe-ultimate-key-1",
+    "model": "openai-gpt4",
+    "tokens": 5000
+  },
+  {
+    "aiApi": { "id": 2 },
+    "apiKey": "your-api-key-2",
+    "model": "openai-gpt4",
+    "tokens": 5000
+  },
+  {
+    "aiApi": { "id": 3 },
+    "apiKey": "your-api-key-3",
+    "model": "google-gemini",
+    "tokens": 5000
+  },
+  {
+    "aiApi": { "id": 4 },
+    "apiKey": "your-api-key-4",
+    "model": "anthropic-claude",
+    "tokens": 5000
+  },
+  {
+    "aiApi": { "id": 5 },
+    "apiKey": "your-api-key-5",
+    "model": "mistral-7b",
+    "tokens": 5000
+  },
+  {
+    "aiApi": { "id": 6 },
+    "apiKey": "your-api-key-6",
+    "model": "cohere-command-r",
+    "tokens": 5000
+  }
+]

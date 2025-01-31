@@ -4,7 +4,7 @@ import {NotFoundPage} from "@/pages/errors";
 import {AccountsManagementPage} from "@/pages/accounts-management";
 import {RemindersManagementPage} from "@/pages/reminders-management";
 import {RolesManagementPage} from "@/pages/roles-management";
-import {ButtonsPage, ChainPage, CitiesPage, MailingPage, OpenAIPage} from "@/pages/settings";
+import {ButtonsPage, ChainPage, CitiesPage, MailingPage, AISettings} from "@/pages/settings";
 import {MainSidebarWidget} from "@/widgets/main-sidebar-widget";
 import {SidebarLayout} from "@/shared/ui/page";
 
@@ -50,8 +50,8 @@ export const router = createBrowserRouter([{
             element: <MailingPage/>,
         },
         {
-            path: '/settings/open-ai',
-            element: <OpenAIPage/>,
+            path: '/settings/ai',
+            element: <AISettings/>,
         },
         {
             path: '*',

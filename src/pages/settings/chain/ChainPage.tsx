@@ -4,7 +4,7 @@ import {DividerTitle} from "@/shared/ui/divider-title";
 import styles from "./ChainPage.module.scss";
 import {ChainSettingsSwitcher, useChainSettingsController} from "@/widgets/chain-settings-widget";
 import {ChangePageMode} from "@/features/change-page-mode";
-import {HeaderPage} from "@/layout";
+import {HeaderPage} from "@/shared/layout";
 
 export const ChainPage = () => {
     useDocumentTitle(t('pages.chain.title'));
