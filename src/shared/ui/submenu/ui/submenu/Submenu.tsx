@@ -1,6 +1,6 @@
+import classNames from "classnames";
 import {ReactElement, ReactNode} from "react";
 import styles from './Submenu.module.scss';
-import classNames from "classnames";
 
 interface SubmenuProps {
     isOpened: boolean,

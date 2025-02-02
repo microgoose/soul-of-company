@@ -1,8 +1,8 @@
 import {Reminder, SendingStatusCode} from "@/shared/types/entities";
-import {useMemo} from "react";
 import {StatusTag, TagStatus} from "@/shared/ui/status-tag";
-import {t} from "i18next";
 import {formatDateTime} from "@/shared/utils/time-utils.ts";
+import {t} from "i18next";
+import {useMemo} from "react";
 
 interface ReminderSendingStatusProps {
     reminder: Reminder,

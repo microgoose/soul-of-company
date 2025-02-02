@@ -1,11 +1,11 @@
-import {SimpleList} from "@/shared/ui/list";
 import {CopyText} from "@/shared/components/copy-text";
-import {UserTelegramIdActivity} from "../user-telegram-id-activity/UserTelegramIdActivity.tsx";
-import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";
-import {TableRow} from "@/shared/ui/table";
-import {ReactNode, useMemo} from "react";
-import {formatDate} from "@/shared/utils/date-utils.ts";
 import {User} from "@/shared/types/entities";
+import {SimpleList} from "@/shared/ui/list";
+import {TableRow} from "@/shared/ui/table";
+import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";
+import {formatDate} from "@/shared/utils/date-utils.ts";
+import {ReactNode, useMemo} from "react";
+import {UserTelegramIdActivity} from "../user-telegram-id-activity/UserTelegramIdActivity.tsx";
 import style from './UsersTable.module.scss';
 
 interface UserRowProps {

@@ -1,9 +1,9 @@
-import {ReactNode, useEffect, useRef, useState} from "react";
+import {ArrowDiagonalTopLeft} from "@/shared/assets";
 import {useToggle} from "@/shared/hooks/use-toggle.ts";
 import {EmptyButton} from "@/shared/ui/button";
-import styles from './TextOpener.module.scss';
-import {ArrowDiagonalTopLeft} from "@/shared/assets";
 import {subscribe, unsubscribe} from "@/shared/utils/resize-observer-event-bus.ts";
+import {ReactNode, useEffect, useRef, useState} from "react";
+import styles from './TextOpener.module.scss';
 
 interface TextOpenerProps {
     maxHeight: number,

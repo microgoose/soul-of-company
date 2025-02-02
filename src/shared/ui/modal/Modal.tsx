@@ -1,9 +1,9 @@
+import {ANIMATION_DURATION_FAST} from "@/shared/config/animation-config.ts";
+import {useDeferredUnmount} from "@/shared/hooks/use-deferred-unmount.ts";
+import classNames from "classnames";
 import {ReactNode, useCallback, useMemo} from "react";
 import ReactDOM from "react-dom";
 import styles from './Modal.module.scss';
-import classNames from "classnames";
-import {useDeferredUnmount} from "@/shared/hooks/use-deferred-unmount.ts";
-import {ANIMATION_DURATION_FAST} from "@/shared/config/animation-config.ts";
 
 interface ModalProps {
     className?: string,

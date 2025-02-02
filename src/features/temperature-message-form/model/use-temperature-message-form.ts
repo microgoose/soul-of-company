@@ -1,8 +1,8 @@
-import {useForm, UseFormReturn} from "react-hook-form";
 import {TemperatureMessage} from "@/shared/types/entities";
 import {yupResolver} from "@hookform/resolvers/yup";
-import {getTemperatureMessagesValidationScheme} from "./get-temperature-messages-validation-scheme.ts";
 import {useEffect} from "react";
+import {useForm, UseFormReturn} from "react-hook-form";
+import {getTemperatureMessagesValidationScheme} from "./get-temperature-messages-validation-scheme.ts";
 
 export interface TemperatureMessageFieldsType {
     minTemperature: number,

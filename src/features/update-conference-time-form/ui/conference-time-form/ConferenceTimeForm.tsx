@@ -1,6 +1,6 @@
 import {ConferenceTimeFields} from "@/entities/mailing";
-import {FormProvider} from "react-hook-form";
 import {UseUpdateConferenceTimeForm} from "@/features/update-conference-time-form";
+import {FormProvider} from "react-hook-form";
 
 type Props = {
     form: UseUpdateConferenceTimeForm

@@ -1,5 +1,5 @@
-import {forwardRef, ReactNode, useImperativeHandle, useRef} from "react";
 import {useOutsideClick} from "@/shared/hooks/use-outside-click.ts";
+import {forwardRef, ReactNode, useImperativeHandle, useRef} from "react";
 
 interface OuterClickProps {
     className?: string,

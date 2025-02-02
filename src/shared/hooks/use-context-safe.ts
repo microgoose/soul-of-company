@@ -1,5 +1,5 @@
-import {Context, useContext} from "react";
 import {t} from "i18next";
+import {Context, useContext} from "react";
 
 export const useContextSafe = <T> (context: Context<T>) => {
     const value = useContext(context);

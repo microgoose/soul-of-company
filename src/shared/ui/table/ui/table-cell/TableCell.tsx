@@ -1,6 +1,6 @@
+import classNames from "classnames";
 import {ReactNode, useMemo} from "react";
 import styles from './TableCell.module.scss';
-import classNames from "classnames";
 
 interface TableCellProps {
     children: ReactNode,

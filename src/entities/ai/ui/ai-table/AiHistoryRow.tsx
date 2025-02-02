@@ -1,15 +1,15 @@
 import {AIHistory} from "@/shared/types/entities";
 import {TableCell, TableRow} from "@/shared/ui/table";
-import styles from './OpenAiHistory.module.scss';
+import {TextOpener} from "@/shared/ui/text/text-opener/TextOpener.tsx";
 import {formatDateTime} from "@/shared/utils/time-utils.ts";
 import {t} from "i18next";
-import {TextOpener} from "@/shared/ui/text/text-opener/TextOpener.tsx";
+import styles from './AiHistory.module.scss';
 
 interface UserRowProps {
     openAiHistory: AIHistory
 }
 
-export const OpenAiHistoryRow = ({openAiHistory}: UserRowProps) => {
+export const AiHistoryRow = ({openAiHistory}: UserRowProps) => {
     return (
         <TableRow className={styles.openAiHistoryRow}>
             <TableCell>

@@ -1,5 +1,5 @@
-import {forwardRef, ReactNode} from "react";
 import classNames from "classnames";
+import {forwardRef, ReactNode} from "react";
 import styles from './ScrollbarContainer.module.scss';
 
 interface ScrollbarContainerProps {

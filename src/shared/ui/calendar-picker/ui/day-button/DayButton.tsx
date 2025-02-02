@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
-import styles from './DayButton.module.scss';
 import {useCallback} from "react";
+import styles from './DayButton.module.scss';
 
 interface DayButtonProps {
     month: Date

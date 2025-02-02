@@ -1,7 +1,7 @@
-import {useCallback, useMemo} from "react";
-import dayjs from "dayjs";
 import {OptionsType} from "@/shared/ui/select";
+import dayjs from "dayjs";
 import {t} from "i18next";
+import {useCallback, useMemo} from "react";
 
 interface UseYearMonthProps {
     month: Date,

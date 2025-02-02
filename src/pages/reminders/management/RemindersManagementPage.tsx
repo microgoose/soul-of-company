@@ -1,10 +1,10 @@
-import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
-import {t} from "i18next";
 import {ReminderTable, useRemindersController} from "@/entities/reminder";
-import {useCallback, useEffect} from "react";
-import {Reminder} from "@/shared/types/entities";
-import {ActionsCell, MonoPage, TableContainer} from "@/shared/layout";
 import {RemoveEntity} from "@/features/remove-entity";
+import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
+import {ActionsCell, MonoPage, TableContainer} from "@/shared/layout";
+import {Reminder} from "@/shared/types/entities";
+import {t} from "i18next";
+import {useCallback, useEffect} from "react";
 
 
 export const RemindersManagementPage = () => {

@@ -1,12 +1,12 @@
-import {t} from "i18next";
-import {Submenu, SubmenuItem} from "@/shared/ui/submenu";
-import {ButtonState, EmptyButton} from "@/shared/ui/button";
-import styles from './SidebarSettingsSubmenu.module.scss';
-import {NavLink, useMatch} from "react-router-dom";
 import {GearWheelIcon} from "@/shared/assets";
-import {SidebarItem} from "@/widgets/main-sidebar-widget/ui/sidebar-item/SidebarItem.tsx";
-import {useCallback, useMemo, useState} from "react";
 import {routesConfig} from "@/shared/config/routes-config.ts";
+import {ButtonState, EmptyButton} from "@/shared/ui/button";
+import {Submenu, SubmenuItem} from "@/shared/ui/submenu";
+import {SidebarItem} from "@/widgets/main-sidebar-widget/ui/sidebar-item/SidebarItem.tsx";
+import {t} from "i18next";
+import {useCallback, useMemo, useState} from "react";
+import {NavLink, useMatch} from "react-router-dom";
+import styles from './SidebarSettingsSubmenu.module.scss';
 
 interface SidebarSettingsSubmenuProps {
     isCollapsed: boolean,

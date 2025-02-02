@@ -1,6 +1,6 @@
-import styles from './UserTelegramIdActivity.module.scss';
-import {ReactNode} from "react";
 import classNames from "classnames";
+import {ReactNode} from "react";
+import styles from './UserTelegramIdActivity.module.scss';
 
 interface UserTelegramIdActivityProps {
     children: ReactNode,

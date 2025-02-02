@@ -1,7 +1,7 @@
-import {ChangeEvent, useCallback, useState} from "react";
 import {FieldClassState, FieldError, FieldLabel, InputProperties, useFieldState} from "@/shared/ui/field";
-import styles from './TextArea.module.scss';
 import {TextAreaInput} from "@/shared/ui/textarea/TextAreaInput.tsx";
+import {ChangeEvent, useCallback, useState} from "react";
+import styles from './TextArea.module.scss';
 
 export interface TextAreaProps extends InputProperties {
     className?: string,

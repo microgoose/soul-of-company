@@ -1,7 +1,7 @@
-import {t} from "i18next";
 import {Note} from "@/shared/ui/note";
-import styles from './SequenceNote.module.scss';
+import {t} from "i18next";
 import {ReactNode} from "react";
+import styles from './SequenceNote.module.scss';
 
 interface SequenceProps {
     children: ReactNode,

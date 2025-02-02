@@ -1,10 +1,10 @@
-import {Controller, useForm} from "react-hook-form";
-import {t} from "i18next";
-import styles from './CityForm.module.scss';
 import {ButtonState, PrimaryButton} from "@/shared/ui/button";
-import {yupResolver} from "@hookform/resolvers/yup";
 import {Input} from "@/shared/ui/input";
+import {yupResolver} from "@hookform/resolvers/yup";
+import {t} from "i18next";
+import {Controller, useForm} from "react-hook-form";
 import * as yup from "yup";
+import styles from './CityForm.module.scss';
 
 export interface CityFields {
     name: string

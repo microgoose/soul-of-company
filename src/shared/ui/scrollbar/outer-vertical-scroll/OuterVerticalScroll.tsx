@@ -1,7 +1,7 @@
-import styles from './OuterVerticalScroll.module.scss';
-import {ReactNode} from "react";
-import classNames from "classnames";
 import {NeedScroll} from "@/shared/ui/scrollbar/need-scroll/NeedScroll.tsx";
+import classNames from "classnames";
+import {ReactNode} from "react";
+import styles from './OuterVerticalScroll.module.scss';
 
 interface OuterScrollProps {
     className?: string,

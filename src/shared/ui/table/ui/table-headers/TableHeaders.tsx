@@ -1,7 +1,7 @@
+import {TableHeaderType} from "@/shared/ui/table/model/table/table.types.ts";
+import {useTableContext} from "@/shared/ui/table/model/table/use-table.ts";
 import {ReactNode} from "react";
 import styles from './TableHeaders.module.scss';
-import {useTableContext} from "@/shared/ui/table/model/table/use-table.ts";
-import {TableHeaderType} from "@/shared/ui/table/model/table/table.types.ts";
 
 interface TableHeadersProps {
     children: (header: TableHeaderType, index: number, headers: TableHeaderType[]) => ReactNode

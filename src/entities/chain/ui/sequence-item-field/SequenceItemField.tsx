@@ -1,9 +1,9 @@
-import styles from './SequenceItemField.module.scss';
+import {FieldClassState, FieldError, useFieldState} from "@/shared/ui/field";
 import {Input} from "@/shared/ui/input";
 import {OptionsType, TinySelect} from "@/shared/ui/select";
-import {FieldClassState, FieldError, useFieldState} from "@/shared/ui/field";
-import {useCallback, useMemo} from "react";
 import classNames from "classnames";
+import {useCallback, useMemo} from "react";
+import styles from './SequenceItemField.module.scss';
 
 export interface SequenceItemValue {
     role: number,

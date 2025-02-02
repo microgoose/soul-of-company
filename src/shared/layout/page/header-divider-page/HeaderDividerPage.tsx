@@ -1,8 +1,8 @@
-import {DividerTitle} from "@/shared/ui/divider-title";
-import styles from "./HeaderDividerPage.module.scss";
 import {HeaderPage} from "@/shared/layout";
-import {ReactNode} from "react";
+import {DividerTitle} from "@/shared/ui/divider-title";
 import classNames from "classnames";
+import {ReactNode} from "react";
+import styles from "./HeaderDividerPage.module.scss";
 
 interface Props {
     title: string,

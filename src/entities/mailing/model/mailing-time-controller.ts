@@ -1,6 +1,6 @@
+import {getMailingTimeConfig} from "@/entities/mailing";
 import {MailingTimeConfig} from "@/shared/types/entities";
 import {useState} from "react";
-import {getMailingTimeConfig} from "@/entities/mailing";
 
 export interface UseMailingTimeController {
     mailingTime: MailingTimeConfig | null,

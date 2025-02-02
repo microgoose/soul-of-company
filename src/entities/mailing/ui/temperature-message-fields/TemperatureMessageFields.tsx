@@ -1,7 +1,7 @@
+import {TemperatureMessage} from "@/shared/types/entities";
 import {Input} from "@/shared/ui/input";
 import {t} from "i18next";
 import {Controller, useFormContext} from "react-hook-form";
-import {TemperatureMessage} from "@/shared/types/entities";
 
 export const TemperatureMessageFields = () => {
     const { control, formState: { errors } } = useFormContext<TemperatureMessage>();

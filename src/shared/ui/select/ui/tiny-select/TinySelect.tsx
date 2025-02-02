@@ -1,16 +1,16 @@
-import {useMemo, useState} from "react";
-import styles from "./TinySelect.module.scss";
-import {FieldClassState, FieldError, FieldLabel, InputProperties} from "@/shared/ui/field";
 import {ChevronDown} from "@/shared/assets";
+import {useAutoScroll} from "@/shared/hooks/use-auto-scroll.ts";
+import {FieldClassState, FieldError, FieldLabel, InputProperties} from "@/shared/ui/field";
+import {OuterClick} from "@/shared/ui/outer-click";
+import {Popover, PositionState} from "@/shared/ui/popover";
 import {OptionsType, SelectValue} from "@/shared/ui/select";
-import {useSelectFieldState} from "../../model/use-select-field-state.ts";
+import classNames from "classnames";
+import {useMemo, useState} from "react";
 import {useSelectController} from "../../model/use-select-controller.ts";
+import {useSelectFieldState} from "../../model/use-select-field-state.ts";
 import {CheckboxOptions} from "./checkbox-option/CheckboxOptions.tsx";
 import {RadioOptions} from "./radio-option/RadioOptions.tsx";
-import {OuterClick} from "@/shared/ui/outer-click";
-import {useAutoScroll} from "@/shared/hooks/use-auto-scroll.ts";
-import classNames from "classnames";
-import {Popover, PositionState} from "@/shared/ui/popover";
+import styles from "./TinySelect.module.scss";
 
 interface TinySelectProps<T extends SelectValue> extends InputProperties {
     className?: string,

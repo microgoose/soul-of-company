@@ -1,9 +1,9 @@
-import {Table, TableBody, TableHeaders, useTable, useTableSorting,} from "@/shared/ui/table";
-import {RoleAuthorityRow} from "./RoleAuthorityRow.tsx";
-import {ReactNode} from "react";
 import {RoleAuthorities} from "@/shared/types/entities";
-import {RoleAuthorityHeader} from "./RoleAuthorityHeader.tsx";
+import {Table, TableBody, TableHeaders, useTable, useTableSorting,} from "@/shared/ui/table";
+import {ReactNode} from "react";
 import {roleAuthorityHeadersList} from "./model/role-authority-headers.ts";
+import {RoleAuthorityHeader} from "./RoleAuthorityHeader.tsx";
+import {RoleAuthorityRow} from "./RoleAuthorityRow.tsx";
 
 interface UsersTableProps {
     roleAuthorities: RoleAuthorities[],

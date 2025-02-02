@@ -1,6 +1,6 @@
-import {useState} from "react";
 import {getOtherTexts} from "@/entities/chain/api/other-texts-api.ts";
 import {OtherTexts} from "@/shared/types/entities";
+import {useState} from "react";
 
 export interface UseOtherTextsController {
     otherTexts: OtherTexts;

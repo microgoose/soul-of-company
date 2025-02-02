@@ -1,7 +1,7 @@
-import {Controller, useFormContext} from "react-hook-form";
 import {Input} from "@/shared/ui/input";
-import {t} from "i18next";
 import {OptionsType, TinySelect} from "@/shared/ui/select";
+import {t} from "i18next";
+import {Controller, useFormContext} from "react-hook-form";
 
 type Props = {
     timeZoneOptions: OptionsType<number>,

@@ -1,8 +1,8 @@
-import {ChangeEvent, forwardRef, ReactNode, useCallback, useMemo, useState} from "react";
-import {Field, InputProperties} from "@/shared/ui/field";
 import {CrossedOutEye, Eye} from "@/shared/assets";
-import styles from './Input.module.scss';
+import {Field, InputProperties} from "@/shared/ui/field";
 import IMask from "imask";
+import {ChangeEvent, forwardRef, ReactNode, useCallback, useMemo, useState} from "react";
+import styles from './Input.module.scss';
 
 export interface InputProps extends InputProperties {
     className?: string,

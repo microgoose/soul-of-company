@@ -1,5 +1,5 @@
-import {getAllRoles} from "@/entities/role/api/role-api.ts";
 import {getAllCities} from "@/entities/city/api/city-api.ts";
+import {getAllRoles} from "@/entities/role/api/role-api.ts";
 import {OptionsType} from "@/shared/ui/select";
 import {useEffect, useState} from "react";
 

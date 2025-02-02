@@ -1,12 +1,12 @@
-import {t} from "i18next";
-import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
-import styles from './MailingPage.module.scss';
-import {UpdateDiadocApiConfigForm} from "@/features/update-diadoc-api-config";
 import {useDiadocApiFieldsController, useMailingTimeController} from "@/entities/mailing";
-import {useEffect, useMemo} from "react";
+import {UpdateDiadocApiConfigForm} from "@/features/update-diadoc-api-config";
 import {MailingTimeForm} from "@/features/update-mailing-time-config";
-import {EditWeatherNotification} from "@/widgets/edit-weather-notification-widget";
+import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
 import {HeaderDividerPage} from "@/shared/layout";
+import {EditWeatherNotification} from "@/widgets/edit-weather-notification-widget";
+import {t} from "i18next";
+import {useEffect, useMemo} from "react";
+import styles from './MailingPage.module.scss';
 
 export const MailingPage = () => {
     useDocumentTitle(t('pages.mailing.title'));

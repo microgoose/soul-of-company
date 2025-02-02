@@ -1,11 +1,11 @@
-import {FormProvider} from "react-hook-form";
-import {TemperatureMessage} from "@/shared/types/entities";
 import {TemperatureMessageFields} from "@/entities/mailing/ui/temperature-message-fields/TemperatureMessageFields.tsx";
+import {TemperatureMessageFieldsType, useTemperatureMessageForm} from "@/features/temperature-message-form";
+import {TemperatureMessage} from "@/shared/types/entities";
+import {ButtonState, PrimaryButton} from "@/shared/ui/button";
 import {DoneStage, ModalForm, StageForm} from "@/shared/ui/form";
 import {t} from "i18next";
 import {useCallback, useEffect, useState} from "react";
-import {TemperatureMessageFieldsType, useTemperatureMessageForm} from "@/features/temperature-message-form";
-import {ButtonState, PrimaryButton} from "@/shared/ui/button";
+import {FormProvider} from "react-hook-form";
 import styles from "./TemperatureMessagesForm.module.scss";
 
 type Props = {

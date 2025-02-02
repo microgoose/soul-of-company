@@ -1,6 +1,5 @@
-import {ChangeEvent, forwardRef, useCallback, useMemo, useState} from "react";
-import styles from './DateInput.module.scss';
 import {ChevronDown} from "@/shared/assets";
+import {useAutoScroll} from "@/shared/hooks/use-auto-scroll.ts";
 import {useToggle} from "@/shared/hooks/use-toggle.ts";
 import {
     FieldClassState,
@@ -10,12 +9,13 @@ import {
     InputProperties,
     useFieldState
 } from "@/shared/ui/field";
-import {DatePicker} from "../date-picker/DatePicker.tsx";
-import {formatDate, isDateValid, toDate} from "@/shared/utils/date-utils.ts";
 import {OuterClick} from "@/shared/ui/outer-click";
-import {useAutoScroll} from "@/shared/hooks/use-auto-scroll.ts";
-import classNames from "classnames";
 import {Popover, PositionState} from "@/shared/ui/popover";
+import {formatDate, isDateValid, toDate} from "@/shared/utils/date-utils.ts";
+import classNames from "classnames";
+import {ChangeEvent, forwardRef, useCallback, useMemo, useState} from "react";
+import {DatePicker} from "../date-picker/DatePicker.tsx";
+import styles from './DateInput.module.scss';
 
 interface DatePickerProps extends InputProperties {
     value: string, 

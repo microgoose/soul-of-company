@@ -1,8 +1,8 @@
-import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";
-import {TableRow} from "@/shared/ui/table";
-import {ReactNode, useMemo} from "react";
 import {RoleAuthorities} from "@/shared/types/entities";
 import {SimpleList} from "@/shared/ui/list";
+import {TableRow} from "@/shared/ui/table";
+import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";
+import {ReactNode, useMemo} from "react";
 
 interface RoleRowProps {
     roleAuthorities: RoleAuthorities

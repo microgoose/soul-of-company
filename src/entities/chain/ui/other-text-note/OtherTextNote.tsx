@@ -1,7 +1,7 @@
-import {Note} from "@/shared/ui/note";
-import {t} from "i18next";
 import {OtherText} from "@/entities/chain";
 import {OtherTexts} from "@/shared/types/entities";
+import {Note} from "@/shared/ui/note";
+import {t} from "i18next";
 import styles from './OtherTextNote.module.scss';
 
 interface OtherTextProps {

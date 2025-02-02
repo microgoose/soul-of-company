@@ -1,7 +1,7 @@
-import * as yup from 'yup';
-import {t} from "i18next";
 import {isDateValid, toDate} from "@/shared/utils/date-utils.ts";
 import dayjs from "dayjs";
+import {t} from "i18next";
+import * as yup from 'yup';
 
 export const getRolesValidator = () => yup
     .array()

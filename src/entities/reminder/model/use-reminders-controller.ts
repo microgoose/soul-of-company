@@ -1,6 +1,6 @@
-import {useState} from "react";
-import {Reminder} from "@/shared/types/entities";
 import {getAllReminders} from "@/entities/reminder/api/reminder-api.ts";
+import {Reminder} from "@/shared/types/entities";
+import {useState} from "react";
 
 export interface UseRemindersController {
     reminders: Reminder[];

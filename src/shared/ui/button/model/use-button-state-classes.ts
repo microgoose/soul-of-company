@@ -1,6 +1,6 @@
-import {useCallback, useState} from "react";
 import {ButtonSize, ButtonState, ButtonType} from "@/shared/ui/button";
 import {ButtonRadius} from "@/shared/ui/button/model/button-radius.ts";
+import {useCallback, useState} from "react";
 
 interface ButtonStateClassesReturnType {
     classes: string[],

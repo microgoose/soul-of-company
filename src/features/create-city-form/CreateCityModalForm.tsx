@@ -1,8 +1,8 @@
-import {City} from "@/shared/types/entities";
-import {useCallback, useEffect, useState} from "react";
 import {CityFields, CityForm} from "@/entities/city/ui/city-form/CityForm.tsx";
+import {City} from "@/shared/types/entities";
 import {DoneStage, ModalForm, StageForm} from "@/shared/ui/form";
 import {t} from "i18next";
+import {useCallback, useEffect, useState} from "react";
 
 interface CreateCityModalFormProps {
     isOpen: boolean,

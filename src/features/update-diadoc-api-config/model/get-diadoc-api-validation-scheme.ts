@@ -1,5 +1,5 @@
-import * as yup from 'yup';
 import {t} from "i18next";
+import * as yup from 'yup';
 
 export const getDiadocApiValidationScheme = () => yup.object().shape({
     login: yup

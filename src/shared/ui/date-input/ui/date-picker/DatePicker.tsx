@@ -1,8 +1,8 @@
-import styles from './DatePicker.module.scss';
-import {t} from "i18next";
-import {DayCalendarPicker} from "@/shared/ui/calendar-picker";
 import {PrimaryButton, SecondaryButton} from "@/shared/ui/button";
 import {ButtonRadius} from "@/shared/ui/button/model/button-radius.ts";
+import {DayCalendarPicker} from "@/shared/ui/calendar-picker";
+import {t} from "i18next";
+import styles from './DatePicker.module.scss';
 
 interface DatePickerProps {
     value: Date | null,

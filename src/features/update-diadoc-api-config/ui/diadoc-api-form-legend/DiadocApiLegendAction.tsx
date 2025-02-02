@@ -1,6 +1,6 @@
+import {RotateLeftStreamLine} from "@/shared/assets";
 import {SecondaryButton} from "@/shared/ui/button";
 import {t} from "i18next";
-import {RotateLeftStreamLine} from "@/shared/assets";
 import styles from './DiadocApiLegendAction.module.scss';
 
 interface UpdateDiadocApiConfigFormProps {

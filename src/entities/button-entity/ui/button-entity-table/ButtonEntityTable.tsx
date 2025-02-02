@@ -1,7 +1,7 @@
-import {ButtonEntity} from "@/shared/types/entities";
-import {ReactNode} from "react";
-import {Table, TableBody, TableHeaders, useTable, useTableSorting} from "@/shared/ui/table";
 import {buttonEntitiesHeaders} from "@/entities/button-entity/model/button-entities-table-headers.ts";
+import {ButtonEntity} from "@/shared/types/entities";
+import {Table, TableBody, TableHeaders, useTable, useTableSorting} from "@/shared/ui/table";
+import {ReactNode} from "react";
 import {ButtonEntityHeader} from './ButtonEntityHeader.tsx';
 import {ButtonEntityRow} from "./ButtonEntityRow.tsx";
 

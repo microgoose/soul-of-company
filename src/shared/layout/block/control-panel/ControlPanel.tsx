@@ -1,5 +1,5 @@
-import styles from './ControlPanel.module.scss';
 import {ReactNode} from "react";
+import styles from './ControlPanel.module.scss';
 
 interface ControlsSectionProps {
     children: ReactNode

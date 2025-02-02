@@ -1,7 +1,7 @@
-import styles from "./SidebarItem.module.scss";
-import {ReactNode} from "react";
 import {ButtonState, IconButton, SimpleButton} from "@/shared/ui/button";
 import classNames from "classnames";
+import {ReactNode} from "react";
+import styles from "./SidebarItem.module.scss";
 
 interface SidebarItemProps {
     icon: ReactNode,

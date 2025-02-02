@@ -1,9 +1,9 @@
-import {ReactNode} from "react";
+import {City} from "@/shared/types/entities";
 import {Table, TableBody, TableHeaders, useTable, useTableSorting} from "@/shared/ui/table";
-import {citiesHeaders} from "./model/cities-table-headers.ts";
+import {ReactNode} from "react";
 import {CitiesHeader} from './CitiesHeader.tsx';
 import {CityRow} from "./CityRow.tsx";
-import {City} from "@/shared/types/entities";
+import {citiesHeaders} from "./model/cities-table-headers.ts";
 
 interface ButtonEntityTableProps {
     cities: City[],

@@ -1,10 +1,10 @@
-import {Modal} from "@/shared/ui/modal";
-import {ReactNode, useCallback, useEffect, useMemo, useRef} from "react";
 import {CrossIcon} from "@/shared/assets";
-import styles from './ModalForm.module.scss';
-import {ScrollbarContainer} from "@/shared/ui/scrollbar";
 import {useOnScroll} from "@/shared/hooks/use-on-scroll.ts";
+import {Modal} from "@/shared/ui/modal";
+import {ScrollbarContainer} from "@/shared/ui/scrollbar";
 import classNames from "classnames";
+import {ReactNode, useCallback, useEffect, useMemo, useRef} from "react";
+import styles from './ModalForm.module.scss';
 
 interface DefaultFormProps {
     title: ReactNode,

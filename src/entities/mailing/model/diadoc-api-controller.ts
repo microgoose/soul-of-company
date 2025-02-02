@@ -1,6 +1,6 @@
+import {getDiadicApiConfig} from "@/entities/mailing";
 import {DiadocApiConfig} from "@/shared/types/entities";
 import {useState} from "react";
-import {getDiadicApiConfig} from "@/entities/mailing";
 
 export interface UseDiadocApiFieldsController {
     diadocApiConfig: DiadocApiConfig | null

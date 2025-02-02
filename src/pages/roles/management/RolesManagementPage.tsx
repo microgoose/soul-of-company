@@ -1,14 +1,14 @@
-import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
-import {t} from "i18next";
-import {useCallback, useEffect} from "react";
-import {ActionsCell, ControlPanel, HeaderPage, TableContainer} from "@/shared/layout";
 import {RoleAuthorityTable, useRoleAuthoritiesController} from "@/entities/role";
-import {RoleAuthorities} from "@/shared/types/entities";
-import {RemoveEntity} from "@/features/remove-entity/RemoveEntity.tsx";
 import {CreateEntity} from "@/features/create-entity/CreateEntity.tsx";
+import {CreateRoleModalForm} from "@/features/create-role-form";
+import {RemoveEntity} from "@/features/remove-entity/RemoveEntity.tsx";
 import {UpdateEntity} from "@/features/update-entity/UpdateEntity.tsx";
 import {UpdateRoleModalForm} from "@/features/update-role-form";
-import {CreateRoleModalForm} from "@/features/create-role-form";
+import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
+import {ActionsCell, ControlPanel, HeaderPage, TableContainer} from "@/shared/layout";
+import {RoleAuthorities} from "@/shared/types/entities";
+import {t} from "i18next";
+import {useCallback, useEffect} from "react";
 
 export const RolesManagementPage = () => {
     useDocumentTitle(t('pages.rolesManagement.title'));

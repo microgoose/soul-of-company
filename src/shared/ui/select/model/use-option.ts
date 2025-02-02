@@ -1,5 +1,5 @@
-import {useCallback, useMemo} from "react";
 import {OptionType} from "@/shared/ui/select";
+import {useCallback, useMemo} from "react";
 
 interface UseOptionProps<Value> {
     value: Value,

@@ -1,6 +1,6 @@
-import {useState} from "react";
-import {ChainLink} from "@/shared/types/entities";
 import {getChain} from "@/entities/chain";
+import {ChainLink} from "@/shared/types/entities";
+import {useState} from "react";
 
 export interface UseChainController {
     links: ChainLink[];

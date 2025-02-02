@@ -1,14 +1,14 @@
-import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
-import {t} from "i18next";
 import {UsersTable, useUsersController} from "@/entities/user";
-import {useCallback, useEffect} from "react";
-import {ActionsCell, ControlPanel, HeaderPage, TableContainer} from "@/shared/layout";
-import {UpdateEntity} from "@/features/update-entity/UpdateEntity.tsx";
-import {CreateEntity} from "@/features/create-entity/CreateEntity.tsx";
 import {BlockUserButton} from "@/features/block-user/BlockUserButton.tsx";
-import {User} from "@/shared/types/entities";
-import {UpdateUserModalForm} from "@/features/update-user-form";
+import {CreateEntity} from "@/features/create-entity/CreateEntity.tsx";
 import {CreateUserModalForm} from "@/features/create-user-form";
+import {UpdateEntity} from "@/features/update-entity/UpdateEntity.tsx";
+import {UpdateUserModalForm} from "@/features/update-user-form";
+import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
+import {ActionsCell, ControlPanel, HeaderPage, TableContainer} from "@/shared/layout";
+import {User} from "@/shared/types/entities";
+import {t} from "i18next";
+import {useCallback, useEffect} from "react";
 
 export const UserManagementPage = () => {
     useDocumentTitle(t('pages.usersManagement.title'));

@@ -1,8 +1,8 @@
-import {t} from "i18next";
-import styles from './TemperatureMessagesList.module.scss';
-import {TemperatureMessage} from "@/shared/types/entities";
-import {ReactNode} from "react";
 import {TemperatureMessageField} from "@/entities/mailing/ui/temperature-messages-list/TemperatureMessageField.tsx";
+import {TemperatureMessage} from "@/shared/types/entities";
+import {t} from "i18next";
+import {ReactNode} from "react";
+import styles from './TemperatureMessagesList.module.scss';
 
 export interface TemperatureMessagesListProps {
     messages: TemperatureMessage[],

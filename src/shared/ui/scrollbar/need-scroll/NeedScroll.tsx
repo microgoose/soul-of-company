@@ -1,7 +1,7 @@
-import {ReactNode, useMemo} from "react";
-import classNames from "classnames";
 import {useNeedVerticalScrollbar} from "@/shared/hooks/use-need-scrollbar.ts";
 import {ScrollbarContainer} from "@/shared/ui/scrollbar";
+import classNames from "classnames";
+import {ReactNode, useMemo} from "react";
 
 interface OuterScrollProps {
     className?: string,

@@ -1,6 +1,6 @@
+import classNames from "classnames";
 import {ReactNode} from "react";
 import styles from './TableRow.module.scss';
-import classNames from "classnames";
 
 interface TableRowProps {
     className?: string,

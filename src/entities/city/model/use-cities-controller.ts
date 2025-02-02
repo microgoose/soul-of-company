@@ -1,7 +1,7 @@
-import {useQuery} from "@tanstack/react-query";
 import {getAllCities} from "@/entities/city";
-import {useCallback, useEffect, useState} from "react";
 import {City} from "@/shared/types/entities";
+import {useQuery} from "@tanstack/react-query";
+import {useCallback, useEffect, useState} from "react";
 
 export const useCitiesController = () => {
     const [cities, setCities] = useState<City[]>([]);

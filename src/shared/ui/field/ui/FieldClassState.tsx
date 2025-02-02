@@ -1,7 +1,7 @@
-import {ReactNode, useMemo} from "react";
 import classNames from "classnames";
-import originStyles from "./Field.module.scss";
+import {ReactNode, useMemo} from "react";
 import {FieldState} from "../model/use-field-state.ts";
+import originStyles from "./Field.module.scss";
 
 interface FieldClassesState extends Record<string, string | undefined> {
     hasLabel?: string,

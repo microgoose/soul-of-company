@@ -1,12 +1,12 @@
-import {DoneStage, ModalForm, StageForm} from "@/shared/ui/form";
-import {UserForm, UserFormFields} from "@/entities/user";
-import {t} from "i18next";
-import {useUserFormFieldsData} from "@/entities/user/model/use-user-form-field-data.ts";
-import {useCallback, useEffect, useState} from "react";
-import {toDate} from "@/shared/utils/date-utils.ts";
-import {getRolesByIds} from "@/entities/role/api/role-api.ts";
 import {getCitiesByIds} from "@/entities/city/api/city-api.ts";
+import {getRolesByIds} from "@/entities/role/api/role-api.ts";
+import {UserForm, UserFormFields} from "@/entities/user";
+import {useUserFormFieldsData} from "@/entities/user/model/use-user-form-field-data.ts";
 import {User} from "@/shared/types/entities";
+import {DoneStage, ModalForm, StageForm} from "@/shared/ui/form";
+import {toDate} from "@/shared/utils/date-utils.ts";
+import {t} from "i18next";
+import {useCallback, useEffect, useState} from "react";
 
 interface CreateUserModalFormProps {
     isOpen: boolean,

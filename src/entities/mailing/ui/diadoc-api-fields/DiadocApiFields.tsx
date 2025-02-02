@@ -1,7 +1,7 @@
-import {Controller, useFormContext} from "react-hook-form";
+import {DiadocApiConfig} from "@/shared/types/entities";
 import {Input} from "@/shared/ui/input";
 import {t} from "i18next";
-import {DiadocApiConfig} from "@/shared/types/entities";
+import {Controller, useFormContext} from "react-hook-form";
 
 export const DiadocApiFields = () => {
     const { control, formState: { errors } } = useFormContext<DiadocApiConfig>();

@@ -1,6 +1,6 @@
-import {useState} from "react";
 import {getAllRoleAuthorities} from "@/entities/role/api/role-api.ts";
 import {RoleAuthorities} from "@/shared/types/entities";
+import {useState} from "react";
 
 export interface UseRoleAuthoritiesController {
     roles: RoleAuthorities[];

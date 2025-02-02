@@ -1,5 +1,5 @@
-import {Organization} from "@/shared/types/entities/organization.types.ts";
 import {City} from "@/shared/types/entities/city.types.ts";
+import {Organization} from "@/shared/types/entities/organization.types.ts";
 import {Person} from "@/shared/types/entities/person.types.ts";
 import {File} from './file.types.ts';
 

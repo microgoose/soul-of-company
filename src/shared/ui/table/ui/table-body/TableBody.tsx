@@ -1,6 +1,6 @@
-import {ReactNode} from "react";
 import {TableRowType} from "@/shared/ui/table";
 import {useTableContext} from "@/shared/ui/table/model/table/use-table.ts";
+import {ReactNode} from "react";
 
 interface TableRowsProps {
     children: (row: TableRowType, index: number) => ReactNode

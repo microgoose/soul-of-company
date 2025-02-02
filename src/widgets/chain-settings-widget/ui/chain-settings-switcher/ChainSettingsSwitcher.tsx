@@ -1,6 +1,6 @@
+import {UseChainSettingsController} from "@/widgets/chain-settings-widget";
 import {EditChainSettings} from "../edit-chain-settings/EditChainSettings.tsx";
 import {ViewChainSettings} from "../view-chain-settings/ViewChainSettings.tsx";
-import {UseChainSettingsController} from "@/widgets/chain-settings-widget";
 
 interface ChainSettingsSwitcherProps {
     chainController: UseChainSettingsController

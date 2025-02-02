@@ -1,5 +1,5 @@
-import {useEffect, useRef, useState} from "react";
 import {subscribe, unsubscribe} from "@/shared/utils/resize-observer-event-bus.ts";
+import {useEffect, useRef, useState} from "react";
 
 export const useNeedVerticalScrollbar = <HTMLElementType extends HTMLElement>() => {
     const elementRef = useRef<HTMLElementType | null>(null);

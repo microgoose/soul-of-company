@@ -1,5 +1,5 @@
-import {useMemo} from "react";
 import {InputProperties} from "@/shared/ui/field";
+import {useMemo} from "react";
 
 interface UseFieldStateProps extends InputProperties {
     isActive?: boolean,
@@ -17,7 +17,7 @@ export interface FieldState extends Record<string, boolean> {
 
 export const useFieldState = (props: UseFieldStateProps)  => {
     return useMemo<FieldState>(() => {
-        let isFilled = false;
+        let isFilled;
 
         if (Array.isArray(props.value)) {
             isFilled = props.value.length > 0;

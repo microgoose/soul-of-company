@@ -1,9 +1,9 @@
-import styles from "./LogoutSidebarButton.module.scss";
 import {LoginIcon} from "@/shared/assets";
-import {t} from "i18next";
-import {FC} from "react";
 import {IconButton, SimpleButton} from "@/shared/ui/button";
 import classNames from "classnames";
+import {t} from "i18next";
+import {FC} from "react";
+import styles from "./LogoutSidebarButton.module.scss";
 
 interface LogoutSidebarButtonProps {
     isCollapsed?: boolean

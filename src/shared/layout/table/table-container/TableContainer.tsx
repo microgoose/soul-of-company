@@ -1,7 +1,7 @@
-import {ReactNode} from "react";
-import {t} from "i18next";
-import styles from './TableContainer.module.scss';
 import {OuterVerticalScroll} from "@/shared/ui/scrollbar";
+import {t} from "i18next";
+import {ReactNode} from "react";
+import styles from './TableContainer.module.scss';
 
 interface TableSectionProps {
     isLoading?: boolean

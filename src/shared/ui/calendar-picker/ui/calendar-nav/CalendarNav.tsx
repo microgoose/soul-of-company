@@ -1,7 +1,7 @@
-import styles from './CalendarNav.module.scss';
-import classNames from "classnames";
-import {TinySelect} from "@/shared/ui/select";
 import {useYearMonth} from "@/shared/ui/calendar-picker/model/use-year-month.ts";
+import {TinySelect} from "@/shared/ui/select";
+import classNames from "classnames";
+import styles from './CalendarNav.module.scss';
 
 interface CalendarNavProps {
     month: Date,

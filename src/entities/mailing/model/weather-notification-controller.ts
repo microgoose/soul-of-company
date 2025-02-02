@@ -1,6 +1,6 @@
+import {getConferenceTime} from "@/entities/mailing";
 import {ConferenceTime} from "@/shared/types/entities";
 import {useState} from "react";
-import {getConferenceTime} from "@/entities/mailing";
 
 export interface UseConferenceTimeController {
     config: ConferenceTime | null

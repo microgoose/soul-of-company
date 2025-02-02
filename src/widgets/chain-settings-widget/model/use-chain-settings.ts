@@ -1,20 +1,20 @@
-import {useCallback, useEffect, useState} from "react";
 import {
     UseChainController,
     useChainController,
     UseOtherTextsController,
     useOtherTextsController
 } from "@/entities/chain";
-import {OtherTexts, Role} from "@/shared/types/entities";
-import {ChainNoteFields, getChainLinkValidationScheme} from "@/features/edit-chain-form";
 import {getAllRoles} from "@/entities/role";
-import {t} from "i18next";
-import {useForm, UseFormReturn} from "react-hook-form";
-import {yupResolver} from "@hookform/resolvers/yup";
+import {ChainNoteFields, getChainLinkValidationScheme} from "@/features/edit-chain-form";
 import {
     getOtherTextValidationScheme
 } from "@/features/update-other-text-form/model/get-other-text-validation-scheme.ts";
+import {OtherTexts, Role} from "@/shared/types/entities";
+import {yupResolver} from "@hookform/resolvers/yup";
 import {useQuery} from "@tanstack/react-query";
+import {t} from "i18next";
+import {useCallback, useEffect, useState} from "react";
+import {useForm, UseFormReturn} from "react-hook-form";
 
 export interface UseChainSettingsController {
     isEditMode: boolean,

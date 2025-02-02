@@ -3,10 +3,15 @@ import classNames from "classnames";
 import {ReactNode} from "react";
 import styles from './TabHeader.module.scss';
 
+export type ChildrenProps = {
+    controller: TabsController,
+    tab: TabItem
+}
+
 type Props = {
     controller: TabsController,
     tab: TabItem,
-    children?: (controller: TabsController, tab: TabItem) => ReactNode
+    children?: (props: ChildrenProps) => ReactNode,
 }
 
 export const TabHeader = ({ children, controller, tab }: Props) => {
@@ -17,7 +22,7 @@ export const TabHeader = ({ children, controller, tab }: Props) => {
             title={tab.label}
             onClick={() => controller.activateTab(tab.id)}
         >
-            {children? children(controller, tab) : tab.label}
+            {children? children({ controller, tab }) : tab.label}
         </button>
     );
 };

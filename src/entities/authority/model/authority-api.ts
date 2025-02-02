@@ -1,5 +1,5 @@
-import {Authority} from "@/shared/types/entities";
 import {api} from "@/app/api.ts";
+import {Authority} from "@/shared/types/entities";
 
 export const getAllAuthorities = (): Promise<Authority[]> => {
     return api.get<Authority[]>('db/authorities.json').json();

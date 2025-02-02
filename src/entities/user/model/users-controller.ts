@@ -1,6 +1,6 @@
 import {getAllUsers} from "@/entities/user";
-import {createContext, useState} from "react";
 import {User} from "@/shared/types/entities";
+import {createContext, useState} from "react";
 
 export interface UsersController {
     users: User[];

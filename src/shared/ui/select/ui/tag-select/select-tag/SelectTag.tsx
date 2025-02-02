@@ -1,7 +1,7 @@
 import {CrossIcon} from "@/shared/assets";
-import styles from './SelectTag.module.scss';
 import {OptionType, SelectValue} from "@/shared/ui/select";
 import {useCallback} from "react";
+import styles from './SelectTag.module.scss';
 
 interface SelectTagProps<T extends SelectValue> {
     option: OptionType<T>,

@@ -1,14 +1,14 @@
-import {t} from "i18next";
+import {CitiesTable, useCitiesController} from "@/entities/city";
+import {CreateCityModalForm} from "@/features/create-city-form";
+import {CreateEntity} from "@/features/create-entity";
+import {RemoveEntity} from "@/features/remove-entity";
 import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
 import {ActionsCell, HeaderPage, TableContainer} from "@/shared/layout";
-import {CitiesTable, useCitiesController} from "@/entities/city";
-import {useCallback} from "react";
 import {City} from "@/shared/types/entities";
-import {RemoveEntity} from "@/features/remove-entity";
-import styles from './CitiesPage.module.scss';
 import {DividerTitle} from "@/shared/ui/divider-title";
-import {CreateEntity} from "@/features/create-entity";
-import {CreateCityModalForm} from "@/features/create-city-form";
+import {t} from "i18next";
+import {useCallback} from "react";
+import styles from './CitiesPage.module.scss';
 
 export const CitiesPage = () => {
     useDocumentTitle(t('pages.cities.title'));

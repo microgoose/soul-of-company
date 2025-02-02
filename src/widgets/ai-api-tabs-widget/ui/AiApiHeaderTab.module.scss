@@ -1,0 +1,25 @@
+.aiApiTabHeader {
+  display: flex;
+  align-items: center;
+  color: rgb(var(--mc-accent));
+}
+
+.aiApiTabLabel {
+  width: calc(100% - 24px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.filledCheckMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+
+  svg {
+    --filled-check-mark-fill: rgb(var(--bg-lighter-blue));
+    --filled-check-mark-stroke: rgb(var(--mc-white));
+  }
+}

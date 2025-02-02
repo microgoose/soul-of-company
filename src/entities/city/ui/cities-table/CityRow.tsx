@@ -1,8 +1,8 @@
-import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";
+import {City} from "@/shared/types/entities";
 import {TableRow} from "@/shared/ui/table";
+import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";
 import {ReactNode} from "react";
 import styles from './CitiesTable.module.scss';
-import {City} from "@/shared/types/entities";
 
 interface UserRowProps {
     city: City,

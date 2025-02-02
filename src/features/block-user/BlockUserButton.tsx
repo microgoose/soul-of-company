@@ -1,6 +1,6 @@
+import {User} from "@/shared/types/entities";
 import {Toggle} from "@/shared/ui/toggle";
 import {useCallback} from "react";
-import {User} from "@/shared/types/entities";
 
 interface BlockUserProps {
     user: User,

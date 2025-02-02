@@ -1,5 +1,5 @@
-import styles from './ActionsCell.module.scss';
 import {ReactNode} from "react";
+import styles from './ActionsCell.module.scss';
 
 interface TableCellActionsProps {
     children: ReactNode,

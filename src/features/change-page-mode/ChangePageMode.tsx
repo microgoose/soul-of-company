@@ -1,5 +1,5 @@
-import {t} from "i18next";
 import {PrimaryButton, SecondaryButton} from "@/shared/ui/button";
+import {t} from "i18next";
 import styles from './ChangePageMode.module.scss';
 
 interface ChangePageModeProps {

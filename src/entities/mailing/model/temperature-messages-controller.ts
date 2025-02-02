@@ -1,6 +1,6 @@
+import {getTemperatureMessages} from "@/entities/mailing";
 import {TemperatureMessage} from "@/shared/types/entities";
 import {useState} from "react";
-import {getTemperatureMessages} from "@/entities/mailing";
 
 export interface UseTemperatureMessagesController {
     messages: TemperatureMessage[]

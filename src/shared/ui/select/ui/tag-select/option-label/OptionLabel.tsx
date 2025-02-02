@@ -1,5 +1,5 @@
-import styles from './OptionLabel.module.scss';
 import {OptionType} from "@/shared/ui/select";
+import styles from './OptionLabel.module.scss';
 
 interface OptionLabelProps {
     option: OptionType<unknown>,

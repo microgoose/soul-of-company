@@ -1,6 +1,6 @@
 import {FC, ReactNode} from "react";
-import styles from './SidebarLayout.module.scss';
 import {Outlet} from "react-router-dom";
+import styles from './SidebarLayout.module.scss';
 
 interface PanelBodyFrameProp {
     sidebar: ReactNode,

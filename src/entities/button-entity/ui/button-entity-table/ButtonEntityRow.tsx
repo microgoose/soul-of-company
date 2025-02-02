@@ -1,7 +1,7 @@
-import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";
-import {TableRow} from "@/shared/ui/table";
-import {ReactNode} from "react";
 import {ButtonEntity} from "@/shared/types/entities";
+import {TableRow} from "@/shared/ui/table";
+import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";
+import {ReactNode} from "react";
 import styles from './ButtonEntityTable.module.scss';
 
 interface UserRowProps {

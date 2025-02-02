@@ -1,5 +1,5 @@
-import {TimeZone} from "@/shared/types/entities";
 import {api} from "@/app/api.ts";
+import {TimeZone} from "@/shared/types/entities";
 
 export const getAllTimeZones = (): Promise<TimeZone[]> => {
     return api.get<TimeZone[]>('db/time-zones.json').json();

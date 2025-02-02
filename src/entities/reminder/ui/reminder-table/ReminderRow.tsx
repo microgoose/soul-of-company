@@ -1,8 +1,8 @@
-import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";
-import {TableRow} from "@/shared/ui/table";
-import {ReactNode} from "react";
 import {Reminder} from "@/shared/types/entities";
+import {TableRow} from "@/shared/ui/table";
+import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";
 import {formatDate} from "@/shared/utils/date-utils.ts";
+import {ReactNode} from "react";
 import {ReminderSendingStatus} from "../reminder-sending-status/ReminderSendingStatus.tsx";
 import styles from './ReminderTable.module.scss';
 

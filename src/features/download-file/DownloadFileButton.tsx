@@ -1,7 +1,7 @@
 import {DownloadIcon} from "@/shared/assets";
 import type {File} from '@/shared/types/entities';
-import {TruncatedText} from "@/shared/ui/text/truncated-text/TruncatedText.tsx";
 import {EmptyButton} from "@/shared/ui/button";
+import {TruncatedText} from "@/shared/ui/text/truncated-text/TruncatedText.tsx";
 import styles from './DownloadFileButton.module.scss';
 
 interface DownloadFileButtonProps {

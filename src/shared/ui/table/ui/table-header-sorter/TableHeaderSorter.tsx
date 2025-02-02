@@ -1,8 +1,8 @@
-import styles from './TableHeaderSorter.module.scss';
 import {SortDescendingIcon} from "@/shared/assets";
-import {ReactNode, useMemo} from "react";
 import {SortingType} from "@/shared/ui/table";
 import classNames from "classnames";
+import {ReactNode, useMemo} from "react";
+import styles from './TableHeaderSorter.module.scss';
 
 interface TableHeadSorterProps {
     children: ReactNode,

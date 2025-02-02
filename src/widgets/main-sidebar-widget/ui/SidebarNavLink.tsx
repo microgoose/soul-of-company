@@ -1,6 +1,6 @@
+import {SidebarItem} from "@/widgets/main-sidebar-widget/ui/sidebar-item/SidebarItem.tsx";
 import {ReactNode} from "react";
 import {NavLink} from "react-router-dom";
-import {SidebarItem} from "@/widgets/main-sidebar-widget/ui/sidebar-item/SidebarItem.tsx";
 
 interface RouteItemProps {
     path: string,

@@ -1,5 +1,5 @@
-import {TableHeader, TableHeaderSorter, TableHeaderType, TableSorter} from "@/shared/ui/table";
 import {accountTableHeaders} from "@/entities/account/ui/accounts-table/model/account-table-headers.ts";
+import {TableHeader, TableHeaderSorter, TableHeaderType, TableSorter} from "@/shared/ui/table";
 import {t} from "i18next";
 
 interface UserRowProps {

@@ -1,9 +1,9 @@
 import {useConferenceTimeController, useTemperatureMessagesController} from "@/entities/mailing";
-import {useEffect} from "react";
 import {
     EditWeatherNotificationForms
 } from "@/widgets/edit-weather-notification-widget/ui/edit-weather-notification-forms/EditWeatherNotificationForms.tsx";
 import {t} from "i18next";
+import {useEffect} from "react";
 
 export const EditWeatherNotification = () => {
     const conferenceTimeController = useConferenceTimeController();

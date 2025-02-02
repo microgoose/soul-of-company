@@ -1,9 +1,9 @@
 import {CopyIconButton} from "@/shared/components/copy-text";
-import {Input} from "@/shared/ui/input";
-import {Controller, useForm} from "react-hook-form";
 import {AIConfig} from "@/shared/types/entities";
+import {Input} from "@/shared/ui/input";
 import {t} from "i18next";
-import styles from './OpenAIFields.module.scss';
+import {Controller, useForm} from "react-hook-form";
+import styles from './AIFields.module.scss';
 
 interface Props {
     defaultValues: AIConfig,

@@ -1,6 +1,6 @@
-import styles from './MonoPage.module.scss';
-import {ReactNode} from "react";
 import classNames from "classnames";
+import {ReactNode} from "react";
+import styles from './MonoPage.module.scss';
 
 interface Props {
     className?: string,

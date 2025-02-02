@@ -1,7 +1,7 @@
+import {getAllAuthorities} from "@/entities/authority";
 import {getAllRoles} from "@/entities/role";
 import {OptionsType} from "@/shared/ui/select";
 import {useEffect, useState} from "react";
-import {getAllAuthorities} from "@/entities/authority";
 
 export const useRoleAuthoritiesFormFieldData = () => {
     const [rolesOptions, setRolesOptions] = useState<OptionsType<number>>([]);

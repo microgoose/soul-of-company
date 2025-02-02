@@ -1,5 +1,5 @@
-import {Person, Reminder, ReminderType, SendingStatus} from "@/shared/types/entities";
 import {api} from "@/app/api.ts";
+import {Person, Reminder, ReminderType, SendingStatus} from "@/shared/types/entities";
 
 export interface GetAllRemindersList {
     id: number,

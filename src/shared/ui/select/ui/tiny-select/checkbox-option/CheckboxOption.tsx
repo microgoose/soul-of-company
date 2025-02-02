@@ -1,8 +1,8 @@
-import styles from "./CheckboxOption.module.scss";
-import {OptionType} from "@/shared/ui/select";
-import classNames from "classnames";
 import {CheckMark} from "@/shared/assets";
+import {OptionType} from "@/shared/ui/select";
 import {useMultipleOption} from "@/shared/ui/select/model/use-option.ts";
+import classNames from "classnames";
+import styles from "./CheckboxOption.module.scss";
 
 interface Props<Value> {
     values: Value[];

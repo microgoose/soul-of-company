@@ -1,11 +1,11 @@
+import {getAuthoritiesByIds} from "@/entities/authority";
+import {getRolesByIds} from "@/entities/role/api/role-api.ts";
+import {useRoleAuthoritiesFormFieldData} from "@/entities/role/model/use-role-authorities-form-field-data.ts";
+import {RoleAuthoritiesFormFields, RoleForm} from "@/entities/role/ui/role-form/RoleForm.tsx";
+import {RoleAuthorities} from "@/shared/types/entities";
 import {DoneStage, ModalForm, StageForm} from "@/shared/ui/form";
 import {t} from "i18next";
 import {useCallback, useEffect, useMemo, useState} from "react";
-import {getRolesByIds} from "@/entities/role/api/role-api.ts";
-import {RoleAuthoritiesFormFields, RoleForm} from "@/entities/role/ui/role-form/RoleForm.tsx";
-import {useRoleAuthoritiesFormFieldData} from "@/entities/role/model/use-role-authorities-form-field-data.ts";
-import {getAuthoritiesByIds} from "@/entities/authority";
-import {RoleAuthorities} from "@/shared/types/entities";
 
 interface UpdateUserModalFormProps {
     roleAuthorities: RoleAuthorities,

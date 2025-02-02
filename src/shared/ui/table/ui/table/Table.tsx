@@ -1,8 +1,8 @@
-import style from './Table.module.scss';
-import {ReactNode} from "react";
-import classNames from "classnames";
 import {TableControllerInterface} from "@/shared/ui/table";
 import {TableContext} from "@/shared/ui/table/model/table/use-table.ts";
+import classNames from "classnames";
+import {ReactNode} from "react";
+import style from './Table.module.scss';
 
 export interface TableProps {
     controller: TableControllerInterface,

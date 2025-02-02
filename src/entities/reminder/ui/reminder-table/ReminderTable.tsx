@@ -1,9 +1,9 @@
-import {Table, TableBody, TableHeaders, useTable, useTableSorting,} from "@/shared/ui/table";
-import {ReminderRow} from "./ReminderRow.tsx";
-import {ReactNode} from "react";
 import {Reminder} from "@/shared/types/entities";
-import {ReminderHeader} from "./ReminderHeader.tsx";
+import {Table, TableBody, TableHeaders, useTable, useTableSorting,} from "@/shared/ui/table";
+import {ReactNode} from "react";
 import {reminderHeadersList} from "./model/reminder-headers.ts";
+import {ReminderHeader} from "./ReminderHeader.tsx";
+import {ReminderRow} from "./ReminderRow.tsx";
 
 interface UsersTableProps {
     reminders: Reminder[],

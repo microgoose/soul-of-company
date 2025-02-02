@@ -1,8 +1,8 @@
-import {MutableRefObject, ReactNode, useEffect, useRef} from "react";
-import classNames from "classnames";
-import styles from './Popover.module.scss'
-import {PositionState, usePopoverPosition} from "../model/use-popover-position.ts";
 import {subscribe, unsubscribe} from "@/shared/utils/resize-observer-event-bus.ts";
+import classNames from "classnames";
+import {MutableRefObject, ReactNode, useEffect, useRef} from "react";
+import {PositionState, usePopoverPosition} from "../model/use-popover-position.ts";
+import styles from './Popover.module.scss'
 
 interface PopoverProps {
     target: MutableRefObject<HTMLElement | null>,

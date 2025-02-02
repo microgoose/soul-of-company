@@ -1,5 +1,5 @@
-import {Role} from "@/shared/types/entities/role.types.ts";
 import {City} from "@/shared/types/entities/city.types.ts";
+import {Role} from "@/shared/types/entities/role.types.ts";
 
 export interface User {
     id: number | null,

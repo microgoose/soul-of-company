@@ -1,7 +1,7 @@
-import {SecondaryButton} from "@/shared/ui/button";
 import {PlusIcon} from "@/shared/assets";
-import style from './CreateEntity.module.scss';
 import {useToggle} from "@/shared/hooks/use-toggle.ts";
+import {SecondaryButton} from "@/shared/ui/button";
+import style from './CreateEntity.module.scss';
 
 interface FormProps<T> {
     isOpen: boolean,

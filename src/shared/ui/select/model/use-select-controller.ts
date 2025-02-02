@@ -1,5 +1,5 @@
-import {useCallback, useEffect, useState} from "react";
 import {OptionsType, SelectValue} from "@/shared/ui/select";
+import {useCallback, useEffect, useState} from "react";
 
 interface UseSelectControllerProps<T extends SelectValue> {
     value: T | T[];

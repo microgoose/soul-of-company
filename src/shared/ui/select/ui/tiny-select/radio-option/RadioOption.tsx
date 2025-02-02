@@ -1,7 +1,7 @@
-import styles from "./RadioOption.module.scss";
 import {OptionType} from "@/shared/ui/select/model/select.types.ts";
-import classNames from "classnames";
 import {useOption} from "@/shared/ui/select/model/use-option.ts";
+import classNames from "classnames";
+import styles from "./RadioOption.module.scss";
 
 interface Props<Value> {
     value: Value,

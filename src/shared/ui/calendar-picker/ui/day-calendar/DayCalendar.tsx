@@ -1,6 +1,6 @@
-import styles from './DayCalendar.module.scss';
 import classNames from "classnames";
 import {ReactNode, useCallback} from "react";
+import styles from './DayCalendar.module.scss';
 
 interface CalendarProps {
     headers: string[],

@@ -1,6 +1,6 @@
-import {t} from "i18next";
 import {DATE_TIME_FORMAT} from "@/shared/config/date-config.ts";
 import dayjs from "dayjs";
+import {t} from "i18next";
 
 export const parseDuration = (duration: string) => {
     const match = duration.trim().match(/^(\d+(\.\d+)?)(ms|s)$/);

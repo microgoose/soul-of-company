@@ -1,10 +1,10 @@
-import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";
-import {TableRow} from "@/shared/ui/table";
-import {ReactNode} from "react";
-import {formatDate} from "@/shared/utils/date-utils.ts";
-import {Account} from "@/shared/types/entities";
-import {toMoney} from "@/shared/utils/money-utils.ts";
 import {AccountStatus} from "@/entities/account";
+import {Account} from "@/shared/types/entities";
+import {TableRow} from "@/shared/ui/table";
+import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";
+import {formatDate} from "@/shared/utils/date-utils.ts";
+import {toMoney} from "@/shared/utils/money-utils.ts";
+import {ReactNode} from "react";
 
 interface UserRowProps {
     account: Account,

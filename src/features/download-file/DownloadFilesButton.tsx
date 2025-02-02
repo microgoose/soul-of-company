@@ -1,5 +1,5 @@
-import type {File} from "@/shared/types/entities";
 import {DownloadFileButton} from "@/features/download-file/index.ts";
+import type {File} from "@/shared/types/entities";
 import styles from './DownloadFileButton.module.scss';
 
 interface DownloadFilesButtonProps {

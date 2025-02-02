@@ -1,6 +1,6 @@
 import {SortingType, TableHeaderType} from "@/shared/ui/table";
-import {DefaultSort} from "./sorter.types.ts";
 import {t} from "i18next";
+import {DefaultSort} from "./sorter.types.ts";
 
 export class SortState {
     private column: TableHeaderType | undefined;

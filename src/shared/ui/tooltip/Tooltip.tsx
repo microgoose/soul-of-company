@@ -1,5 +1,5 @@
-import ReactDOM from "react-dom";
 import {ReactNode, RefObject, useEffect, useRef} from "react";
+import ReactDOM from "react-dom";
 import {tooltipPositionSystem} from "./model/tooltip-position-system.ts";
 import style from './Tooltip.module.scss';
 

@@ -1,4 +1,4 @@
-import {AiHistoryTable, AiApiFields} from "@/entities/ai";
+import {AiApiFields, AiHistoryTable} from "@/entities/ai";
 import {AIConfig, AIHistory} from "@/shared/types/entities";
 import {t} from "i18next";
 import styles from './AiApiTab.module.scss';

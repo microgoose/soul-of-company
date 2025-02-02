@@ -1,7 +1,7 @@
 import {ButtonEntity} from "@/shared/types/entities";
 import {TextArea} from "@/shared/ui/textarea";
-import {useEffect, useMemo, useState} from "react";
 import {t} from "i18next";
+import {useEffect, useMemo, useState} from "react";
 import styles from './ButtonEntityDisplayField.module.scss';
 
 type Props = {

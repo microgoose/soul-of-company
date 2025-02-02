@@ -1,12 +1,14 @@
+import {setupHeaderResizer} from "@/shared/ui/table";
+import classNames from "classnames";
 import {ReactNode, useEffect, useRef} from "react";
 import styles from './TableHeader.module.scss';
-import {setupHeaderResizer} from "@/shared/ui/table";
 
 interface TableHeadProps {
+    className?: string;
     children?: ReactNode,
 }
 
-export const TableHeader = ({children}: TableHeadProps) => {
+export const TableHeader = ({className, children}: TableHeadProps) => {
     const thRef = useRef<HTMLTableCellElement | null>(null);
     const rightBorderRef = useRef<HTMLDivElement | null>(null);
 
@@ -16,7 +18,7 @@ export const TableHeader = ({children}: TableHeadProps) => {
     });
 
     return (
-        <th className={styles.th} ref={thRef}>
+        <th className={classNames(styles.th, className)} ref={thRef}>
             <div className={styles.content}>
                 {children}
 

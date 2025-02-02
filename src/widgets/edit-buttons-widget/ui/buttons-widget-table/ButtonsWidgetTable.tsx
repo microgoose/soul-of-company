@@ -1,12 +1,12 @@
-import {useQuery} from "@tanstack/react-query";
 import {ButtonEntityTable, getAllButtonEntities} from "@/entities/button-entity";
-import {t} from "i18next";
-import {ButtonEntityDisplayField} from "../button-entity-display-field/ButtonEntityDisplayField.tsx";
-import {EmptyButton} from "@/shared/ui/button";
-import {useCallback, useEffect, useState} from "react";
-import {ButtonEntity} from "@/shared/types/entities";
 import {RotateLeftStreamLine} from "@/shared/assets";
 import {TableContainer} from "@/shared/layout";
+import {ButtonEntity} from "@/shared/types/entities";
+import {EmptyButton} from "@/shared/ui/button";
+import {useQuery} from "@tanstack/react-query";
+import {t} from "i18next";
+import {useCallback, useEffect, useState} from "react";
+import {ButtonEntityDisplayField} from "../button-entity-display-field/ButtonEntityDisplayField.tsx";
 
 export const ButtonsWidgetTable = () => {
     const [buttons, setButtons] = useState<ButtonEntity[]>([]);

@@ -1,5 +1,5 @@
-import dayjs from "dayjs";
 import {DATE_FORMAT} from "@/shared/config/date-config.ts";
+import dayjs from "dayjs";
 
 export const getCalendarDates = (date: Date): Date[] => {
     const year = date.getFullYear();

@@ -1,9 +1,9 @@
+import {useAutoScroll} from "@/shared/hooks/use-auto-scroll.ts";
+import {FieldInputContainer, InputProperties, useFieldState} from "@/shared/ui/field";
 import {ReactNode} from "react";
 import {FieldClassState} from "./FieldClassState.tsx";
 import {FieldError} from "./FieldError.tsx";
 import {FieldLabel} from "./FieldLabel.tsx";
-import {FieldInputContainer, InputProperties, useFieldState} from "@/shared/ui/field";
-import {useAutoScroll} from "@/shared/hooks/use-auto-scroll.ts";
 
 interface FieldProps extends InputProperties {
     className?: string,

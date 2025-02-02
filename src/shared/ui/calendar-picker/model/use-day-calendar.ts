@@ -1,6 +1,6 @@
-import {useEffect, useMemo, useState} from "react";
-import {t} from "i18next";
 import {getCalendarDates} from "@/shared/utils/date-utils.ts";
+import {t} from "i18next";
+import {useEffect, useMemo, useState} from "react";
 
 interface UseDayCalendarProps {
     month?: Date,

@@ -1,6 +1,6 @@
-import {useCallback} from "react";
 import {BasketIcon} from "@/shared/assets";
 import {IconButton} from "@/shared/ui/button";
+import {useCallback} from "react";
 import styles from './RemoveEntity.module.scss';
 
 interface RemoveEntityProps<T> {

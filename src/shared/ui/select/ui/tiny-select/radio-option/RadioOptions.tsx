@@ -1,5 +1,5 @@
-import {RadioOption} from "./RadioOption.tsx";
 import {OptionsType} from "@/shared/ui/select";
+import {RadioOption} from "./RadioOption.tsx";
 
 interface Props<Value> {
     value: Value,

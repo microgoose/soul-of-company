@@ -1,16 +1,16 @@
-import classNames from "classnames";
-import {ContactIcon, DollarCoin, EmployeeTreeIcon, NotificationIcon} from '@/shared/assets';
-import styles from './MainSidebarWidget.module.scss';
 import {DefaultLogo, LogoImage} from "@/entities/logo";
-import {t} from "i18next";
-import {routesConfig} from "@/shared/config/routes-config.ts";
-import {SidebarNavLink} from "../SidebarNavLink.tsx";
-import {LogoutSidebarButton} from "@/features/logout";
 import {CollapseSidebarButton} from "@/features/collapse-sidebar";
-import {memo, useCallback, useState} from "react";
+import {LogoutSidebarButton} from "@/features/logout";
+import {ContactIcon, DollarCoin, EmployeeTreeIcon, NotificationIcon} from '@/shared/assets';
+import {routesConfig} from "@/shared/config/routes-config.ts";
 import {
     SidebarSettingsSubmenu
 } from "@/widgets/main-sidebar-widget/ui/sidebar-settings-submenu/SidebarSettingsSubmenu.tsx";
+import classNames from "classnames";
+import {t} from "i18next";
+import {memo, useCallback, useState} from "react";
+import {SidebarNavLink} from "../SidebarNavLink.tsx";
+import styles from './MainSidebarWidget.module.scss';
 
 export const MainSidebarWidget = memo(() => {
     const [isCollapsed, setIsCollapsed] = useState(false);

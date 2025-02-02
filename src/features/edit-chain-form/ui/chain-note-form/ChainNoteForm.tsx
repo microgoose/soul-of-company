@@ -1,10 +1,10 @@
 import {SequenceItemField, SequenceItems, SequenceItemValue, SequenceNote} from "@/entities/chain";
-import {Controller, useFieldArray, UseFormReturn} from "react-hook-form";
 import {useRoleOptions} from "@/features/edit-chain-form/model/use-role-options.ts";
-import {ButtonSize, ButtonType, IconButton} from "@/shared/ui/button";
 import {CrossIcon} from "@/shared/assets";
-import styles from './ChainNoteForm.module.scss';
+import {ButtonSize, ButtonType, IconButton} from "@/shared/ui/button";
 import {useCallback} from "react";
+import {Controller, useFieldArray, UseFormReturn} from "react-hook-form";
+import styles from './ChainNoteForm.module.scss';
 
 export interface ChainNoteFields {
     links: SequenceItemValue[],

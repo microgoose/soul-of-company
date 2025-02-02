@@ -1,8 +1,8 @@
-import {Controller, useFormContext} from "react-hook-form";
 import {ConferenceTime} from "@/shared/types/entities";
 import {Input} from "@/shared/ui/input";
-import styles from './ConferenceTimeFields.module.scss';
 import {t} from "i18next";
+import {Controller, useFormContext} from "react-hook-form";
+import styles from './ConferenceTimeFields.module.scss';
 
 export const ConferenceTimeFields = () => {
     const { control, formState: { errors } } = useFormContext<ConferenceTime>();

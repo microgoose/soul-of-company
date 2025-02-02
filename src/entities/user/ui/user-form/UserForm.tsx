@@ -1,14 +1,14 @@
-import {getUserValidationSchema} from "../../model/user-form-validation-schema.ts";
-import {Controller, useForm} from "react-hook-form";
-import {yupResolver} from "@hookform/resolvers/yup";
-import {DateInput} from "@/shared/ui/date-input";
-import {t} from "i18next";
-import styles from './UserForm.module.scss';
 import {ButtonState, PrimaryButton} from "@/shared/ui/button";
-import {OptionsType, TagSelect} from "@/shared/ui/select";
+import {DateInput} from "@/shared/ui/date-input";
 import {Input} from "@/shared/ui/input";
-import {useEffect} from "react";
+import {OptionsType, TagSelect} from "@/shared/ui/select";
 import {isDateValid} from "@/shared/utils/date-utils.ts";
+import {yupResolver} from "@hookform/resolvers/yup";
+import {t} from "i18next";
+import {useEffect} from "react";
+import {Controller, useForm} from "react-hook-form";
+import {getUserValidationSchema} from "../../model/user-form-validation-schema.ts";
+import styles from './UserForm.module.scss';
 
 export interface UserFormFields {
     roles: number[]

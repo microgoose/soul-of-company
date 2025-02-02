@@ -1,5 +1,5 @@
-import {CheckboxOption} from "./CheckboxOption.tsx";
 import {OptionsType} from "@/shared/ui/select";
+import {CheckboxOption} from "./CheckboxOption.tsx";
 
 interface Props<Value> {
     values: Value[];

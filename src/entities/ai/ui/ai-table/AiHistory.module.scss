@@ -1,0 +1,8 @@
+.aiHistoryHeader {
+  border-top: 1px solid rgb(var(--bg-stroke-gray));
+  background-color: transparent;
+}
+
+.openAiHistoryRow > td {
+  max-height: 108px;
+}

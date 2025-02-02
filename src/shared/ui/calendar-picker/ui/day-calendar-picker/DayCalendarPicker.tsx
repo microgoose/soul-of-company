@@ -1,9 +1,9 @@
+import {useDayCalendar} from "@/shared/ui/calendar-picker/model/use-day-calendar.ts";
 import {useCallback} from "react";
-import styles from './DayCalendarPicker.module.scss';
-import {DayCalendar} from "../day-calendar/DayCalendar.tsx";
 import {CalendarNav} from "../calendar-nav/CalendarNav.tsx";
 import {DayButton} from "../day-button/DayButton.tsx";
-import {useDayCalendar} from "@/shared/ui/calendar-picker/model/use-day-calendar.ts";
+import {DayCalendar} from "../day-calendar/DayCalendar.tsx";
+import styles from './DayCalendarPicker.module.scss';
 
 interface CalendarPickerProps {
     selected: Date | null,

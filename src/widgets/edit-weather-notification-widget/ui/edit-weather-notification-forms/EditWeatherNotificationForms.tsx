@@ -1,17 +1,17 @@
+import {TemperatureMessagesList, UseTemperatureMessagesController} from "@/entities/mailing";
+import {CreateEntity} from "@/features/create-entity";
+import {RemoveEntity} from "@/features/remove-entity";
+import {TemperatureMessagesForm} from "@/features/temperature-message-form";
 import {ConferenceTimeForm, useUpdateConferenceTimeForm} from "@/features/update-conference-time-form";
+import {UpdateEntity} from "@/features/update-entity";
+import {ConferenceTime, TemperatureMessage} from "@/shared/types/entities";
 import {Fieldset} from "@/shared/ui/fieldset";
 import {
     WeatherNotificationLegend
 } from "@/widgets/edit-weather-notification-widget/ui/weather-notification-legend/WeatherNotificationLegend.tsx";
-import {ConferenceTime, TemperatureMessage} from "@/shared/types/entities";
-import styles from './EditWeatherNotificationForms.module.scss';
-import {TemperatureMessagesList, UseTemperatureMessagesController} from "@/entities/mailing";
-import {useCallback, useMemo} from "react";
 import {t} from "i18next";
-import {RemoveEntity} from "@/features/remove-entity";
-import {UpdateEntity} from "@/features/update-entity";
-import {TemperatureMessagesForm} from "@/features/temperature-message-form";
-import {CreateEntity} from "@/features/create-entity";
+import {useCallback, useMemo} from "react";
+import styles from './EditWeatherNotificationForms.module.scss';
 
 type Props = {
     conferenceTime: ConferenceTime,

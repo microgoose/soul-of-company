@@ -1,6 +1,6 @@
-import {useCallback, useRef, useState} from "react";
 import {InfoCircle} from "@/shared/assets";
 import {Tooltip} from "@/shared/ui/tooltip";
+import {useCallback, useRef, useState} from "react";
 
 interface StatusTooltipProps {
     tooltip?: string,

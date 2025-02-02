@@ -1,12 +1,12 @@
-import {Fieldset} from "@/shared/ui/fieldset";
-import {MailingTimeLegend} from "@/features/update-mailing-time-config/ui/mailing-time-legend/MailingTimeLegend.tsx";
 import {MailingTimeFields, MailingTimeFieldsType} from "@/entities/mailing";
-import {FormProvider} from "react-hook-form";
-import {MailingTimeConfig} from "@/shared/types/entities";
-import {useCallback} from "react";
 import {getTimeZoneById} from "@/entities/time-zone";
-import {t} from "i18next";
 import {useUpdateMailingTimeForm} from "@/features/update-mailing-time-config/model/use-update-mailing-time-form.ts";
+import {MailingTimeLegend} from "@/features/update-mailing-time-config/ui/mailing-time-legend/MailingTimeLegend.tsx";
+import {MailingTimeConfig} from "@/shared/types/entities";
+import {Fieldset} from "@/shared/ui/fieldset";
+import {t} from "i18next";
+import {useCallback} from "react";
+import {FormProvider} from "react-hook-form";
 
 type Props = {
     mailingTypeConfig: MailingTimeConfig,

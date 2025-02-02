@@ -1,6 +1,6 @@
-import {IconButton} from "@/shared/ui/button";
 import {PencilIcon} from "@/shared/assets";
 import {useToggle} from "@/shared/hooks/use-toggle.ts";
+import {IconButton} from "@/shared/ui/button";
 import {ReactNode, useCallback} from "react";
 import styles from './UpdateEntity.module.scss';
 

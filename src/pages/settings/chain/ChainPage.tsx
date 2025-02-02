@@ -1,10 +1,10 @@
-import {t} from "i18next";
-import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
-import {DividerTitle} from "@/shared/ui/divider-title";
-import styles from "./ChainPage.module.scss";
-import {ChainSettingsSwitcher, useChainSettingsController} from "@/widgets/chain-settings-widget";
 import {ChangePageMode} from "@/features/change-page-mode";
+import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
 import {HeaderPage} from "@/shared/layout";
+import {DividerTitle} from "@/shared/ui/divider-title";
+import {ChainSettingsSwitcher, useChainSettingsController} from "@/widgets/chain-settings-widget";
+import {t} from "i18next";
+import styles from "./ChainPage.module.scss";
 
 export const ChainPage = () => {
     useDocumentTitle(t('pages.chain.title'));

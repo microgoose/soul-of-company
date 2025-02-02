@@ -1,9 +1,9 @@
-import {t} from "i18next";
-import {Note} from "@/shared/ui/note";
-import styles from './OtherTextNoteForm.module.scss';
-import {OtherTextFields} from "../other-text-fields/OtherTextFields.tsx";
-import {UseFormReturn} from "react-hook-form";
 import {OtherTexts} from "@/shared/types/entities";
+import {Note} from "@/shared/ui/note";
+import {t} from "i18next";
+import {UseFormReturn} from "react-hook-form";
+import {OtherTextFields} from "../other-text-fields/OtherTextFields.tsx";
+import styles from './OtherTextNoteForm.module.scss';
 
 interface OtherTextNoteFormProps {
     form: UseFormReturn<OtherTexts>,

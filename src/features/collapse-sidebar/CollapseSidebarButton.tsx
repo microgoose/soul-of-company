@@ -1,8 +1,8 @@
-import styles from './CollapseSidebarButton.module.scss';
-import {ButtonState, ButtonType, IconButton, SimpleButton} from "@/shared/ui/button";
 import {LayoutWindowIcon} from "@/shared/assets";
+import {ButtonState, ButtonType, IconButton, SimpleButton} from "@/shared/ui/button";
 import {t} from "i18next";
 import {useCallback} from "react";
+import styles from './CollapseSidebarButton.module.scss';
 
 interface CollapseSidebarButton {
     isCollapsed: boolean,

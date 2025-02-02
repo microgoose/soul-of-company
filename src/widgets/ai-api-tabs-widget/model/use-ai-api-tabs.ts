@@ -7,6 +7,7 @@ import {useEffect, useMemo, useState} from "react";
 
 export const useAaiApiTabs = () => {
     const tabs = useTabs();
+    const [selectedAiApiTab, setSelectedAiApiTab] = useState<AiApi | undefined>(undefined);
     const [activeAiApi, setActiveAiApi] = useState<AiApi | undefined>(undefined);
 
     const {data: aiApis = [], isLoading: aiApisIsLoading} = useQuery({
@@ -15,21 +16,21 @@ export const useAaiApiTabs = () => {
     });
 
     const {data: aiConfig, isLoading: aiConfigIsLoading} = useQuery({
-        queryKey: ['activeAiConfig', activeAiApi?.id],
+        queryKey: ['activeAiConfig', selectedAiApiTab?.id],
         queryFn: () => {
-            if (!activeAiApi) throw new Error(t('errors.AiApi.activeAiApiNotFound'));
-            return getAIConfig(activeAiApi.id);
+            if (!selectedAiApiTab) throw new Error(t('errors.AiApi.activeAiApiNotFound'));
+            return getAIConfig(selectedAiApiTab.id);
         },
-        enabled: !!activeAiApi
+        enabled: !!selectedAiApiTab
     });
 
     const {data: aiHistory = [], isLoading: aiHistoryIsLoading} = useQuery({
-        queryKey: ['activeAiHistory', activeAiApi?.id],
+        queryKey: ['activeAiHistory', selectedAiApiTab?.id],
         queryFn: () => {
-            if (!activeAiApi) throw new Error(t('errors.AiApi.activeAiApiNotFound'));
-            return getAIHistory(activeAiApi.id);
+            if (!selectedAiApiTab) throw new Error(t('errors.AiApi.activeAiApiNotFound'));
+            return getAIHistory(selectedAiApiTab.id);
         },
-        enabled: !!activeAiApi
+        enabled: !!selectedAiApiTab
     });
     
     const isLoading = useMemo(() => (
@@ -38,26 +39,29 @@ export const useAaiApiTabs = () => {
 
     useEffect(() => {
         if (aiApis.length) {
-            setActiveAiApi(aiApis.find((aiConfig) => aiConfig.isActive));
             tabs.replaceTabs(aiApis);
+            const active = aiApis.find((aiConfig) => aiConfig.isActive);
+            setActiveAiApi(active);
+            setSelectedAiApiTab(active);
         } else {
             setActiveAiApi(undefined);
+            setSelectedAiApiTab(undefined);
         }
     }, [aiApis]);
 
     useEffect(() => {
-        if (activeAiApi && tabs.tabs.length) {
-            tabs.activateTab(activeAiApi.id);
+        if (selectedAiApiTab && tabs.tabs.length) {
+            tabs.activateTab(selectedAiApiTab.id);
         }
-    }, [activeAiApi, tabs.tabs.length]);
+    }, [selectedAiApiTab, tabs.tabs.length]);
 
     useEffect(() => {
         const activeTab = tabs.activeTab;
         if (activeTab) {
             const foundApi = aiApis.find((aiConfig) => activeTab.id === aiConfig.id);
-            if (foundApi) setActiveAiApi(foundApi);
+            if (foundApi) setSelectedAiApiTab(foundApi);
         }
     }, [aiApis, tabs.activeTab]);
 
-    return {tabs, aiConfig, aiHistory, isLoading};
+    return {tabs, activeAiApi, aiConfig, aiHistory, isLoading};
 };

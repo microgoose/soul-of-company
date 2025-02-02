@@ -1,10 +1,10 @@
-import {Controller, useForm} from "react-hook-form";
-import {t} from "i18next";
-import styles from './RoleForm.module.scss';
+import {getRoleAuthoritiesValidationSchema} from "@/entities/role/model/role-authorities-form-validation-schema.ts";
 import {ButtonState, PrimaryButton} from "@/shared/ui/button";
 import {OptionsType, TagSelect} from "@/shared/ui/select";
 import {yupResolver} from "@hookform/resolvers/yup";
-import {getRoleAuthoritiesValidationSchema} from "@/entities/role/model/role-authorities-form-validation-schema.ts";
+import {t} from "i18next";
+import {Controller, useForm} from "react-hook-form";
+import styles from './RoleForm.module.scss';
 
 export interface RoleAuthoritiesFormFields {
     roles: number[]

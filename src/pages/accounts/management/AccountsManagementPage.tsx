@@ -1,11 +1,11 @@
-import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
-import {t} from "i18next";
 import {AccountsTable, useAccountController} from "@/entities/account";
-import {useCallback, useEffect} from "react";
-import {Account} from "@/shared/types/entities";
-import {ActionsCell, MonoPage, TableContainer} from "@/shared/layout";
-import {RemoveEntity} from "@/features/remove-entity";
 import {DownloadFilesButton} from "@/features/download-file";
+import {RemoveEntity} from "@/features/remove-entity";
+import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
+import {ActionsCell, MonoPage, TableContainer} from "@/shared/layout";
+import {Account} from "@/shared/types/entities";
+import {t} from "i18next";
+import {useCallback, useEffect} from "react";
 
 export const AccountsManagementPage = () => {
     useDocumentTitle(t('pages.accounts.title'));

@@ -1,8 +1,8 @@
+import {aiHistoryHeaders} from "@/entities/ai/model/ai-history-table-headers.ts";
+import {AiHistoryHeader} from "@/entities/ai/ui/ai-table/AiHistoryHeader.tsx";
+import {AiHistoryRow} from "@/entities/ai/ui/ai-table/AiHistoryRow.tsx";
 import {AIHistory} from "@/shared/types/entities";
 import {Table, TableBody, TableHeaders, useTable, useTableSorting} from "@/shared/ui/table";
-import {aiHistoryHeaders} from "@/entities/ai/model/ai-history-table-headers.ts";
-import {OpenAiHistoryHeader} from "@/entities/ai/ui/ai-table/OpenAiHistoryHeader.tsx";
-import {OpenAiHistoryRow} from "@/entities/ai/ui/ai-table/OpenAiHistoryRow.tsx";
 
 
 interface ButtonEntityTableProps {
@@ -26,7 +26,7 @@ export const AiHistoryTable = ({ openAiHistory }: ButtonEntityTableProps) => {
         <Table controller={tableController}>
             <TableHeaders>
                 {(header, index) =>
-                    <OpenAiHistoryHeader
+                    <AiHistoryHeader
                         key={index}
                         header={header}
                         controller={sortingController}
@@ -35,7 +35,7 @@ export const AiHistoryTable = ({ openAiHistory }: ButtonEntityTableProps) => {
             </TableHeaders>
             <TableBody>
                 {(openAiHistory, index) =>
-                    <OpenAiHistoryRow
+                    <AiHistoryRow
                         key={index}
                         openAiHistory={openAiHistory as AIHistory}
                     />

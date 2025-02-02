@@ -1,6 +1,6 @@
+import classNames from "classnames";
 import {ReactNode} from "react";
 import styles from './StageForm.module.scss';
-import classNames from "classnames";
 
 interface StagedFormProps {
     stage: number,

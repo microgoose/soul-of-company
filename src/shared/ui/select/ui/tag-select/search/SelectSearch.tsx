@@ -1,7 +1,7 @@
 import {CrossIcon, Magnifier} from "@/shared/assets";
-import styles from "./SelectSearch.module.scss";
-import {ChangeEvent, useCallback, useState} from "react";
 import classNames from "classnames";
+import {ChangeEvent, useCallback, useState} from "react";
+import styles from "./SelectSearch.module.scss";
 
 interface SelectSearchProps {
     className?: string,

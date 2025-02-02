@@ -1,6 +1,6 @@
-import {useState} from "react";
-import {Account} from "@/shared/types/entities";
 import {getAllAccounts} from "@/entities/account";
+import {Account} from "@/shared/types/entities";
+import {useState} from "react";
 
 export interface AccountController {
     accounts: Account[];

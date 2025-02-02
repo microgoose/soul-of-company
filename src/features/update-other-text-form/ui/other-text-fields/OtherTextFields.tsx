@@ -1,7 +1,7 @@
-import {t} from "i18next";
-import {Input} from "@/shared/ui/input";
-import {Controller, UseFormReturn} from "react-hook-form";
 import {OtherTexts} from "@/shared/types/entities";
+import {Input} from "@/shared/ui/input";
+import {t} from "i18next";
+import {Controller, UseFormReturn} from "react-hook-form";
 
 interface OtherTextFieldsProps {
     form: UseFormReturn<OtherTexts>,

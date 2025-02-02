@@ -1,5 +1,5 @@
-import styles from './TemperatureMessagesList.module.scss';
 import {FieldClassState, FieldInputContainer, FieldLabel, useFieldState} from "@/shared/ui/field";
+import styles from './TemperatureMessagesList.module.scss';
 
 export interface TemperatureMessageFieldProps {
     className?: string,
