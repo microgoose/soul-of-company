@@ -1,1 +1,1 @@
-export * from './model/authority-api.ts';
+export * from '@/entities/authority/api/authority-api.ts';

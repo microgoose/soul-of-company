@@ -15,7 +15,7 @@
       "code": "openai-gpt4"
     },
     "label": "Это тоже GPT-4O с очень длинным названием которое повторяет само себя очень длинно",
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
       "code": "anthropic-claude"
     },
     "label": "Anthropic Claude",
-    "isActive": true
+    "isActive": false
   },
   {
     "id": 5,
@@ -51,6 +51,6 @@
       "code": "cohere-command-r"
     },
     "label": "Cohere Command R",
-    "isActive": true
+    "isActive": false
   }
 ]

@@ -1,5 +1,5 @@
-import {CopyText} from "@/shared/components/copy-text";
 import {User} from "@/shared/types/entities";
+import {CopyText} from "@/shared/ui/copy-text";
 import {SimpleList} from "@/shared/ui/list";
 import {TableRow} from "@/shared/ui/table";
 import {TableCell} from "@/shared/ui/table/ui/table-cell/TableCell.tsx";

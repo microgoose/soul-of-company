@@ -1,5 +1,5 @@
 import {LoginIcon} from "@/shared/assets";
-import {IconButton, SimpleButton} from "@/shared/ui/button";
+import {IconButton, TextButton} from "@/shared/ui/button";
 import classNames from "classnames";
 import {t} from "i18next";
 import {FC} from "react";
@@ -19,9 +19,9 @@ export const LogoutSidebarButton: FC<LogoutSidebarButtonProps> = ({isCollapsed})
     }
 
     return (
-        <SimpleButton className={classNames(styles.button, styles.logout)}>
+        <TextButton className={classNames(styles.button, styles.logout)}>
             <LoginIcon/>
             <span>{t('actions.logOut')}</span>
-        </SimpleButton>
+        </TextButton>
     );
 };

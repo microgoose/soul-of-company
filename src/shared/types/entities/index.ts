@@ -15,4 +15,5 @@ export * from './temperature-message.types.ts';
 export * from './time-zone.types.ts';
 export * from './conference-time.types.ts';
 export * from './button-entity.types.ts';
-export * from './open-ai.types.ts';
+export * from './ai.types.ts';
+export * from './ai-api.types.ts';

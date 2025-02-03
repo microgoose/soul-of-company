@@ -1,7 +1,6 @@
 import ArrowDiagonalTopLeft from './icons/arrow-diagonal-top-left.svg?react';
 import BasketIcon from './icons/basket-icon.svg?react';
 import CheckMark from './icons/check-mark.svg?react';
-import FilledCheckMark from './icons/filled-check-mark.svg?react';
 import ChevronDown from './icons/chevron-down.svg?react';
 import ContactIcon from './icons/contact-icon.svg?react';
 import CopyIcon from './icons/copy-icon.svg?react';
@@ -12,6 +11,7 @@ import DownloadIcon from './icons/download-icon.svg?react';
 import EmployeeTreeIcon from './icons/employee-tree-icon.svg?react';
 import EmptyJackdaw from './icons/empty-jackdaw.svg?react';
 import Eye from './icons/eye.svg?react';
+import FilledCheckMark from './icons/filled-check-mark.svg?react';
 import GearWheelIcon from './icons/gear-wheel-icon.svg?react';
 import InfoCircle from './icons/info-circle.svg?react';
 import LayoutWindowIcon from './icons/layout-window-icon.svg?react';

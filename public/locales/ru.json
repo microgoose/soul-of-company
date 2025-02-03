@@ -273,10 +273,21 @@
       "city": "Город"
     }
   },
-  "AIConfig": {
-    "errors": {
-      "aiApiNotFound": "AI API конфигуарция не найдена"
+  "AiApi": {
+    "actions": {
+      "enable": "Включить",
+      "disable": "Выключить"
     },
+    "state": {
+      "notActive": "Сеть не активна",
+      "isActive": "Сеть активна",
+      "pending": "Запрос..."
+    },
+    "errors": {
+      "activeAiApiNotFound": "Не найден активный AI API"
+    }
+  },
+  "AIConfig": {
     "label": {
       "apiKey": "API",
       "model": "Модель",
@@ -319,6 +330,7 @@
       "fieldMustBeFilled": "Поле должно быть заполнено"
   },
   "errors": {
+    "testError": "Тестовая ошиба, просто для теста оишбок",
     "somethingWentWrong": "Что-то пошло не так",
     "incorrectDurationFormat": "Неверный формат продолжительности",
     "incorrectDateFormat": "Введите корректный формат даты (дд.мм.гггг)",
@@ -334,12 +346,6 @@
     },
     "chain": {
       "findRoleEntityError": "Не удалось найти сущности роли"
-    },
-    "AiApi": {
-      "activeAiApiNotFound": "Не найден активный AI API"
-    },
-    "AIConfig": {
-      "aiApiNotFound": "AI API конфигуарция не найдена"
     }
   }
 }

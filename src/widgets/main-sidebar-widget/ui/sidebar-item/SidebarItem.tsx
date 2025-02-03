@@ -1,4 +1,4 @@
-import {ButtonState, IconButton, SimpleButton} from "@/shared/ui/button";
+import {ButtonState, IconButton, TextButton} from "@/shared/ui/button";
 import classNames from "classnames";
 import {ReactNode} from "react";
 import styles from "./SidebarItem.module.scss";
@@ -23,10 +23,10 @@ export const SidebarItem = ({icon, text, isCollapsed, isActive, onClick}: Sideba
         }
 
         return (
-            <SimpleButton state={ButtonState.ACTIVE} className={className} onClick={onClick}>
+            <TextButton state={ButtonState.ACTIVE} className={className} onClick={onClick}>
                 {icon}
                 <span className={styles.text}>{text}</span>
-            </SimpleButton>
+            </TextButton>
         );
     }
 
@@ -35,9 +35,9 @@ export const SidebarItem = ({icon, text, isCollapsed, isActive, onClick}: Sideba
     }
 
     return (
-        <SimpleButton className={className} onClick={onClick}>
+        <TextButton className={className} onClick={onClick}>
             {icon}
             <span className={styles.text}>{text}</span>
-        </SimpleButton>
+        </TextButton>
     );
 };

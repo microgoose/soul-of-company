@@ -1,8 +1,10 @@
 .button {
-  padding: 11px;
+  padding: 0 11px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  height: 40px;
   border-radius: 8px;
   border: 1px solid rgb(var(--bg-stroke-gray));
   font: var(--font-text);
@@ -13,10 +15,28 @@
   & > * {
     flex-shrink: 0;
   }
+
+  &.radiusSmall {
+    border-radius: 4px;
+  }
+
+  &.smallSize {
+    height: 24px;
+
+  }
 }
-.buttonHovered {
+
+.buttonDisabled {
+  border-color: rgb(var(--bg-stroke-gray));
+  color: rgb(var(--bg-darker-stroke-gray));
+  background-color: rgb(var(--bg-gray));
+  cursor: default;
+}
+
+.buttonHovered:not(.buttonDisabled) {
   background-color: rgb(var(--bg-blue));
 }
-.buttonActive {
+
+.buttonActive:not(.buttonDisabled) {
   background-color: rgb(var(--bg-blue-hover));
 }

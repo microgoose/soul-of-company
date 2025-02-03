@@ -1,5 +1,5 @@
-import {CopyIconButton} from "@/shared/components/copy-text";
 import {AIConfig} from "@/shared/types/entities";
+import {CopyIconButton} from "@/shared/ui/copy-text";
 import {Input} from "@/shared/ui/input";
 import {t} from "i18next";
 import {Controller, useForm} from "react-hook-form";

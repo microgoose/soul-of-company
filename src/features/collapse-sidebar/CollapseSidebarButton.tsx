@@ -1,5 +1,5 @@
 import {LayoutWindowIcon} from "@/shared/assets";
-import {ButtonState, ButtonType, IconButton, SimpleButton} from "@/shared/ui/button";
+import {ButtonState, ButtonType, IconButton, TextButton} from "@/shared/ui/button";
 import {t} from "i18next";
 import {useCallback} from "react";
 import styles from './CollapseSidebarButton.module.scss';
@@ -28,9 +28,9 @@ export const CollapseSidebarButton = ({isCollapsed, onChange}: CollapseSidebarBu
     }
 
     return (
-        <SimpleButton onClick={changeCollapsed} className={styles.button}>
+        <TextButton onClick={changeCollapsed} className={styles.button}>
             <LayoutWindowIcon/>
             <span>{t('mainSidebar.desktop')}</span>
-        </SimpleButton>
+        </TextButton>
     );
 };
