@@ -1,6 +1,6 @@
 import {CitiesTable, useCitiesController} from "@/entities/city";
-import {CreateCityModalForm} from "@/features/create-city-form";
-import {CreateEntity} from "@/features/create-entity";
+import {CreateCityModalForm} from "@/features/add-city-form";
+import {CreateEntity} from "@/features/add-entity";
 import {RemoveEntity} from "@/features/remove-entity";
 import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
 import {ActionsCell, Page, PageHeader, PageTitle, TableContainer} from "@/shared/layout";

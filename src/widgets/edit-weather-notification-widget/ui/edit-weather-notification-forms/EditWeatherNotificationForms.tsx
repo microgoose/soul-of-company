@@ -1,5 +1,5 @@
 import {TemperatureMessagesList, UseTemperatureMessagesController} from "@/entities/mailing";
-import {CreateEntity} from "@/features/create-entity";
+import {CreateEntity} from "@/features/add-entity";
 import {RemoveEntity} from "@/features/remove-entity";
 import {TemperatureMessagesForm} from "@/features/temperature-message-form";
 import {ConferenceTimeForm, useUpdateConferenceTimeForm} from "@/features/update-conference-time-form";

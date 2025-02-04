@@ -1,6 +1,6 @@
 import {RoleAuthorityTable, useRoleAuthoritiesController} from "@/entities/role";
-import {CreateEntity} from "@/features/create-entity/CreateEntity.tsx";
-import {CreateRoleModalForm} from "@/features/create-role-form";
+import {CreateEntity} from "@/features/add-entity/CreateEntity.tsx";
+import {CreateRoleModalForm} from "@/features/add-role-form";
 import {RemoveEntity} from "@/features/remove-entity/RemoveEntity.tsx";
 import {UpdateEntity} from "@/features/update-entity/UpdateEntity.tsx";
 import {UpdateRoleModalForm} from "@/features/update-role-form";
