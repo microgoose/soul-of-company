@@ -3,12 +3,10 @@ import {CreateCityModalForm} from "@/features/create-city-form";
 import {CreateEntity} from "@/features/create-entity";
 import {RemoveEntity} from "@/features/remove-entity";
 import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
-import {ActionsCell, HeaderPage, TableContainer} from "@/shared/layout";
+import {ActionsCell, Page, PageHeader, PageTitle, TableContainer} from "@/shared/layout";
 import {City} from "@/shared/types/entities";
-import {DividerTitle} from "@/shared/ui/divider-title";
 import {t} from "i18next";
 import {useCallback} from "react";
-import styles from './CitiesPage.module.scss';
 
 export const CitiesPage = () => {
     useDocumentTitle(t('pages.cities.title'));
@@ -21,17 +19,18 @@ export const CitiesPage = () => {
     ), [citiesController]);
 
     return (
-        <HeaderPage className={styles.citiesPage}>
-            <DividerTitle title={t('pages.cities.title')}>
+        <Page>
+            <PageHeader>
+                <PageTitle>{t('pages.cities.title')}</PageTitle>
                 <CreateEntity
                     label={t('city.actions.addCity')}
                     modalForm={CreateCityModalForm}
                     onCreate={citiesController.add}
                 />
-            </DividerTitle>
+            </PageHeader>
             <TableContainer>
                 <CitiesTable cities={citiesController.cities} actionsCell={cityActions}/>
             </TableContainer>
-        </HeaderPage>
+        </Page>
     );
 };

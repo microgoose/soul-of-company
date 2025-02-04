@@ -5,7 +5,7 @@ import {RemoveEntity} from "@/features/remove-entity/RemoveEntity.tsx";
 import {UpdateEntity} from "@/features/update-entity/UpdateEntity.tsx";
 import {UpdateRoleModalForm} from "@/features/update-role-form";
 import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
-import {ActionsCell, ControlPanel, HeaderPage, TableContainer} from "@/shared/layout";
+import {ActionsCell, Page, PageHeader, TableContainer} from "@/shared/layout";
 import {RoleAuthorities} from "@/shared/types/entities";
 import {t} from "i18next";
 import {useCallback, useEffect} from "react";
@@ -29,17 +29,18 @@ export const RolesManagementPage = () => {
     useEffect(() => rolesController.load(), []);
 
     return (
-        <HeaderPage>
-            <ControlPanel>
+        <Page>
+            <PageHeader>
+                <div/>
                 <CreateEntity
                     label={t('rolesManagement.addRole')}
                     modalForm={CreateRoleModalForm}
                     onCreate={rolesController.insert}
                 />
-            </ControlPanel>
+            </PageHeader>
             <TableContainer>
                 <RoleAuthorityTable roleAuthorities={rolesController.roles} actions={rolesActions}/>
             </TableContainer>
-        </HeaderPage>
+        </Page>
     );
 };

@@ -5,7 +5,7 @@ import {CreateUserModalForm} from "@/features/create-user-form";
 import {UpdateEntity} from "@/features/update-entity/UpdateEntity.tsx";
 import {UpdateUserModalForm} from "@/features/update-user-form";
 import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
-import {ActionsCell, ControlPanel, HeaderPage, TableContainer} from "@/shared/layout";
+import {ActionsCell, Page, PageHeader, TableContainer} from "@/shared/layout";
 import {User} from "@/shared/types/entities";
 import {t} from "i18next";
 import {useCallback, useEffect} from "react";
@@ -29,18 +29,18 @@ export const UserManagementPage = () => {
     useEffect(() => usersController.load(), []);
 
     return (
-        <HeaderPage>
-            <ControlPanel>
+        <Page>
+            <PageHeader>
+                <div/>
                 <CreateEntity
                     label={t('usersManagement.addUser')}
                     modalForm={CreateUserModalForm}
                     onCreate={usersController.insert}
                 />
-            </ControlPanel>
-
+            </PageHeader>
             <TableContainer>
                 <UsersTable users={usersController.users} actions={userActions}/>
             </TableContainer>
-        </HeaderPage>
+        </Page>
     );
 };

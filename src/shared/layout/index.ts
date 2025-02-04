@@ -1,7 +1,8 @@
-//TODO DEPRECATED, REMOVE
-export * from '@/shared/layout/block/control-panel/ControlPanel.tsx';
-export * from '@/shared/layout/table/actions-cell/ActionsCell.tsx';
-export * from '@/shared/layout/page/header-page/HeaderPage.tsx';
-export * from '@/shared/layout/page/header-divider-page/HeaderDividerPage.tsx';
-export * from '@/shared/layout/page/mono-page/MonoPage.tsx';
-export * from '@/shared/layout/table/table-container/TableContainer.tsx';
+//TODO DEPRECATED, REFACTORING
+export * from './table/actions-cell/ActionsCell.tsx';
+export * from './table/table-container/TableContainer.tsx';
+
+export * from './page/page/Page.tsx';
+export * from './page/page/MonoPage.tsx';
+export * from './page/page-header/PageHeader.tsx';
+export * from './page/page-title/PageTitle.tsx';

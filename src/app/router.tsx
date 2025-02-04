@@ -3,7 +3,7 @@ import {NotFoundPage} from "@/pages/errors";
 import {RemindersManagementPage} from "@/pages/reminders";
 import {RolesManagementPage} from "@/pages/roles";
 import {AISettings, ButtonsPage, ChainPage, CitiesPage, MailingPage} from "@/pages/settings";
-import {UserManagementPage} from "@/pages/user-management";
+import {UserManagementPage} from "@/pages/user";
 import {SidebarLayout} from "@/shared/ui/page";
 import {MainSidebarWidget} from "@/widgets/main-sidebar-widget";
 import {createBrowserRouter, redirect} from "react-router-dom";
