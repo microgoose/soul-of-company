@@ -1,1 +1,2 @@
-export {Tooltip} from './Tooltip.tsx';
+export {Tooltip} from './ui/Tooltip.tsx';
+export {InfoTooltip} from './ui/InfoTooltip.tsx';

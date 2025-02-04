@@ -1,9 +1,9 @@
+import {InfoTooltip} from "@/shared/ui/tooltip";
 import classNames from "classnames";
 import {useMemo} from "react";
 import {TagStatus} from "../model/tag-status.ts";
 import styles from './StatusTag.module.scss';
 import {TagStatusAdditional} from "./TagStatusAdditional.tsx";
-import {TagStatusTooltip} from "./TagStatusTooltip.tsx";
 
 interface StatusTagProps {
     status: TagStatus,
@@ -22,7 +22,7 @@ export const StatusTag = ({status, title, tooltip, additional}: StatusTagProps) 
         <div className={classState}>
             <div className={styles.titleContainer}>
                 <span className={styles.title}>{title}</span>
-                <TagStatusTooltip tooltip={tooltip}/>
+                <InfoTooltip tooltip={tooltip}/>
             </div>
            <TagStatusAdditional additional={additional}/>
         </div>
