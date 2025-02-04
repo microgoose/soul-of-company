@@ -1,3 +1,4 @@
+import {AddAiConfigButton, AddAiConfigModalForm} from "@/features/add-ai-config-form";
 import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
 import {Page, PageHeader, PageTitle} from "@/shared/layout";
 import {InfoTooltip} from "@/shared/ui/tooltip";
@@ -14,8 +15,11 @@ export const AISettings = () => {
                     {t('pages.AISettings.fullTitle')}
                     <InfoTooltip tooltip={t('pages.AISettings.apiSwitchingInfo')}/>
                 </PageTitle>
+                <AddAiConfigButton/>
             </PageHeader>
+
             <AiApiTabs/>
+            <AddAiConfigModalForm/>
         </Page>
     );
 };

@@ -1,7 +1,7 @@
 import {UseChainSettingsController} from "@/widgets/chain-settings-widget";
+import styles from './ChainSettingsSwitcher.module.scss';
 import {EditChainSettings} from "./EditChainSettings.tsx";
 import {ViewChainSettings} from "./ViewChainSettings.tsx";
-import styles from './ChainSettingsSwitcher.module.scss';
 
 interface ChainSettingsSwitcherProps {
     chainController: UseChainSettingsController

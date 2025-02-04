@@ -24,7 +24,7 @@ const defaultValues = {
     hiringDate: ''
 };
 
-export const CreateUserModalForm = ({ isOpen, onSubmit }: CreateUserModalFormProps) => {
+export const AddUserModalForm = ({ isOpen, onSubmit }: CreateUserModalFormProps) => {
     const { rolesOptions, citiesOptions } = useUserFormFieldsData();
     const [createdUser, setCreatedUser] = useState<User | null>(null);
     const [stage, setStage] = useState(0);

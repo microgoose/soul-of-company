@@ -14,7 +14,11 @@ export const useTemperatureMessageForm = (temperatureMessage?: TemperatureMessag
     const form = useForm<TemperatureMessageFieldsType>({
         mode: 'onChange',
         resolver: yupResolver<TemperatureMessageFieldsType>(getTemperatureMessagesValidationScheme()),
-        values: temperatureMessage
+        values: temperatureMessage || {
+            minTemperature: 0,
+            maxTemperature: 0,
+            message: '',
+        }
     });
 
     const minT = form.watch('minTemperature');

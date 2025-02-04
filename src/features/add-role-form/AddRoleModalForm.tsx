@@ -17,7 +17,7 @@ const defaultValues = {
     authorities: [],
 };
 
-export const CreateRoleModalForm = ({ isOpen, onSubmit }: CreateUserModalFormProps) => {
+export const AddRoleModalForm = ({ isOpen, onSubmit }: CreateUserModalFormProps) => {
     const { rolesOptions, authoritiesOptions } = useRoleAuthoritiesFormFieldData();
     const [createdRole, setCreatedRole] = useState<RoleAuthorities | null>(null);
     const [stage, setStage] = useState(0);

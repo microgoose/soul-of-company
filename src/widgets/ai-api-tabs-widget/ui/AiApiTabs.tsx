@@ -6,7 +6,7 @@ import {AiApiTab} from "@/widgets/ai-api-tabs-widget/ui/AiApiTab.tsx";
 import styles from './AiApiTabs.module.scss';
 
 export const AiApiTabs = () => {
-    const {isLoading, tabs, selectedAiApi, aiConfig, aiHistory, activeAiApi} = useAiApiTabs();
+    const {tabs, selectedAiApi, aiConfig, aiHistory, activeAiApi} = useAiApiTabs();
 
     return (
         <TabManager controller={tabs} className={styles.aiApiTabs}>
@@ -15,7 +15,6 @@ export const AiApiTabs = () => {
             </TabHeaders>
             <TabBody>
                 <AiApiTab
-                    isLoading={isLoading}
                     aiApi={selectedAiApi}
                     aiConfig={aiConfig}
                     aiHistory={aiHistory}

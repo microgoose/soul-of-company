@@ -13,7 +13,7 @@ const defaultValues = {
     name: ''
 };
 
-export const CreateCityModalForm = ({ isOpen, onSubmit }: CreateCityModalFormProps) => {
+export const AddCityModalForm = ({ isOpen, onSubmit }: CreateCityModalFormProps) => {
     const [city, setCity] = useState<City | null>(null);
     const [stage, setStage] = useState(0);
 

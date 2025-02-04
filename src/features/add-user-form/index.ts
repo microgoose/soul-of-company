@@ -1,1 +1,1 @@
-export { CreateUserModalForm } from './CreateUserModalForm.tsx';
+export { AddUserModalForm } from './AddUserModalForm.tsx';

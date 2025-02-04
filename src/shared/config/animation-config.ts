@@ -4,3 +4,5 @@
 
 // export const ANIMATION_DURATION_FAST = () => parseDuration(getDurationCssVariable('--animation-duration-fast'));
 export const ANIMATION_DURATION_FAST = () => 150; //ms
+
+export const MODAL_FORM_CLOSE_DURATION = 2000;

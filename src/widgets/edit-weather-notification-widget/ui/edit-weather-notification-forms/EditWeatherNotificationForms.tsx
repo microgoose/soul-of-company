@@ -1,5 +1,5 @@
 import {TemperatureMessagesList, UseTemperatureMessagesController} from "@/entities/mailing";
-import {CreateEntity} from "@/features/add-entity";
+import {AddEntity} from "@/features/add-entity";
 import {RemoveEntity} from "@/features/remove-entity";
 import {TemperatureMessagesForm} from "@/features/temperature-message-form";
 import {ConferenceTimeForm, useUpdateConferenceTimeForm} from "@/features/update-conference-time-form";
@@ -23,7 +23,7 @@ export const EditWeatherNotificationForms = (props: Props) => {
     const weatherNotificationForm = useUpdateConferenceTimeForm(conferenceTime);
 
     const addMessage = useMemo(() => (
-        <CreateEntity
+        <AddEntity
             label={t('temperatureMessage.actions.addMessage')} 
             onCreate={temperatureMessagesController.add}
             modalForm={({ isOpen, onSubmit }) =>

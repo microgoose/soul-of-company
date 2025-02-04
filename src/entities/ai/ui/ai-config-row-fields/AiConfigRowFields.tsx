@@ -1,22 +1,19 @@
-import {AIConfig} from "@/shared/types/entities";
+import {NewAIConfig} from "@/shared/types/entities";
 import {CopyIconButton} from "@/shared/ui/copy-text";
 import {Input} from "@/shared/ui/input";
 import {t} from "i18next";
-import {Controller, useForm} from "react-hook-form";
-import styles from './AIFields.module.scss';
+import {Controller, UseFormReturn} from "react-hook-form";
+import styles from './AiConfigRowFields.module.scss';
 
 interface Props {
-    defaultValues: AIConfig,
+    form: UseFormReturn<NewAIConfig>,
 }
 
-export const AiApiFields = ({ defaultValues }: Props) => {
-    const {control} = useForm<AIConfig>({
-        mode: 'onChange',
-        values: defaultValues,
-    });
+export const AiConfigRowFields = ({ form }: Props) => {
+    const {control} = form;
 
     return (
-        <div className={styles.openAiFields}>
+        <fieldset className={styles.openAiFields}>
             <Controller name='model' control={control} render={({field}) =>
                 <Input
                     className={styles.model}
@@ -47,6 +44,6 @@ export const AiApiFields = ({ defaultValues }: Props) => {
                     afterInput={<CopyIconButton text={field.value}/>}
                 />
             }/>
-        </div>
+        </fieldset>
     );
 };

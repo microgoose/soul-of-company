@@ -1,6 +1,6 @@
 import {RoleAuthorityTable, useRoleAuthoritiesController} from "@/entities/role";
-import {CreateEntity} from "@/features/add-entity/CreateEntity.tsx";
-import {CreateRoleModalForm} from "@/features/add-role-form";
+import {AddEntity} from "@/features/add-entity/AddEntity.tsx";
+import {AddRoleModalForm} from "@/features/add-role-form";
 import {RemoveEntity} from "@/features/remove-entity/RemoveEntity.tsx";
 import {UpdateEntity} from "@/features/update-entity/UpdateEntity.tsx";
 import {UpdateRoleModalForm} from "@/features/update-role-form";
@@ -32,9 +32,9 @@ export const RolesManagementPage = () => {
         <Page>
             <PageHeader>
                 <div/>
-                <CreateEntity
+                <AddEntity
                     label={t('rolesManagement.addRole')}
-                    modalForm={CreateRoleModalForm}
+                    modalForm={AddRoleModalForm}
                     onCreate={rolesController.insert}
                 />
             </PageHeader>

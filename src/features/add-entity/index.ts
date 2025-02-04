@@ -1,1 +1,1 @@
-export { CreateEntity } from './CreateEntity.tsx';
+export { AddEntity } from './AddEntity.tsx';

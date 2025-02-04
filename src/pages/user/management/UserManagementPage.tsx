@@ -1,7 +1,7 @@
 import {UsersTable, useUsersController} from "@/entities/user";
+import {AddEntity} from "@/features/add-entity/AddEntity.tsx";
+import {AddUserModalForm} from "@/features/add-user-form";
 import {BlockUserButton} from "@/features/block-user/BlockUserButton.tsx";
-import {CreateEntity} from "@/features/add-entity/CreateEntity.tsx";
-import {CreateUserModalForm} from "@/features/add-user-form";
 import {UpdateEntity} from "@/features/update-entity/UpdateEntity.tsx";
 import {UpdateUserModalForm} from "@/features/update-user-form";
 import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
@@ -32,9 +32,9 @@ export const UserManagementPage = () => {
         <Page>
             <PageHeader>
                 <div/>
-                <CreateEntity
+                <AddEntity
                     label={t('usersManagement.addUser')}
-                    modalForm={CreateUserModalForm}
+                    modalForm={AddUserModalForm}
                     onCreate={usersController.insert}
                 />
             </PageHeader>

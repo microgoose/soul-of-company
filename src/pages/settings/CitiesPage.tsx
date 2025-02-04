@@ -1,6 +1,6 @@
 import {CitiesTable, useCitiesController} from "@/entities/city";
-import {CreateCityModalForm} from "@/features/add-city-form";
-import {CreateEntity} from "@/features/add-entity";
+import {AddCityModalForm} from "@/features/add-city-form";
+import {AddEntity} from "@/features/add-entity";
 import {RemoveEntity} from "@/features/remove-entity";
 import {useDocumentTitle} from "@/shared/hooks/use-document-title.ts";
 import {ActionsCell, Page, PageHeader, PageTitle, TableContainer} from "@/shared/layout";
@@ -22,9 +22,9 @@ export const CitiesPage = () => {
         <Page>
             <PageHeader>
                 <PageTitle>{t('pages.cities.title')}</PageTitle>
-                <CreateEntity
+                <AddEntity
                     label={t('city.actions.addCity')}
-                    modalForm={CreateCityModalForm}
+                    modalForm={AddCityModalForm}
                     onCreate={citiesController.add}
                 />
             </PageHeader>
