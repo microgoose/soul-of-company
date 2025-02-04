@@ -1,7 +1,9 @@
 import {useSaveAiConfig} from "@/entities/ai";
+import {getAddAiConfigValidationSchema} from "@/entities/ai/model/ai-config-validation-schema.ts";
 import {useAiConfigModalForm} from "@/features/add-ai-config-form";
 import {NewAIConfig} from "@/shared/types/entities";
 import {DoneStage, ModalForm, StageForm} from "@/shared/ui/form";
+import {yupResolver} from "@hookform/resolvers/yup";
 import {t} from "i18next";
 import {useCallback} from "react";
 import {useForm} from "react-hook-form";
@@ -12,6 +14,7 @@ export const AddAiConfigModalForm = () => {
     const aiConfigSaver = useSaveAiConfig();
     const form = useForm<NewAIConfig>({
         mode: 'onChange',
+        resolver: yupResolver<NewAIConfig>(getAddAiConfigValidationSchema()),
         defaultValues: {
             apiKey: '',
             model: '',
@@ -22,8 +25,8 @@ export const AddAiConfigModalForm = () => {
     const onSubmit = useCallback(async (aiConfig: NewAIConfig) => {
         nextStage();
         await aiConfigSaver.save(aiConfig);
-        nextStage();
-    }, [aiConfigSaver, nextStage]);
+        close();
+    }, [aiConfigSaver, close, nextStage]);
     
     return (
         <ModalForm title={t('AiApi.actions.addAi')} isOpen={isOpen} onClose={close}>

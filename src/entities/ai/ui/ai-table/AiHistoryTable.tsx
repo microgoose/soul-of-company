@@ -1,4 +1,4 @@
-import {aiHistoryHeaders} from "@/entities/ai/model/ai-history-table-headers.ts";
+import {aiHistoryHeaders} from "@/entities/ai/config/ai-history-table-headers.ts";
 import {AiHistoryHeader} from "@/entities/ai/ui/ai-table/AiHistoryHeader.tsx";
 import {AiHistoryRow} from "@/entities/ai/ui/ai-table/AiHistoryRow.tsx";
 import {AIHistory} from "@/shared/types/entities";

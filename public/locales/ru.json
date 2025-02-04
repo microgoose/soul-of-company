@@ -296,6 +296,14 @@
       "model": "Модель",
       "tokens": "Токены"
     },
+    "actions": {
+      "specifyApiKey": "Укажите ключ API обязатален",
+      "specifyModel": "Укажите модель",
+      "specifyTokens": "Укажите количество токентов"
+    },
+    "validation": {
+      "minTokensError": "Неккоректное количество токенов"
+    },
     "message": {
       "aiConfigAdded": "Нейросеть добавлена"
     }
@@ -337,6 +345,7 @@
   },
   "errors": {
     "testError": "Тестовая ошиба, просто для теста оишбок",
+    "invalidNumberError": "Неккоректное число",
     "somethingWentWrong": "Что-то пошло не так",
     "incorrectDurationFormat": "Неверный формат продолжительности",
     "incorrectDateFormat": "Введите корректный формат даты (дд.мм.гггг)",

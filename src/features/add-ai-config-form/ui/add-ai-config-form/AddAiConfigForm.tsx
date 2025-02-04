@@ -1,11 +1,12 @@
-import {AIConfigFields, AiConfigFields} from "@/entities/ai";
+import {AiConfigFields} from "@/entities/ai";
+import {NewAIConfig} from "@/shared/types/entities";
 import {ButtonState, PrimaryButton} from "@/shared/ui/button";
 import {t} from "i18next";
 import {UseFormReturn} from "react-hook-form";
 import styles from './AddAiConfigForm.module.scss';
 
 type Props = {
-    form: UseFormReturn<AIConfigFields>,
+    form: UseFormReturn<NewAIConfig>,
     onSubmit: () => void,
 }
 
