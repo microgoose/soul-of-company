@@ -15,7 +15,6 @@ export const TabHeaders = ({ children }: Props) => {
             {controller.tabs.map(tab => (
                 <TabHeader key={tab.id} controller={controller} tab={tab} children={children}/>
             ))}
-            <div className={styles.emptySpaceTab}/>
         </div>
     );
 };
